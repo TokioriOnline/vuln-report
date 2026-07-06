@@ -7,9 +7,21 @@
                    initial-scale=1.0">
     <title>脆弱性情報レポート 2026年07月06日
            | Tokiori Online</title>
+    
+    <!-- Google AdSense(審査通過後に有効化) -->
+    <!--
+    <script async
+        src="https://pagead2.googlesyndication.com
+/pagead/js/adsbygoogle.js?client=ca-pub-1682715102138016"
+        crossorigin="anonymous">
+    </script>
+    -->
+
     <style>
+        * { box-sizing: border-box; }
         body {
-            font-family: 'Helvetica Neue',sans-serif;
+            font-family: 'Helvetica Neue',
+                         sans-serif;
             max-width: 900px;
             margin: auto;
             padding: 20px;
@@ -20,13 +32,15 @@
         h2 {
             border-left: 4px solid #333;
             padding-left: 10px;
+            margin-top: 30px;
         }
         .card {
             background: white;
             border-radius: 8px;
             padding: 15px 20px;
             margin: 10px 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px
+                        rgba(0,0,0,0.1);
         }
         .card.critical {
             border-left: 5px solid #cc0000;
@@ -39,74 +53,152 @@
             font-weight: bold;
             margin-bottom: 8px;
         }
-        .badge-critical,.badge-CRITICAL {
-            background:#cc0000; color:white;
+        .badge-critical,
+        .badge-CRITICAL {
+            background: #cc0000;
+            color: white;
         }
         .badge-高 {
-            background:#ff6600; color:white;
+            background: #ff6600;
+            color: white;
         }
         .badge-中 {
-            background:#ffaa00; color:white;
+            background: #ffaa00;
+            color: white;
         }
         .badge-低 {
-            background:#009900; color:white;
+            background: #009900;
+            color: white;
         }
-        .summary {
+        .summary-box {
             background: #1a1a2e;
             color: white;
             border-radius: 8px;
             padding: 20px;
             margin: 20px 0;
         }
-        .summary table {
+        .summary-box h2 {
+            color: white;
+            border-color: white;
+        }
+        .summary-box table {
             width: 100%;
             border-collapse: collapse;
         }
-        .summary td { padding: 8px; }
-        a { color: #0066cc; }
+        .summary-box td {
+            padding: 8px;
+            font-size: 1.05em;
+        }
         .update-time {
             background: #e8f4f8;
             padding: 10px 15px;
             border-radius: 5px;
             margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+        .disclaimer {
+            background: #fff8e1;
+            border-left: 4px solid #ffaa00;
+            padding: 15px 20px;
+            margin: 30px 0;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        .disclaimer h3 {
+            margin-top: 0;
+        }
+        .ad-area {
+            text-align: center;
+            margin: 20px 0;
+            min-height: 90px;
+            background: #f9f9f9;
+            border: 1px dashed #ccc;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 0.85em;
         }
         footer {
             text-align: center;
             margin-top: 40px;
             padding: 20px;
             color: #666;
+            font-size: 0.9em;
+            border-top: 1px solid #ddd;
         }
+        a { color: #0066cc; }
+        a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
-<p><a href="index.html">← 最新レポートに戻る</a></p>
+
+<p style="margin-bottom:20px;"><a href="index.html">← 最新レポートに戻る</a></p>
+
 <h1>🔍 脆弱性情報レポート</h1>
+
 <div class="update-time">
     📅 レポート日: 2026年07月06日 |
-    <a href="archive.html">📚 過去のレポート一覧</a>
+    毎週月曜日 午前7時に自動更新 |
+    <a href="archive.html">
+        📚 過去のレポート一覧
+    </a> |
+    <a href="privacy.html">
+        プライバシーポリシー
+    </a>
 </div>
 
-<div class="summary">
-    <h2 style="color:white;border-color:white;">
-        📊 重要度サマリー
-    </h2>
+<!-- 広告(上部) -->
+
+    <!-- 広告ユニット(審査通過後に有効化) -->
+    <!--
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-1682715102138016"
+         data-ad-slot="2045988064"
+         data-ad-format="auto"
+         data-full-width-responsive="true">
+    </ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle
+            || []).push({});
+    </script>
+    -->
+    <div class="ad-area">広告エリア</div>
+
+
+<div class="summary-box">
+    <h2>📊 今週の重要度サマリー</h2>
     <table>
         <tr>
-            <td>🔴 CRITICAL(即時対応・24時間以内)</td>
-            <td><strong>1件
-                </strong></td>
+            <td>
+                🔴 CRITICAL
+                (即時対応・24時間以内)
+            </td>
+            <td>
+                <strong>
+                    1件
+                </strong>
+            </td>
         </tr>
         <tr>
             <td>🟠 高(優先対応・72時間以内)</td>
-            <td><strong>1件</strong></td>
+            <td>
+                <strong>1件</strong>
+            </td>
         </tr>
         <tr>
             <td>🟡 中(計画対応・1週間以内)</td>
-            <td><strong>0件</strong></td>
+            <td>
+                <strong>0件</strong>
+            </td>
         </tr>
         <tr>
             <td>🟢 低(モニタリング・月次確認)</td>
-            <td><strong>9件</strong></td>
+            <td>
+                <strong>9件</strong>
+            </td>
         </tr>
         <tr>
             <td><strong>合計</strong></td>
@@ -116,7 +208,7 @@
 </div>
 
 <h2>🔴 CISA KEV:実際に悪用確認済みの脆弱性</h2>
-<p>米国CISAが実際に攻撃者に悪用されていると
+<p>米国CISAが「実際に攻撃者に悪用されている」と
 認定した脆弱性です。最優先で対応してください。</p>
 
         <div class="card critical">
@@ -124,12 +216,16 @@
                 🔴 CRITICAL
             </span>
             <strong>CVE-2026-45659</strong> |
-            SharePoint Server (Microsoft)<br>
+            SharePoint Server
+            (Microsoft)<br>
             <p>Microsoft SharePoint Server contains a deserialization of untrusted data vulnerability which allows an authorized attacker to execute code over a network.</p>
-            <p>📅 追加日:2026-07-01
-               ⏰ 対応期限:2026-07-04</p>
-            <a href="https://www.cisa.gov/known-exploited
--vulnerabilities-catalog"
+            <p>
+                📅 追加日:2026-07-01
+                &nbsp;
+                ⏰ 対応期限:2026-07-04
+            </p>
+            <a href="https://www.cisa.gov/
+known-exploited-vulnerabilities-catalog"
                target="_blank">
                 🔗 対策を確認する(CISA)
             </a>
@@ -146,10 +242,13 @@
             </span>
             <strong>注意喚起: Fortinet製品に関連する認証情報の漏えいに関する注意喚起  (公開)</strong><br>
             <small></small>
-            <p><a href="https://www.jpcert.or.jp/at/2026/at260019.html"
-                  target="_blank">
-                🔗 対策・詳細(JPCERT/CC)
-            </a></p>
+            <p>
+                <a href="https://www.jpcert.or.jp/at/2026/at260019.html"
+                   target="_blank">
+                    🔗 対策・詳細を確認する
+                    (JPCERT/CC)
+                </a>
+            </p>
         </div>
         <div class="card">
             <span class="badge
@@ -158,10 +257,13 @@
             </span>
             <strong>注意喚起: Adobe AcrobatおよびReaderの脆弱性（APSB26-63）に関する注意喚起  (公開)</strong><br>
             <small></small>
-            <p><a href="https://www.jpcert.or.jp/at/2026/at260018.html"
-                  target="_blank">
-                🔗 対策・詳細(JPCERT/CC)
-            </a></p>
+            <p>
+                <a href="https://www.jpcert.or.jp/at/2026/at260018.html"
+                   target="_blank">
+                    🔗 対策・詳細を確認する
+                    (JPCERT/CC)
+                </a>
+            </p>
         </div>
         <div class="card">
             <span class="badge
@@ -170,10 +272,13 @@
             </span>
             <strong>注意喚起: 2026年6月マイクロソフトセキュリティ更新プログラムに関する注意喚起  (公開)</strong><br>
             <small></small>
-            <p><a href="https://www.jpcert.or.jp/at/2026/at260017.html"
-                  target="_blank">
-                🔗 対策・詳細(JPCERT/CC)
-            </a></p>
+            <p>
+                <a href="https://www.jpcert.or.jp/at/2026/at260017.html"
+                   target="_blank">
+                    🔗 対策・詳細を確認する
+                    (JPCERT/CC)
+                </a>
+            </p>
         </div>
         <div class="card">
             <span class="badge
@@ -182,10 +287,13 @@
             </span>
             <strong>注意喚起: Check Point Software Technologies社製品における認証バイパスの脆弱性（CVE-2026-50751）に関する注意喚起  (公開)</strong><br>
             <small></small>
-            <p><a href="https://www.jpcert.or.jp/at/2026/at260016.html"
-                  target="_blank">
-                🔗 対策・詳細(JPCERT/CC)
-            </a></p>
+            <p>
+                <a href="https://www.jpcert.or.jp/at/2026/at260016.html"
+                   target="_blank">
+                    🔗 対策・詳細を確認する
+                    (JPCERT/CC)
+                </a>
+            </p>
         </div>
         <div class="card">
             <span class="badge
@@ -194,33 +302,103 @@
             </span>
             <strong>注意喚起: Palo Alto Networks製PAN-OSにおける認証回避の脆弱性（CVE-2026-0265）に関する注意喚起  (公開)</strong><br>
             <small></small>
-            <p><a href="https://www.jpcert.or.jp/at/2026/at260015.html"
-                  target="_blank">
-                🔗 対策・詳細(JPCERT/CC)
-            </a></p>
+            <p>
+                <a href="https://www.jpcert.or.jp/at/2026/at260015.html"
+                   target="_blank">
+                    🔗 対策・詳細を確認する
+                    (JPCERT/CC)
+                </a>
+            </p>
         </div>
 
 <h2>🟡 JVN iPedia:国内製品脆弱性情報</h2>
-<p>IPAとJPCERT/CCが公開する
-国内製品・日本語の脆弱性情報です。</p>
+<p>IPAとJPCERT/CCが公開する国内製品・
+日本語の脆弱性情報です。</p>
+<p>取得できませんでした</p>
 
+<!-- 広告(中間) -->
+
+    <!-- 広告ユニット(審査通過後に有効化) -->
+    <!--
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-1682715102138016"
+         data-ad-slot="2045988064"
+         data-ad-format="auto"
+         data-full-width-responsive="true">
+    </ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle
+            || []).push({});
+    </script>
+    -->
+    <div class="ad-area">広告エリア</div>
+
+
+<!-- 免責事項 -->
+<div class="disclaimer">
+    <h3>⚠️ 免責事項・ご利用にあたって</h3>
+    <p>
+        本サイトに掲載している脆弱性情報は、
+        CISA KEV・JPCERT/CC・JVN iPediaが
+        公開する情報を収集・整理したものです。
+    </p>
+    <ul>
+        <li>
+            本情報は参考情報であり、
+            実際のセキュリティ対応を
+            保証するものではありません
+        </li>
+        <li>
+            掲載情報に基づく対応・判断は、
+            必ず各情報源の原文および
+            専門家への相談のうえ
+            自己責任で行ってください
+        </li>
+        <li>
+            本サイトの情報利用により
+            生じた損害について、
+            当サイトは一切の責任を
+            負いかねます
+        </li>
+        <li>
+            情報は自動収集のため、
+            最新の状況と異なる場合があります。
+            必ず一次情報源をご確認ください
+        </li>
+    </ul>
+    <p>
+        一次情報源:
+        <a href="https://www.cisa.gov/
+known-exploited-vulnerabilities-catalog"
+           target="_blank">CISA KEV</a> /
+        <a href="https://www.jpcert.or.jp/"
+           target="_blank">JPCERT/CC</a> /
+        <a href="https://jvndb.jvn.jp/"
+           target="_blank">JVN iPedia</a>
+    </p>
+</div>
 
 <footer>
     <p>
-        <strong>Tokiori Online</strong> |
+        <strong>Tokiori Online</strong><br>
         ITセキュリティコンサルタント Hatakeyama<br>
-        NIST / FISC / ISMS / 自工会GL /
-        経産省SCS評価制度<br>
-        お問い合わせ:
-        <a href="https://www.linkedin.com/"
-           target="_blank">LinkedIn</a>
+        NIST / FISC / ISMS /
+        自工会GL / 経産省SCS評価制度
     </p>
-    <p style="font-size:0.8em;color:#999;">
-        本情報はCISA KEV・JPCERT/CC・JVN iPediaの
-        公開情報を収集・整理したものです。
-        実際の対応は各情報源および
-        専門家への相談をお勧めします。
+    <p>
+        <a href="https://www.linkedin.com/"
+           target="_blank">LinkedIn</a> |
+        <a href="https://note.com/"
+           target="_blank">Note</a> |
+        <a href="privacy.html">
+            プライバシーポリシー
+        </a>
+    </p>
+    <p style="font-size:0.8em; color:#999;">
+        © 2026 Tokiori Online All Rights Reserved.
     </p>
 </footer>
+
 </body>
 </html>
