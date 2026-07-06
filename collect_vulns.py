@@ -389,7 +389,7 @@ def build_html_content(today, kev_list,
 <footer>
     <p>
         <strong>Tokiori Online</strong> |
-        ITセキュリティコンサルタント<br>
+        ITセキュリティコンサルタント Hatakeyama<br>
         NIST / FISC / ISMS / 自工会GL /
         経産省SCS評価制度<br>
         お問い合わせ:
