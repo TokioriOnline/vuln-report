@@ -1,0 +1,33 @@
+name: 週次脆弱性レポート自動生成
+
+on:
+  schedule:
+    # 毎週月曜 午前7時(JST) = UTC 日曜 22時
+    - cron: "0 22 * * 0"
+  workflow_dispatch:
+    # 手動実行ボタンも追加
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: リポジトリを取得
+        uses: actions/checkout@v4
+
+      - name: Python環境を設定
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: ライブラリをインストール
+        run: pip install -r requirements.txt
+
+      - name: 脆弱性情報を収集してHTML生成
+        run: python collect_vulns.py
+
+      - name: GitHub Pagesにデプロイ
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
