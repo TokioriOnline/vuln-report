@@ -332,7 +332,26 @@ def build_html_content(today, kev_list,
         }
     """
 
-    return f"""<!DOCTYPE html>
+    return f"""
+# 広告ユニット(記事上部と下部に配置)
+    ad_unit = """
+    <div style="text-align:center; margin:20px 0;">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-1682715102138016"
+             data-ad-slot="2045988064"
+             data-ad-format="auto"
+             data-full-width-responsive="true">
+        </ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle
+                || []).push({});
+        </script>
+    </div>
+"""
+# ※ data-ad-slot は
+#    AdSense管理画面の広告ユニットIDに変更
+<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
