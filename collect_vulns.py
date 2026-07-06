@@ -252,6 +252,18 @@ def build_html_content(today, kev_list,
 
     total = sum(counts.values())
 
+# 変更後(AdSenseコードを追加)
+    adsense = """
+    <!-- Google AdSense -->
+    <script async
+        src="https://pagead2.googlesyndication.com
+/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+        crossorigin="anonymous">
+    </script>
+"""
+# ※ ca-pub-XXXXXXXXXXXXXXXX は
+#    AdSense管理画面のパブリッシャーIDに変更
+
     css = """
         body {
             font-family: 'Helvetica Neue',sans-serif;
@@ -386,23 +398,87 @@ def build_html_content(today, kev_list,
 国内製品・日本語の脆弱性情報です。</p>
 {jvn_html}
 
+footer_html = f"""
 <footer>
-    <p>
-        <strong>Tokiori Online</strong> |
-        ITセキュリティコンサルタント Hatakeyama<br>
-        NIST / FISC / ISMS / 自工会GL /
-        経産省SCS評価制度<br>
-        お問い合わせ:
-        <a href="https://www.linkedin.com/"
-           target="_blank">LinkedIn</a>
-    </p>
-    <p style="font-size:0.8em;color:#999;">
-        本情報はCISA KEV・JPCERT/CC・JVN iPediaの
-        公開情報を収集・整理したものです。
-        実際の対応は各情報源および
-        専門家への相談をお勧めします。
-    </p>
-</footer>
+    <hr>
+
+    <!-- 免責事項 -->
+    <div style="
+        background: #fff8e1;
+        border-left: 4px solid #ffaa00;
+        padding: 15px 20px;
+        margin: 20px 0;
+        border-radius: 4px;
+        font-size: 0.9em;
+    ">
+        <h3 style="margin-top:0;">
+            ⚠️ 免責事項・ご利用にあたって
+        </h3>
+        <p>本サイトに掲載している脆弱性情報は、
+CISA KEV・JPCERT/CC・JVN iPediaが公開する
+情報を収集・整理したものです。</p>
+        <ul>
+            <li>
+                本情報は参考情報であり、
+                実際のセキュリティ対応を
+                保証するものではありません
+            </li>
+            <li>
+                掲載情報に基づく対応・判断は、
+                必ず各情報源の原文および
+                専門家への相談のうえ
+                自己責任で行ってください
+            </li>
+            <li>
+                本サイトの情報利用により
+                生じた損害について、
+                当サイトは一切の責任を
+                負いかねます
+            </li>
+            <li>
+                情報は自動収集のため、
+                最新の状況と異なる場合が
+                あります。必ず一次情報源を
+                ご確認ください
+            </li>
+        </ul>
+        <p>
+            一次情報源:
+            <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+               target="_blank">CISA KEV</a> /
+            <a href="https://www.jpcert.or.jp/"
+               target="_blank">JPCERT/CC</a> /
+            <a href="https://jvndb.jvn.jp/"
+               target="_blank">JVN iPedia</a>
+        </p>
+    </div>
+
+    <!-- 広告 -->
+    {ad_unit}
+
+    <!-- プロフィール -->
+    <div style="
+        text-align:center;
+        padding: 20px;
+        color: #666;
+    ">
+        <p>
+            <strong>Tokiori Online</strong> |
+            ITセキュリティコンサルタント Hatakeyama<br>
+            NIST / FISC / ISMS / 自工会GL /
+            経産省SCS評価制度<br>
+            お問い合わせ:
+            <a href="https://www.linkedin.com/in/masahikoh/"
+               target="_blank">LinkedIn</a> |
+            <a href="https://note.com/alive_clover8071"
+               target="_blank">Note</a>
+        </p>
+        <p style="font-size:0.8em;">
+            © 2026 Tokiori Online
+            All Rights Reserved.
+        </p>
+    </div>
+</footer>"""
 </body>
 </html>"""
 
