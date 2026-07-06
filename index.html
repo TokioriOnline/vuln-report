@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,
+                   initial-scale=1.0">
+    <title>脆弱性情報レポート | 畠山正彦</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue',
+                         sans-serif;
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            background: #f5f5f5;
+            color: #333;
+        }
+        h1 { color: #1a1a2e; }
+        h2 { border-left: 4px solid #333;
+              padding-left: 10px; }
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 10px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .card.critical {
+            border-left: 5px solid #cc0000;
+        }
+        .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .badge-critical {
+            background: #cc0000;
+            color: white;
+        }
+        .badge-高 {
+            background: #ff6600;
+            color: white;
+        }
+        .badge-中 {
+            background: #ffaa00;
+            color: white;
+        }
+        .badge-低 {
+            background: #009900;
+            color: white;
+        }
+        .summary {
+            background: #1a1a2e;
+            color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .summary table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .summary td {
+            padding: 8px;
+            font-size: 1.1em;
+        }
+        a { color: #0066cc; }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9em;
+        }
+        .update-time {
+            background: #e8f4f8;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>🔍 脆弱性情報レポート</h1>
+<div class="update-time">
+    🕐 最終更新: 2026年07月06日 06:48 |
+    毎週月曜日 午前7時に自動更新
+</div>
+
+<div class="summary">
+    <h2 style="color:white; border-color:white;">
+        📊 今週のサマリー
+    </h2>
+    <table>
+        <tr>
+            <td>🔴 CRITICAL(即時対応・24時間以内)</td>
+            <td><strong>1件</strong>
+            </td>
+        </tr>
+        <tr>
+            <td>🟠 高(優先対応・72時間以内)</td>
+            <td><strong>1件</strong></td>
+        </tr>
+        <tr>
+            <td>🟡 中(計画対応・1週間以内)</td>
+            <td><strong>0件</strong></td>
+        </tr>
+        <tr>
+            <td>🟢 低(モニタリング・月次確認)</td>
+            <td><strong>4件</strong></td>
+        </tr>
+        <tr>
+            <td><strong>合計</strong></td>
+            <td><strong>6件</strong></td>
+        </tr>
+    </table>
+</div>
+
+<h2>🔴 CISA KEV:実際に悪用確認済みの脆弱性</h2>
+<p>米国CISAが「実際に攻撃者に悪用されている」と
+認定した脆弱性です。最優先で対応してください。</p>
+
+        <div class="card critical">
+            <span class="badge badge-critical">
+                🔴 CRITICAL
+            </span>
+            <strong>CVE-2026-45659</strong> |
+            SharePoint Server (Microsoft)<br>
+            <p>Microsoft SharePoint Server contains a deserialization of untrusted data vulnerability which allows an authorized attacker to execute code over a network.</p>
+            <p>📅 追加日:2026-07-01
+               ⏰ 対応期限:2026-07-04</p>
+            <a href="https://www.cisa.gov/known-exploited
+-vulnerabilities-catalog" target="_blank">
+                🔗 対策を確認する(CISA)
+            </a>
+        </div>
+
+<h2>🟠 JPCERT/CC:日本向け注意喚起</h2>
+<p>JPCERT/CCが日本の組織向けに発信した
+注意喚起情報です。</p>
+
+        <div class="card">
+            <span class="badge badge-低">
+                🟢 低
+            </span>
+            <strong>注意喚起: Fortinet製品に関連する認証情報の漏えいに関する注意喚起  (公開)</strong><br>
+            <small></small>
+            <p><a href="https://www.jpcert.or.jp/at/2026/at260019.html"
+                  target="_blank">
+                🔗 対策・詳細を確認する(JPCERT/CC)
+            </a></p>
+        </div>
+        <div class="card">
+            <span class="badge badge-低">
+                🟢 低
+            </span>
+            <strong>注意喚起: Adobe AcrobatおよびReaderの脆弱性（APSB26-63）に関する注意喚起  (公開)</strong><br>
+            <small></small>
+            <p><a href="https://www.jpcert.or.jp/at/2026/at260018.html"
+                  target="_blank">
+                🔗 対策・詳細を確認する(JPCERT/CC)
+            </a></p>
+        </div>
+        <div class="card">
+            <span class="badge badge-低">
+                🟢 低
+            </span>
+            <strong>注意喚起: 2026年6月マイクロソフトセキュリティ更新プログラムに関する注意喚起  (公開)</strong><br>
+            <small></small>
+            <p><a href="https://www.jpcert.or.jp/at/2026/at260017.html"
+                  target="_blank">
+                🔗 対策・詳細を確認する(JPCERT/CC)
+            </a></p>
+        </div>
+        <div class="card">
+            <span class="badge badge-高">
+                🟠 高
+            </span>
+            <strong>注意喚起: Check Point Software Technologies社製品における認証バイパスの脆弱性（CVE-2026-50751）に関する注意喚起  (公開)</strong><br>
+            <small></small>
+            <p><a href="https://www.jpcert.or.jp/at/2026/at260016.html"
+                  target="_blank">
+                🔗 対策・詳細を確認する(JPCERT/CC)
+            </a></p>
+        </div>
+        <div class="card">
+            <span class="badge badge-低">
+                🟢 低
+            </span>
+            <strong>注意喚起: Palo Alto Networks製PAN-OSにおける認証回避の脆弱性（CVE-2026-0265）に関する注意喚起  (公開)</strong><br>
+            <small></small>
+            <p><a href="https://www.jpcert.or.jp/at/2026/at260015.html"
+                  target="_blank">
+                🔗 対策・詳細を確認する(JPCERT/CC)
+            </a></p>
+        </div>
+
+<h2>🟡 JVN iPedia:国内製品脆弱性情報</h2>
+<p>IPAとJPCERT/CCが公開する国内製品・
+日本語での脆弱性情報です。</p>
+
+
+<footer>
+    <p>
+        <strong>畠山正彦</strong> |
+        ITセキュリティコンサルタント<br>
+        NIST / FISC / ISMS / 自工会GL /
+        経産省SCS評価制度<br>
+        お問い合わせ・ご相談:
+        <a href="https://www.linkedin.com/in/"
+           target="_blank">LinkedIn</a>
+    </p>
+    <p style="font-size:0.8em; color:#999;">
+        本情報はCISA KEV・JPCERT/CC・JVN iPediaの
+        公開情報を収集・整理したものです。<br>
+        実際の対応は各情報源および
+        専門家への相談をお勧めします。
+    </p>
+</footer>
+
+</body>
+</html>
