@@ -331,7 +331,7 @@ def build_html_content(today, kev_list,
           content="width=device-width,
                    initial-scale=1.0">
     <title>脆弱性情報レポート {display_date}
-           | 畠山正彦</title>
+           | Tokiori Online</title>
     <style>{css}</style>
 </head>
 <body>
@@ -388,7 +388,7 @@ def build_html_content(today, kev_list,
 
 <footer>
     <p>
-        <strong>畠山正彦</strong> |
+        <strong>Tokiori Online</strong> |
         ITセキュリティコンサルタント<br>
         NIST / FISC / ISMS / 自工会GL /
         経産省SCS評価制度<br>
