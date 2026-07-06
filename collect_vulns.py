@@ -123,4 +123,456 @@ def save_to_json(today, kev_list,
             "high": counts["高"],
             "medium": counts["中"],
             "low": counts["低"],
-            "total":
+            "total": sum(counts.values())
+        },
+        "kev": [
+            {
+                "cveID": v["cveID"],
+                "product": v["product"],
+                "vendorProject": v["vendorProject"],
+                "description": v["shortDescription"],
+                "dateAdded": v["dateAdded"],
+                "dueDate": v["dueDate"]
+            }
+            for v in kev_list
+        ],
+        "jpcert": [
+            {
+                "title": v["title"],
+                "link": v["link"],
+                "published": v["published"],
+                "severity": classify_severity(
+                    v, "jpcert")["level"]
+            }
+            for v in jpcert_list
+        ],
+        "jvn": [
+            {
+                "title": v["title"],
+                "link": v["link"],
+                "published": v["published"],
+                "severity": classify_severity(
+                    v, "jvn")["level"]
+            }
+            for v in jvn_list
+        ]
+    }
+
+    os.makedirs("docs", exist_ok=True)
+    with open(json_path, "w",
+              encoding="utf-8") as f:
+        json.dump(all_data, f,
+                  ensure_ascii=False,
+                  indent=2)
+
+    print(
+        f"✅ data.json に {today} を追加 "
+        f"(累計 {len(all_data)}週分)"
+    )
+    return all_data
+
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# HTML生成(共通部品)
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+def build_html_content(today, kev_list,
+                       jpcert_list, jvn_list,
+                       counts, is_archive=False):
+    """HTML本文を生成(index/アーカイブ共通)"""
+
+    display_date = datetime.strptime(
+        today, "%Y-%m-%d"
+    ).strftime("%Y年%m月%d日")
+
+    back_link = (
+        '<p><a href="index.html">'
+        '← 最新レポートに戻る</a></p>'
+        if is_archive else ""
+    )
+
+    # KEV
+    kev_html = ""
+    for v in kev_list[:10]:
+        sev = classify_severity(v, "kev")
+        kev_html += f"""
+        <div class="card critical">
+            <span class="badge badge-critical">
+                {sev['icon']} CRITICAL
+            </span>
+            <strong>{v['cveID']}</strong> |
+            {v['product']} ({v['vendorProject']})<br>
+            <p>{v['shortDescription']}</p>
+            <p>📅 追加日:{v['dateAdded']}
+               ⏰ 対応期限:{v['dueDate']}</p>
+            <a href="https://www.cisa.gov/known-exploited
+-vulnerabilities-catalog"
+               target="_blank">
+                🔗 対策を確認する(CISA)
+            </a>
+        </div>"""
+    if not kev_html:
+        kev_html = "<p>該当なし</p>"
+
+    # JPCERT
+    jpcert_html = ""
+    for item in jpcert_list[:5]:
+        sev = classify_severity(item, "jpcert")
+        jpcert_html += f"""
+        <div class="card">
+            <span class="badge
+                badge-{sev['level']}">
+                {sev['icon']} {sev['level']}
+            </span>
+            <strong>{item['title']}</strong><br>
+            <small>{item['published']}</small>
+            <p><a href="{item['link']}"
+                  target="_blank">
+                🔗 対策・詳細(JPCERT/CC)
+            </a></p>
+        </div>"""
+
+    # JVN
+    jvn_html = ""
+    for item in jvn_list[:5]:
+        sev = classify_severity(item, "jvn")
+        jvn_html += f"""
+        <div class="card">
+            <span class="badge
+                badge-{sev['level']}">
+                {sev['icon']} {sev['level']}
+            </span>
+            <strong>{item['title']}</strong><br>
+            <small>{item['published']}</small>
+            <p><a href="{item['link']}"
+                  target="_blank">
+                🔗 対策・詳細(JVN iPedia)
+            </a></p>
+        </div>"""
+
+    total = sum(counts.values())
+
+    css = """
+        body {
+            font-family: 'Helvetica Neue',sans-serif;
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            background: #f5f5f5;
+            color: #333;
+        }
+        h1 { color: #1a1a2e; }
+        h2 {
+            border-left: 4px solid #333;
+            padding-left: 10px;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 10px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .card.critical {
+            border-left: 5px solid #cc0000;
+        }
+        .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .badge-critical,.badge-CRITICAL {
+            background:#cc0000; color:white;
+        }
+        .badge-高 {
+            background:#ff6600; color:white;
+        }
+        .badge-中 {
+            background:#ffaa00; color:white;
+        }
+        .badge-低 {
+            background:#009900; color:white;
+        }
+        .summary {
+            background: #1a1a2e;
+            color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .summary table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .summary td { padding: 8px; }
+        a { color: #0066cc; }
+        .update-time {
+            background: #e8f4f8;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+        }
+    """
+
+    return f"""<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,
+                   initial-scale=1.0">
+    <title>脆弱性情報レポート {display_date}
+           | 畠山正彦</title>
+    <style>{css}</style>
+</head>
+<body>
+{back_link}
+<h1>🔍 脆弱性情報レポート</h1>
+<div class="update-time">
+    📅 レポート日: {display_date} |
+    <a href="archive.html">📚 過去のレポート一覧</a>
+</div>
+
+<div class="summary">
+    <h2 style="color:white;border-color:white;">
+        📊 重要度サマリー
+    </h2>
+    <table>
+        <tr>
+            <td>🔴 CRITICAL(即時対応・24時間以内)</td>
+            <td><strong>{counts['CRITICAL']}件
+                </strong></td>
+        </tr>
+        <tr>
+            <td>🟠 高(優先対応・72時間以内)</td>
+            <td><strong>{counts['高']}件</strong></td>
+        </tr>
+        <tr>
+            <td>🟡 中(計画対応・1週間以内)</td>
+            <td><strong>{counts['中']}件</strong></td>
+        </tr>
+        <tr>
+            <td>🟢 低(モニタリング・月次確認)</td>
+            <td><strong>{counts['低']}件</strong></td>
+        </tr>
+        <tr>
+            <td><strong>合計</strong></td>
+            <td><strong>{total}件</strong></td>
+        </tr>
+    </table>
+</div>
+
+<h2>🔴 CISA KEV:実際に悪用確認済みの脆弱性</h2>
+<p>米国CISAが実際に攻撃者に悪用されていると
+認定した脆弱性です。最優先で対応してください。</p>
+{kev_html}
+
+<h2>🟠 JPCERT/CC:日本向け注意喚起</h2>
+<p>JPCERT/CCが日本の組織向けに発信した
+注意喚起情報です。</p>
+{jpcert_html}
+
+<h2>🟡 JVN iPedia:国内製品脆弱性情報</h2>
+<p>IPAとJPCERT/CCが公開する
+国内製品・日本語の脆弱性情報です。</p>
+{jvn_html}
+
+<footer>
+    <p>
+        <strong>畠山正彦</strong> |
+        ITセキュリティコンサルタント<br>
+        NIST / FISC / ISMS / 自工会GL /
+        経産省SCS評価制度<br>
+        お問い合わせ:
+        <a href="https://www.linkedin.com/"
+           target="_blank">LinkedIn</a>
+    </p>
+    <p style="font-size:0.8em;color:#999;">
+        本情報はCISA KEV・JPCERT/CC・JVN iPediaの
+        公開情報を収集・整理したものです。
+        実際の対応は各情報源および
+        専門家への相談をお勧めします。
+    </p>
+</footer>
+</body>
+</html>"""
+
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 方法A:アーカイブ一覧ページ生成
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+def generate_archive_index(all_data):
+    """過去レポートの一覧ページを生成"""
+
+    rows = ""
+    for date in sorted(all_data.keys(),
+                       reverse=True):
+        d = all_data[date]
+        s = d["summary"]
+        display = datetime.strptime(
+            date, "%Y-%m-%d"
+        ).strftime("%Y年%m月%d日")
+
+        rows += f"""
+        <tr>
+            <td>
+                <a href="{date}.html">
+                    {display}
+                </a>
+            </td>
+            <td style="color:#cc0000;">
+                <strong>{s['critical']}</strong>
+            </td>
+            <td style="color:#ff6600;">
+                {s['high']}
+            </td>
+            <td style="color:#ffaa00;">
+                {s['medium']}
+            </td>
+            <td style="color:#009900;">
+                {s['low']}
+            </td>
+            <td>{s['total']}</td>
+        </tr>"""
+
+    html = f"""<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>レポートアーカイブ | 畠山正彦</title>
+    <style>
+        body {{
+            font-family: sans-serif;
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }}
+        table {{
+            width: 100%;
+            border-collapse: collapse;
+        }}
+        th, td {{
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }}
+        th {{
+            background: #1a1a2e;
+            color: white;
+        }}
+        tr:hover {{ background: #f5f5f5; }}
+    </style>
+</head>
+<body>
+    <h1>📚 脆弱性レポート アーカイブ</h1>
+    <p>
+        <a href="index.html">
+            ← 最新レポートに戻る
+        </a>
+    </p>
+    <p>累計 {len(all_data)}週分のデータ</p>
+    <table>
+        <thead>
+            <tr>
+                <th>レポート日</th>
+                <th>🔴CRITICAL</th>
+                <th>🟠高</th>
+                <th>🟡中</th>
+                <th>🟢低</th>
+                <th>合計</th>
+            </tr>
+        </thead>
+        <tbody>{rows}</tbody>
+    </table>
+</body>
+</html>"""
+
+    with open("docs/archive.html", "w",
+              encoding="utf-8") as f:
+        f.write(html)
+    print("✅ archive.html 生成完了")
+
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# メイン処理
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+def main():
+    print("📡 情報収集開始...")
+    today = datetime.now().strftime("%Y-%m-%d")
+
+    # データ収集
+    kev = fetch_cisa_kev(days=7)
+    jpcert = fetch_jpcert()
+    jvn = fetch_jvn()
+    print(
+        f"収集完了: KEV={len(kev)}件 "
+        f"JPCERT={len(jpcert)}件 "
+        f"JVN={len(jvn)}件"
+    )
+
+    # 重要度カウント
+    counts = {"CRITICAL": 0, "高": 0,
+              "中": 0, "低": 0}
+    for v in kev:
+        counts["CRITICAL"] += 1
+    for item in jpcert + jvn:
+        source = (
+            "jpcert" if item in jpcert else "jvn"
+        )
+        level = classify_severity(
+            item, source)["level"]
+        counts[level] += 1
+
+    os.makedirs("docs", exist_ok=True)
+
+    # 方法B:JSONに累積保存
+    all_data = save_to_json(
+        today, kev, jpcert, jvn, counts
+    )
+
+    # 最新版index.htmlを生成
+    html = build_html_content(
+        today, kev, jpcert, jvn, counts,
+        is_archive=False
+    )
+    with open("docs/index.html", "w",
+              encoding="utf-8") as f:
+        f.write(html)
+    print("✅ index.html 生成完了")
+
+    # 方法A:日付付きアーカイブHTMLを生成
+    archive_html = build_html_content(
+        today, kev, jpcert, jvn, counts,
+        is_archive=True
+    )
+    archive_path = f"docs/{today}.html"
+    with open(archive_path, "w",
+              encoding="utf-8") as f:
+        f.write(archive_html)
+    print(f"✅ {archive_path} アーカイブ保存完了")
+
+    # アーカイブ一覧ページを更新
+    generate_archive_index(all_data)
+
+    print("\n=== 完了 ===")
+    print(f"累計データ: {len(all_data)}週分")
+    print(
+        f"重要度: "
+        f"CRITICAL={counts['CRITICAL']} "
+        f"高={counts['高']} "
+        f"中={counts['中']} "
+        f"低={counts['低']}"
+    )
+
+main()
