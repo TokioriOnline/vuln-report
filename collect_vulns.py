@@ -449,7 +449,7 @@ def generate_archive_index(all_data):
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>レポートアーカイブ | 畠山正彦</title>
+    <title>レポートアーカイブ | Tokiori Online</title>
     <style>
         body {{
             font-family: sans-serif;
