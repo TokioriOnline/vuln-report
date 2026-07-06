@@ -325,18 +325,18 @@ def build_html_content(today, kev_list,
     # ─────────────────────────────────────
     adsense_head = """
     <!-- Google AdSense(審査通過後に有効化) -->
-    <!--
+
     <script async
         src="https://pagead2.googlesyndication.com
 /pagead/js/adsbygoogle.js?client=ca-pub-1682715102138016"
         crossorigin="anonymous">
     </script>
-    -->
+
 """
 
     adsense_unit = """
     <!-- 広告ユニット(審査通過後に有効化) -->
-    <!--
+
     <ins class="adsbygoogle"
          style="display:block"
          data-ad-client="ca-pub-1682715102138016"
@@ -348,7 +348,7 @@ def build_html_content(today, kev_list,
         (adsbygoogle = window.adsbygoogle
             || []).push({});
     </script>
-    -->
+
     <div class="ad-area">広告エリア</div>
 """
 
