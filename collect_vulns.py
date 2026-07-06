@@ -255,11 +255,8 @@ def build_html_content(today, kev_list,
 # 変更後(AdSenseコードを追加)
     adsense = """
     <!-- Google AdSense -->
-    <script async
-        src="https://pagead2.googlesyndication.com
-/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
-        crossorigin="anonymous">
-    </script>
+   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1682715102138016"
+     crossorigin="anonymous"></script>
 """
 # ※ ca-pub-XXXXXXXXXXXXXXXX は
 #    AdSense管理画面のパブリッシャーIDに変更
