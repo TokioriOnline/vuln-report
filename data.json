@@ -1,21 +1,61 @@
 {
-  "2026-07-06": {
-    "date": "2026-07-06",
+  "2026-07-12": {
+    "date": "2026-07-12",
     "summary": {
-      "critical": 1,
+      "critical": 6,
       "high": 1,
       "medium": 0,
       "low": 9,
-      "total": 11
+      "total": 16
     },
     "kev": [
       {
-        "cveID": "CVE-2026-45659",
-        "product": "SharePoint Server",
-        "vendorProject": "Microsoft",
-        "description": "Microsoft SharePoint Server contains a deserialization of untrusted data vulnerability which allows an authorized attacker to execute code over a network.",
-        "dateAdded": "2026-07-01",
-        "dueDate": "2026-07-04"
+        "cveID": "CVE-2026-56291",
+        "product": "Forms",
+        "vendorProject": "Balbooa",
+        "description": "Balbooa Forms contains an unrestricted upload of file with dangerous type vulnerability that allows an unauthenticated arbitrary file upload which could allow uploading of executable files leading to full RCE.",
+        "dateAdded": "2026-07-10",
+        "dueDate": "2026-07-13"
+      },
+      {
+        "cveID": "CVE-2026-48939",
+        "product": "iCagenda",
+        "vendorProject": "iCagenda",
+        "description": "iCagenda contains an unrestricted upload of file with dangerous type vulnerability that allows the upload of arbitrary files in the file attachment feature, ultimately resulting in PHP code upload and execution.",
+        "dateAdded": "2026-07-10",
+        "dueDate": "2026-07-13"
+      },
+      {
+        "cveID": "CVE-2026-48908",
+        "product": "SP Page Builder",
+        "vendorProject": "JoomShaper",
+        "description": "JoomShaper SP Page Builder contains an unrestricted upload of file with dangerous type vulnerability that allows unauthenticated users to upload arbitrary files, ultimately resulting in the upload and execution of PHP code.",
+        "dateAdded": "2026-07-07",
+        "dueDate": "2026-07-10"
+      },
+      {
+        "cveID": "CVE-2026-55255",
+        "product": "Langflow",
+        "vendorProject": "Langflow",
+        "description": "Langflow contains an authorization bypass through user-controlled key vulnerability which allows an authenticated attacker to execute any flow belonging to another user by specifying the victim's flow ID in the request.",
+        "dateAdded": "2026-07-07",
+        "dueDate": "2026-07-10"
+      },
+      {
+        "cveID": "CVE-2026-56290",
+        "product": "Page Builder",
+        "vendorProject": "Joomlack",
+        "description": "Joomlack Page Builder contains an improper access control vulnerability that could allow for remote code execution via unauthenticated arbitrary file upload.",
+        "dateAdded": "2026-07-07",
+        "dueDate": "2026-07-10"
+      },
+      {
+        "cveID": "CVE-2026-48282",
+        "product": "ColdFusion",
+        "vendorProject": "Adobe",
+        "description": "Adobe ColdFusion contains a path traversal vulnerability that could lead to arbitrary code execution in the context of the current user.",
+        "dateAdded": "2026-07-07",
+        "dueDate": "2026-07-10"
       }
     ],
     "jpcert": [
@@ -56,26 +96,26 @@
         "severity": "低"
       },
       {
-        "title": "Weekly Report: Red Hat Ansible Automation Platformに権限チェックの欠如の脆弱性",
-        "link": "https://www.jpcert.or.jp/wr/2026/wr260701.html#1",
+        "title": "Weekly Report: Rancherに複数の脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr260708.html#1",
         "published": "",
         "severity": "低"
       },
       {
-        "title": "Weekly Report: Google Chromeに複数の脆弱性",
-        "link": "https://www.jpcert.or.jp/wr/2026/wr260701.html#2",
+        "title": "Weekly Report: 複数のUbiquiti製品に脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr260708.html#2",
         "published": "",
         "severity": "低"
       },
       {
-        "title": "Weekly Report: 複数のJenkins用プラグインに脆弱性",
-        "link": "https://www.jpcert.or.jp/wr/2026/wr260701.html#3",
+        "title": "Weekly Report: セイコーソリューションズ製SkyBridge MB-A100/MB-A110にOSコマンドインジェクションの脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr260708.html#3",
         "published": "",
         "severity": "低"
       },
       {
-        "title": "Weekly Report: GitLabに複数の脆弱性",
-        "link": "https://www.jpcert.or.jp/wr/2026/wr260701.html#4",
+        "title": "Weekly Report: Apache Tomcatに複数の脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr260708.html#4",
         "published": "",
         "severity": "低"
       }
