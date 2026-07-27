@@ -791,10 +791,12 @@ def get_css():
         .summary-box table {
             width: 100%;
             border-collapse: collapse;
+            background: transparent;
         }
         .summary-box td {
             padding: 8px;
             font-size: 1.05em;
+            color: white;
         }
         .update-time {
             background: #e8f4f8;
