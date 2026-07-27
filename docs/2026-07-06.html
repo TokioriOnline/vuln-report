@@ -1,285 +1,237 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width,
-                   initial-scale=1.0">
-    <title>脆弱性情報 2026年07月06日 |
-    畠山正彦</title>
-    <style>
-        body {
-            font-family: 'Helvetica Neue', sans-serif;
-            max-width: 900px; margin: auto;
-            padding: 20px; background: #f5f5f5;
-            color: #333;
-        }
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>脆弱性情報 2026年07月06日 | 畠山正彦</title>
+<style>
+        body { font-family: sans-serif; max-width: 900px;
+               margin: auto; padding: 20px;
+               background: #f5f5f5; color: #333; }
         h1 { color: #1a1a2e; }
-        h2 {
-            border-left: 4px solid #333;
-            padding-left: 10px; margin-top: 30px;
-        }
-        .card {
-            background: white; border-radius: 8px;
-            padding: 15px 20px; margin: 10px 0;
-        }
-        .card.critical {
-            border-left: 5px solid #cc0000;
-        }
-        .badge {
-            display: inline-block;
-            padding: 3px 10px; border-radius: 12px;
-            font-size: 0.85em; font-weight: bold;
-            margin-bottom: 8px;
-        }
-        .badge-critical, .badge-CRITICAL {
-            background: #cc0000; color: white;
-        }
-        .badge-高 { background: #ff6600; color: white; }
-        .badge-中 { background: #ffaa00; color: white; }
-        .badge-低 { background: #009900; color: white; }
-        .summary-box {
-            background: #1a1a2e; color: white;
-            border-radius: 8px; padding: 20px;
-            margin: 20px 0;
-        }
-        .summary-box h2 {
-            color: white; border-color: white;
-        }
-        .summary-box table {
-            width: 100%; border-collapse: collapse;
-        }
-        .summary-box td { padding: 8px; }
-        .persistent-critical {
-            background: #fff0f0;
-            border: 1px solid #ffcccc;
-            border-radius: 8px;
-            padding: 16px 20px; margin: 10px 0;
-        }
-        .days-since {
-            font-size: 0.8em; color: #cc0000;
-            margin-top: 4px;
-        }
-        .update-time {
-            background: #e8f4f8; padding: 10px 15px;
-            border-radius: 5px; margin-bottom: 20px;
-            font-size: 0.9em;
-        }
-        .disclaimer {
-            background: #fff8e1;
-            border-left: 4px solid #ffaa00;
-            padding: 15px 20px; margin: 30px 0;
-            border-radius: 4px; font-size: 0.9em;
-        }
-        footer {
-            text-align: center; margin-top: 40px;
-            padding: 20px; color: #666;
-            font-size: 0.9em;
-            border-top: 1px solid #ddd;
-        }
-        table {
-            width: 100%; border-collapse: collapse;
-            background: white; border-radius: 8px;
-        }
-        th, td {
-            padding: 10px; border: 1px solid #eee;
-            text-align: center;
-        }
+        h2 { border-left: 4px solid #333;
+             padding-left: 10px; margin-top: 30px; }
+        .card { background: white; border-radius: 8px;
+                padding: 15px 20px; margin: 10px 0; }
+        .badge { display: inline-block; padding: 3px 10px;
+                 border-radius: 12px; font-size: 0.85em;
+                 font-weight: bold; margin-bottom: 8px; }
+        .badge-critical { background: #cc0000; color: white; }
+        .summary-box { background: #1a1a2e; color: white;
+                       border-radius: 8px; padding: 20px; margin: 20px 0; }
+        .summary-box h2 { color: white; border-color: white; }
+        .summary-box table { width: 100%; border-collapse: collapse; background: transparent; }
+        .summary-box td { padding: 8px; color: white; }
+        .persistent-critical { background: #fff0f0;
+                                border: 1px solid #ffcccc;
+                                border-radius: 8px;
+                                padding: 16px 20px; margin: 10px 0; }
+        .update-time { background: #e8f4f8; padding: 10px 15px;
+                       border-radius: 5px; margin-bottom: 20px; }
+        .disclaimer { background: #fff8e1;
+                      border-left: 4px solid #ffaa00;
+                      padding: 15px 20px; margin: 30px 0;
+                      border-radius: 4px; }
+        footer { text-align: center; margin-top: 40px;
+                 padding: 20px; color: #666;
+                 border-top: 1px solid #ddd; }
+        table { width: 100%; border-collapse: collapse;
+                background: white; border-radius: 8px; }
+        th, td { padding: 10px; border: 1px solid #eee;
+                 text-align: center; }
         th { background: #1a1a2e; color: white; }
         tr:hover { background: #f5f5f5; }
         a { color: #0066cc; }
-    </style>
-</head>
+    </style></head>
 <body>
-    <p>
-        <a href="index.html">
-            ← 最新レポートに戻る
-        </a> |
-        <a href="archive.html">
-            📚 アーカイブ一覧
-        </a>
-    </p>
-    <h1>🔍 脆弱性情報レポート</h1>
-    <div class="update-time">
-        📅 レポート日: 2026年07月06日
-    </div>
+<p><a href="index.html">← 最新レポートに戻る</a> | <a href="archive.html">📚 アーカイブ一覧</a></p>
+<h1>🔍 脆弱性情報レポート</h1>
+<div class="update-time">📅 レポート日: 2026年07月06日</div>
+<div class="summary-box"><h2>📊 重要度サマリー</h2>
+<table>
+<tr><td>🔴 CRITICAL</td><td><strong>6件</strong></td></tr>
+<tr><td>🟠 高</td><td><strong>0件</strong></td></tr>
+<tr><td>🟡 中</td><td><strong>0件</strong></td></tr>
+<tr><td>🟢 低</td><td><strong>0件</strong></td></tr>
+<tr><td><strong>合計</strong></td><td><strong>6件</strong></td></tr>
+</table></div>
+<h2>🔴 CRITICAL:実際に悪用確認済み <small style="font-size:0.7em;color:#cc0000;">(直近90日間 常時掲載)</small></h2>
 
-    <div class="summary-box">
-        <h2>📊 重要度サマリー</h2>
-        <table>
-            <tr>
-                <td>🔴 CRITICAL</td>
-                <td><strong>
-                    6件
-                </strong></td>
-            </tr>
-            <tr>
-                <td>🟠 高</td>
-                <td><strong>
-                    0件
-                </strong></td>
-            </tr>
-            <tr>
-                <td>🟡 中</td>
-                <td><strong>
-                    0件
-                </strong></td>
-            </tr>
-            <tr>
-                <td>🟢 低</td>
-                <td><strong>
-                    0件
-                </strong></td>
-            </tr>
-            <tr>
-                <td><strong>合計</strong></td>
-                <td><strong>6件</strong></td>
-            </tr>
-        </table>
-    </div>
-
-    <h2>🔴 CRITICAL:実際に悪用確認済み
-    <small style="font-size:0.7em;
-        color:#cc0000;">(直近90日間 常時掲載)</small>
-    </h2>
-    
         <div class="persistent-critical">
-            <span class="badge badge-critical">
-                🔴 CRITICAL
-            </span>
-            
-            <strong>CVE-2026-56291</strong> |
-            Forms
-            (Balbooa)<br>
+            <span class="badge badge-critical">🔴 CRITICAL</span> <a href="feature/CVE-2026-16232.html" style="background:#7A74B8;color:white;padding:2px 8px;border-radius:10px;font-size:0.8em;text-decoration:none;">📋 特集記事</a>
+            <strong>CVE-2026-16232</strong> | SmartConsole (Check Point)<br>
+            <p>Check Point SmartConsole contains an improper authentication vulnerability which could allow an unauthenticated remote attacker to obtain an application login token and use it to authenticate with full administrative privileges.</p>
+            <p>📅 追加日:2026-07-22 ⏰ 期限:2026-07-25</p>
+            <div style="font-size:0.8em;color:#cc0000;">追加 5日前</div>
+            <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank">🔗 対策を確認する(CISA)</a>
+        </div>
+        <div class="persistent-critical">
+            <span class="badge badge-critical">🔴 CRITICAL</span> <a href="feature/CVE-2026-50522.html" style="background:#7A74B8;color:white;padding:2px 8px;border-radius:10px;font-size:0.8em;text-decoration:none;">📋 特集記事</a>
+            <strong>CVE-2026-50522</strong> | SharePoint (Microsoft)<br>
+            <p>Microsoft SharePoint contains a deserialization of untrusted data vulnerability which could allow an unauthorized attacker to execute code over a network.</p>
+            <p>📅 追加日:2026-07-22 ⏰ 期限:2026-07-25</p>
+            <div style="font-size:0.8em;color:#cc0000;">追加 5日前</div>
+            <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank">🔗 対策を確認する(CISA)</a>
+        </div>
+        <div class="persistent-critical">
+            <span class="badge badge-critical">🔴 CRITICAL</span> <a href="feature/CVE-2026-60137.html" style="background:#7A74B8;color:white;padding:2px 8px;border-radius:10px;font-size:0.8em;text-decoration:none;">📋 特集記事</a>
+            <strong>CVE-2026-60137</strong> | Core (WordPress)<br>
+            <p>WordPress Core contains a SQL injection vulnerability when a plugin or theme passes untrusted input to the parameter. This vulnerability can be chained with CVE-2026-63030 to allow an unauthenticated attacker to gain remote code execution on default WordPress installations.</p>
+            <p>📅 追加日:2026-07-21 ⏰ 期限:2026-08-04</p>
+            <div style="font-size:0.8em;color:#cc0000;">追加 6日前</div>
+            <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank">🔗 対策を確認する(CISA)</a>
+        </div>
+        <div class="persistent-critical">
+            <span class="badge badge-critical">🔴 CRITICAL</span> <a href="feature/CVE-2026-63030.html" style="background:#7A74B8;color:white;padding:2px 8px;border-radius:10px;font-size:0.8em;text-decoration:none;">📋 特集記事</a>
+            <strong>CVE-2026-63030</strong> | Core (WordPress)<br>
+            <p>WordPress Core contains an interpretation conflict vulnerability that could allow an attacker to perform SQL Injection and achieve Remote Code Execution. This vulnerability can be chained with CVE-2026-60137.</p>
+            <p>📅 追加日:2026-07-21 ⏰ 期限:2026-07-24</p>
+            <div style="font-size:0.8em;color:#cc0000;">追加 6日前</div>
+            <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank">🔗 対策を確認する(CISA)</a>
+        </div>
+        <div class="persistent-critical">
+            <span class="badge badge-critical">🔴 CRITICAL</span>
+            <strong>CVE-2026-0770</strong> | Langflow (Langflow)<br>
+            <p>Langflow contains an inclusion of functionality from untrusted control sphere vulnerability that allows remote attackers to execute arbitrary code on affected installations. </p>
+            <p>📅 追加日:2026-07-21 ⏰ 期限:2026-07-24</p>
+            <div style="font-size:0.8em;color:#cc0000;">追加 6日前</div>
+            <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank">🔗 対策を確認する(CISA)</a>
+        </div>
+        <div class="persistent-critical">
+            <span class="badge badge-critical">🔴 CRITICAL</span> <a href="feature/CVE-2021-27137.html" style="background:#7A74B8;color:white;padding:2px 8px;border-radius:10px;font-size:0.8em;text-decoration:none;">📋 特集記事</a>
+            <strong>CVE-2021-27137</strong> | DD-WRT (DD-WRT)<br>
+            <p>DD-WRT contains a stack-based buffer overflow vulnerability that could allow an unauthenticated attacker to overflow an internal buffer used by UPnP and trigger a code execution vulnerability.</p>
+            <p>📅 追加日:2026-07-21 ⏰ 期限:2026-07-24</p>
+            <div style="font-size:0.8em;color:#cc0000;">追加 6日前</div>
+            <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank">🔗 対策を確認する(CISA)</a>
+        </div>
+        <div class="persistent-critical">
+            <span class="badge badge-critical">🔴 CRITICAL</span> <a href="feature/CVE-2026-58644.html" style="background:#7A74B8;color:white;padding:2px 8px;border-radius:10px;font-size:0.8em;text-decoration:none;">📋 特集記事</a>
+            <strong>CVE-2026-58644</strong> | SharePoint (Microsoft)<br>
+            <p>Microsoft SharePoint contains a deserialization of untrusted data vulnerability that allows an unauthorized attacker to execute code over a network.</p>
+            <p>📅 追加日:2026-07-16 ⏰ 期限:2026-07-19</p>
+            <div style="font-size:0.8em;color:#cc0000;">追加 11日前</div>
+            <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank">🔗 対策を確認する(CISA)</a>
+        </div>
+        <div class="persistent-critical">
+            <span class="badge badge-critical">🔴 CRITICAL</span> <a href="feature/CVE-2026-25089.html" style="background:#7A74B8;color:white;padding:2px 8px;border-radius:10px;font-size:0.8em;text-decoration:none;">📋 特集記事</a>
+            <strong>CVE-2026-25089</strong> | FortiSandbox (Fortinet)<br>
+            <p>Fortinet FortiSandbox, FortiSandbox Cloud, and FortiSandbox PaaS contain an OS command injection vulnerability that allows an unauthenticated attacker to execute unauthorized commands via specifically crafted HTTP requests.</p>
+            <p>📅 追加日:2026-07-16 ⏰ 期限:2026-07-19</p>
+            <div style="font-size:0.8em;color:#cc0000;">追加 11日前</div>
+            <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank">🔗 対策を確認する(CISA)</a>
+        </div>
+        <div class="persistent-critical">
+            <span class="badge badge-critical">🔴 CRITICAL</span> <a href="feature/CVE-2026-39808.html" style="background:#7A74B8;color:white;padding:2px 8px;border-radius:10px;font-size:0.8em;text-decoration:none;">📋 特集記事</a>
+            <strong>CVE-2026-39808</strong> | FortiSandbox (Fortinet)<br>
+            <p>Fortinet FortiSandbox contains an OS command injection vulnerability that could allow an unauthenticated attacker to execute unauthorized code or commands via crafted HTTP requests.</p>
+            <p>📅 追加日:2026-07-16 ⏰ 期限:2026-07-19</p>
+            <div style="font-size:0.8em;color:#cc0000;">追加 11日前</div>
+            <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank">🔗 対策を確認する(CISA)</a>
+        </div>
+        <div class="persistent-critical">
+            <span class="badge badge-critical">🔴 CRITICAL</span> <a href="feature/CVE-2026-46817.html" style="background:#7A74B8;color:white;padding:2px 8px;border-radius:10px;font-size:0.8em;text-decoration:none;">📋 特集記事</a>
+            <strong>CVE-2026-46817</strong> | E-Business Suite (Oracle)<br>
+            <p>Oracle E-Business Suite contains an improper privilege management vulnerability that allows an unauthenticated attacker with network access via HTTP to compromise Oracle Payments. Successful attacks of this vulnerability can result in takeover of Oracle Payments.</p>
+            <p>📅 追加日:2026-07-15 ⏰ 期限:2026-07-18</p>
+            <div style="font-size:0.8em;color:#cc0000;">追加 12日前</div>
+            <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank">🔗 対策を確認する(CISA)</a>
+        </div>
+        <div class="persistent-critical">
+            <span class="badge badge-critical">🔴 CRITICAL</span>
+            <strong>CVE-2023-4346</strong> | KNX Protocol Connection Authorization Option 1 (KNX Association)<br>
+            <p>KNX Association KNX Protocol Connection Authorization Option 1 contains an overly restrictive account lockout mechanism vulnerability that could allow an attacker to purge all devices without additional security options enabled and set a BCU key to lock the device. </p>
+            <p>📅 追加日:2026-07-15 ⏰ 期限:2026-07-29</p>
+            <div style="font-size:0.8em;color:#cc0000;">追加 12日前</div>
+            <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank">🔗 対策を確認する(CISA)</a>
+        </div>
+        <div class="persistent-critical">
+            <span class="badge badge-critical">🔴 CRITICAL</span>
+            <strong>CVE-2026-56155</strong> | Active Directory Federation Services (Microsoft)<br>
+            <p>Microsoft Active Directory Federation Services contains an insufficient granularity of access control vulnerability that allows an authorized attacker to elevate privileges locally.</p>
+            <p>📅 追加日:2026-07-14 ⏰ 期限:2026-07-28</p>
+            <div style="font-size:0.8em;color:#cc0000;">追加 13日前</div>
+            <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank">🔗 対策を確認する(CISA)</a>
+        </div>
+        <div class="persistent-critical">
+            <span class="badge badge-critical">🔴 CRITICAL</span> <a href="feature/CVE-2026-56164.html" style="background:#7A74B8;color:white;padding:2px 8px;border-radius:10px;font-size:0.8em;text-decoration:none;">📋 特集記事</a>
+            <strong>CVE-2026-56164</strong> | SharePoint Server (Microsoft)<br>
+            <p>Microsoft SharePoint contains a missing authentication for critical function vulnerability that allows an unauthorized attacker to elevate privileges over a network.</p>
+            <p>📅 追加日:2026-07-14 ⏰ 期限:2026-07-17</p>
+            <div style="font-size:0.8em;color:#cc0000;">追加 13日前</div>
+            <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank">🔗 対策を確認する(CISA)</a>
+        </div>
+        <div class="persistent-critical">
+            <span class="badge badge-critical">🔴 CRITICAL</span> <a href="feature/CVE-2026-15409.html" style="background:#7A74B8;color:white;padding:2px 8px;border-radius:10px;font-size:0.8em;text-decoration:none;">📋 特集記事</a>
+            <strong>CVE-2026-15409</strong> | SMA1000 Appliances (SonicWall)<br>
+            <p>SonicWall SMA1000 Appliances contain a server-side request forgery vulnerability that could allow a remote unauthenticated attacker to potentially cause the appliance to make requests to unintended location.</p>
+            <p>📅 追加日:2026-07-14 ⏰ 期限:2026-07-17</p>
+            <div style="font-size:0.8em;color:#cc0000;">追加 13日前</div>
+            <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank">🔗 対策を確認する(CISA)</a>
+        </div>
+        <div class="persistent-critical">
+            <span class="badge badge-critical">🔴 CRITICAL</span> <a href="feature/CVE-2026-15410.html" style="background:#7A74B8;color:white;padding:2px 8px;border-radius:10px;font-size:0.8em;text-decoration:none;">📋 特集記事</a>
+            <strong>CVE-2026-15410</strong> | SMA1000 Appliances (SonicWall)<br>
+            <p>SonicWall SMA1000 Appliances contain a code injection vulnerability which in specific conditions could potentially enable a remote authenticated attacker as administrator to execute arbitrary OS commands.</p>
+            <p>📅 追加日:2026-07-14 ⏰ 期限:2026-07-17</p>
+            <div style="font-size:0.8em;color:#cc0000;">追加 13日前</div>
+            <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank">🔗 対策を確認する(CISA)</a>
+        </div>
+        <div class="persistent-critical">
+            <span class="badge badge-critical">🔴 CRITICAL</span> <a href="feature/CVE-2008-4128.html" style="background:#7A74B8;color:white;padding:2px 8px;border-radius:10px;font-size:0.8em;text-decoration:none;">📋 特集記事</a>
+            <strong>CVE-2008-4128</strong> | IOS (Cisco)<br>
+            <p>Cisco IOS 12.4 contains multiple cross-site forgery vulnerabilities that allows remote attackers to execute arbitrary commands via (1) a certain "show privilege" command to the /level/15/exec/- URI, and (2) a certain "alias exec" command to the /level/15/exec/-/configure/http URI.</p>
+            <p>📅 追加日:2026-07-13 ⏰ 期限:2026-07-16</p>
+            <div style="font-size:0.8em;color:#cc0000;">追加 14日前</div>
+            <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank">🔗 対策を確認する(CISA)</a>
+        </div>
+        <div class="persistent-critical">
+            <span class="badge badge-critical">🔴 CRITICAL</span> <a href="feature/CVE-2026-56291.html" style="background:#7A74B8;color:white;padding:2px 8px;border-radius:10px;font-size:0.8em;text-decoration:none;">📋 特集記事</a>
+            <strong>CVE-2026-56291</strong> | Forms (Balbooa)<br>
             <p>Balbooa Forms contains an unrestricted upload of file with dangerous type vulnerability that allows an unauthenticated arbitrary file upload which could allow uploading of executable files leading to full RCE.</p>
-            <p>📅 追加日:2026-07-10
-               ⏰ 期限:2026-07-13</p>
-            <div class="days-since">
-                追加 17日前
-            </div>
-            <a href="https://www.cisa.gov/
-known-exploited-vulnerabilities-catalog"
-               target="_blank">
-                🔗 対策を確認する(CISA)
-            </a>
+            <p>📅 追加日:2026-07-10 ⏰ 期限:2026-07-13</p>
+            <div style="font-size:0.8em;color:#cc0000;">追加 17日前</div>
+            <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank">🔗 対策を確認する(CISA)</a>
         </div>
         <div class="persistent-critical">
-            <span class="badge badge-critical">
-                🔴 CRITICAL
-            </span>
-            
-            <strong>CVE-2026-48939</strong> |
-            iCagenda
-            (iCagenda)<br>
+            <span class="badge badge-critical">🔴 CRITICAL</span>
+            <strong>CVE-2026-48939</strong> | iCagenda (iCagenda)<br>
             <p>iCagenda contains an unrestricted upload of file with dangerous type vulnerability that allows the upload of arbitrary files in the file attachment feature, ultimately resulting in PHP code upload and execution.</p>
-            <p>📅 追加日:2026-07-10
-               ⏰ 期限:2026-07-13</p>
-            <div class="days-since">
-                追加 17日前
-            </div>
-            <a href="https://www.cisa.gov/
-known-exploited-vulnerabilities-catalog"
-               target="_blank">
-                🔗 対策を確認する(CISA)
-            </a>
+            <p>📅 追加日:2026-07-10 ⏰ 期限:2026-07-13</p>
+            <div style="font-size:0.8em;color:#cc0000;">追加 17日前</div>
+            <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank">🔗 対策を確認する(CISA)</a>
         </div>
         <div class="persistent-critical">
-            <span class="badge badge-critical">
-                🔴 CRITICAL
-            </span>
-            
-            <strong>CVE-2026-48908</strong> |
-            SP Page Builder
-            (JoomShaper)<br>
+            <span class="badge badge-critical">🔴 CRITICAL</span> <a href="feature/CVE-2026-48908.html" style="background:#7A74B8;color:white;padding:2px 8px;border-radius:10px;font-size:0.8em;text-decoration:none;">📋 特集記事</a>
+            <strong>CVE-2026-48908</strong> | SP Page Builder (JoomShaper)<br>
             <p>JoomShaper SP Page Builder contains an unrestricted upload of file with dangerous type vulnerability that allows unauthenticated users to upload arbitrary files, ultimately resulting in the upload and execution of PHP code.</p>
-            <p>📅 追加日:2026-07-07
-               ⏰ 期限:2026-07-10</p>
-            <div class="days-since">
-                追加 20日前
-            </div>
-            <a href="https://www.cisa.gov/
-known-exploited-vulnerabilities-catalog"
-               target="_blank">
-                🔗 対策を確認する(CISA)
-            </a>
+            <p>📅 追加日:2026-07-07 ⏰ 期限:2026-07-10</p>
+            <div style="font-size:0.8em;color:#cc0000;">追加 20日前</div>
+            <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank">🔗 対策を確認する(CISA)</a>
         </div>
         <div class="persistent-critical">
-            <span class="badge badge-critical">
-                🔴 CRITICAL
-            </span>
-            
-            <strong>CVE-2026-55255</strong> |
-            Langflow
-            (Langflow)<br>
+            <span class="badge badge-critical">🔴 CRITICAL</span>
+            <strong>CVE-2026-55255</strong> | Langflow (Langflow)<br>
             <p>Langflow contains an authorization bypass through user-controlled key vulnerability which allows an authenticated attacker to execute any flow belonging to another user by specifying the victim's flow ID in the request.</p>
-            <p>📅 追加日:2026-07-07
-               ⏰ 期限:2026-07-10</p>
-            <div class="days-since">
-                追加 20日前
-            </div>
-            <a href="https://www.cisa.gov/
-known-exploited-vulnerabilities-catalog"
-               target="_blank">
-                🔗 対策を確認する(CISA)
-            </a>
+            <p>📅 追加日:2026-07-07 ⏰ 期限:2026-07-10</p>
+            <div style="font-size:0.8em;color:#cc0000;">追加 20日前</div>
+            <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank">🔗 対策を確認する(CISA)</a>
         </div>
         <div class="persistent-critical">
-            <span class="badge badge-critical">
-                🔴 CRITICAL
-            </span>
-            
-            <strong>CVE-2026-56290</strong> |
-            Page Builder
-            (Joomlack)<br>
+            <span class="badge badge-critical">🔴 CRITICAL</span> <a href="feature/CVE-2026-56290.html" style="background:#7A74B8;color:white;padding:2px 8px;border-radius:10px;font-size:0.8em;text-decoration:none;">📋 特集記事</a>
+            <strong>CVE-2026-56290</strong> | Page Builder (Joomlack)<br>
             <p>Joomlack Page Builder contains an improper access control vulnerability that could allow for remote code execution via unauthenticated arbitrary file upload.</p>
-            <p>📅 追加日:2026-07-07
-               ⏰ 期限:2026-07-10</p>
-            <div class="days-since">
-                追加 20日前
-            </div>
-            <a href="https://www.cisa.gov/
-known-exploited-vulnerabilities-catalog"
-               target="_blank">
-                🔗 対策を確認する(CISA)
-            </a>
+            <p>📅 追加日:2026-07-07 ⏰ 期限:2026-07-10</p>
+            <div style="font-size:0.8em;color:#cc0000;">追加 20日前</div>
+            <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank">🔗 対策を確認する(CISA)</a>
         </div>
         <div class="persistent-critical">
-            <span class="badge badge-critical">
-                🔴 CRITICAL
-            </span>
-            
-            <strong>CVE-2026-48282</strong> |
-            ColdFusion
-            (Adobe)<br>
+            <span class="badge badge-critical">🔴 CRITICAL</span> <a href="feature/CVE-2026-48282.html" style="background:#7A74B8;color:white;padding:2px 8px;border-radius:10px;font-size:0.8em;text-decoration:none;">📋 特集記事</a>
+            <strong>CVE-2026-48282</strong> | ColdFusion (Adobe)<br>
             <p>Adobe ColdFusion contains a path traversal vulnerability that could lead to arbitrary code execution in the context of the current user.</p>
-            <p>📅 追加日:2026-07-07
-               ⏰ 期限:2026-07-10</p>
-            <div class="days-since">
-                追加 20日前
-            </div>
-            <a href="https://www.cisa.gov/
-known-exploited-vulnerabilities-catalog"
-               target="_blank">
-                🔗 対策を確認する(CISA)
-            </a>
+            <p>📅 追加日:2026-07-07 ⏰ 期限:2026-07-10</p>
+            <div style="font-size:0.8em;color:#cc0000;">追加 20日前</div>
+            <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank">🔗 対策を確認する(CISA)</a>
         </div>
-
-    <div class="disclaimer">
-        <h3>⚠️ 免責事項</h3>
-        <p>本情報はCISA KEV・JPCERT/CC・
-        JVN iPediaの公開情報を収集・整理したものです。
-        実際の対応は各情報源および専門家への
-        相談のうえ行ってください。</p>
-    </div>
-
-    <footer>
-        <p>
-            <strong>畠山正彦</strong> |
-            ITセキュリティコンサルタント
-        </p>
-        <p style="font-size:0.8em;color:#999;">
-            © 2026 畠山正彦 All Rights Reserved.
-        </p>
-    </footer>
-</body>
-</html>
+<div class="disclaimer"><h3>⚠️ 免責事項</h3>
+<p>本情報はCISA KEV・JPCERT/CC・JVN iPediaの公開情報を収集・整理したものです。実際の対応は各情報源および専門家への相談のうえ行ってください。</p></div>
+<footer><p><strong>畠山正彦</strong> | ITセキュリティコンサルタント</p><p style="font-size:0.8em;color:#999;">© 2026 畠山正彦 All Rights Reserved.</p></footer>
+</body></html>
