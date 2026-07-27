@@ -1,0 +1,76 @@
+{
+  "2026-07-27": {
+    "date": "2026-07-27",
+    "summary": {
+      "critical": 0,
+      "high": 2,
+      "medium": 0,
+      "low": 8,
+      "total": 10
+    },
+    "kev": [],
+    "jpcert": [
+      {
+        "title": "注意喚起: 2026年7月マイクロソフトセキュリティ更新プログラムに関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260020.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: Fortinet製品に関連する認証情報の漏えいに関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260019.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: Adobe AcrobatおよびReaderの脆弱性（APSB26-63）に関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260018.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: 2026年6月マイクロソフトセキュリティ更新プログラムに関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260017.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: Check Point Software Technologies社製品における認証バイパスの脆弱性（CVE-2026-50751）に関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260016.html",
+        "published": "",
+        "severity": "高"
+      },
+      {
+        "title": "注意喚起: Palo Alto Networks製PAN-OSにおける認証回避の脆弱性（CVE-2026-0265）に関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260015.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "Weekly Report: WordPressにリモートコード実行につながる脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr260723.html#1",
+        "published": "",
+        "severity": "高"
+      },
+      {
+        "title": "Weekly Report: Google Chromeに複数の脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr260723.html#2",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "Weekly Report: VMware Avi Load Balancerに複数の脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr260723.html#3",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "Weekly Report: 複数のSplunk製品に脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr260723.html#4",
+        "published": "",
+        "severity": "低"
+      }
+    ],
+    "jvn": []
+  }
+}
