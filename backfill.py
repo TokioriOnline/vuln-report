@@ -44,50 +44,24 @@ MAJOR_THREATS = [
 # KEV全件取得
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 def fetch_all_kev():
-    """CISA KEV全件取得(複数の方法を試す)"""
-
-    urls = [
-        # メインURL
-        (
-            "https://www.cisa.gov/sites/default"
-            "/files/feeds/"
-            "known_exploited_vulnerabilities.json"
-        ),
-        # 代替URL
-        (
-            "https://www.cisa.gov/sites/default"
-            "/files/csv/"
-            "known_exploited_vulnerabilities.json"
-        ),
-    ]
-
-    for url in urls:
-        for verify in [True, False]:
-            try:
-                resp = requests.get(
-                    url, timeout=30,
-                    verify=verify,
-                    headers={{
-                        "User-Agent": (
-                            "Mozilla/5.0 "
-                            "(Macintosh; Intel Mac OS X)"
-                        )
-                    }}
-                )
-                if resp.status_code == 200:
-                    data = resp.json()
-                    vulns = data["vulnerabilities"]
-                    print(
-                        f"KEV取得成功: {len(vulns)}件"
-                    )
-                    return vulns
-            except Exception as e:
-                print(f"試行失敗: {e}")
-                continue
-
-    print("❌ KEV取得失敗")
-    return []
-
+    """CISA KEV全件取得"""
+    url = (
+        "https://www.cisa.gov/sites/default/files"
+        "/feeds/known_exploited_vulnerabilities.json"
+    )
+    try:
+        resp = requests.get(url, timeout=30)
+        if resp.status_code == 200:
+            data = resp.json()
+            vulns = data["vulnerabilities"]
+            print(f"KEV取得成功: {len(vulns)}件")
+            return vulns
+        else:
+            print(f"HTTPエラー: {resp.status_code}")
+            return []
+    except Exception as e:
+        print(f"KEV取得エラー: {e}")
+        return []
 def filter_kev_by_week(
     all_kev, week_start_str
 ):
