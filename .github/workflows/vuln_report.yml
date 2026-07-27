@@ -2,10 +2,11 @@ name: 週次脆弱性レポート自動生成
 
 on:
   schedule:
-    # 毎週月曜 午前7時(JST) = UTC 日曜 22時
     - cron: "0 22 * * 0"
   workflow_dispatch:
-    # 手動実行ボタンも追加
+
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -14,6 +15,17 @@ jobs:
     steps:
       - name: リポジトリを取得
         uses: actions/checkout@v4
+
+      - name: 既存データをgh-pagesから取得
+        run: |
+          git fetch origin gh-pages || true
+          mkdir -p docs
+          git checkout origin/gh-pages \
+            -- docs/data.json || true
+          git checkout origin/gh-pages \
+            -- docs/vuln_history.json || true
+          echo "既存データ取得完了"
+          ls -la docs/ || true
 
       - name: Python環境を設定
         uses: actions/setup-python@v5
@@ -31,3 +43,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs
+          publish_branch: gh-pages
+          force_orphan: true
