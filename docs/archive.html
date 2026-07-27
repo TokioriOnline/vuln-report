@@ -1,365 +1,53 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width,
-                   initial-scale=1.0">
-    <title>レポートアーカイブ | 畠山正彦</title>
-    <style>
-        body {
-            font-family: 'Helvetica Neue', sans-serif;
-            max-width: 900px; margin: auto;
-            padding: 20px; background: #f5f5f5;
-            color: #333;
-        }
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>レポートアーカイブ | 畠山正彦</title>
+<style>
+        body { font-family: sans-serif; max-width: 900px;
+               margin: auto; padding: 20px;
+               background: #f5f5f5; color: #333; }
         h1 { color: #1a1a2e; }
-        h2 {
-            border-left: 4px solid #333;
-            padding-left: 10px; margin-top: 30px;
-        }
-        .card {
-            background: white; border-radius: 8px;
-            padding: 15px 20px; margin: 10px 0;
-        }
-        .card.critical {
-            border-left: 5px solid #cc0000;
-        }
-        .badge {
-            display: inline-block;
-            padding: 3px 10px; border-radius: 12px;
-            font-size: 0.85em; font-weight: bold;
-            margin-bottom: 8px;
-        }
-        .badge-critical, .badge-CRITICAL {
-            background: #cc0000; color: white;
-        }
-        .badge-高 { background: #ff6600; color: white; }
-        .badge-中 { background: #ffaa00; color: white; }
-        .badge-低 { background: #009900; color: white; }
-        .summary-box {
-            background: #1a1a2e; color: white;
-            border-radius: 8px; padding: 20px;
-            margin: 20px 0;
-        }
-        .summary-box h2 {
-            color: white; border-color: white;
-        }
-        .summary-box table {
-            width: 100%; border-collapse: collapse;
-        }
+        h2 { border-left: 4px solid #333;
+             padding-left: 10px; margin-top: 30px; }
+        .card { background: white; border-radius: 8px;
+                padding: 15px 20px; margin: 10px 0; }
+        .badge { display: inline-block; padding: 3px 10px;
+                 border-radius: 12px; font-size: 0.85em;
+                 font-weight: bold; margin-bottom: 8px; }
+        .badge-critical { background: #cc0000; color: white; }
+        .summary-box { background: #1a1a2e; color: white;
+                       border-radius: 8px; padding: 20px; margin: 20px 0; }
+        .summary-box h2 { color: white; border-color: white; }
+        .summary-box table { width: 100%; border-collapse: collapse; }
         .summary-box td { padding: 8px; }
-        .persistent-critical {
-            background: #fff0f0;
-            border: 1px solid #ffcccc;
-            border-radius: 8px;
-            padding: 16px 20px; margin: 10px 0;
-        }
-        .days-since {
-            font-size: 0.8em; color: #cc0000;
-            margin-top: 4px;
-        }
-        .update-time {
-            background: #e8f4f8; padding: 10px 15px;
-            border-radius: 5px; margin-bottom: 20px;
-            font-size: 0.9em;
-        }
-        .disclaimer {
-            background: #fff8e1;
-            border-left: 4px solid #ffaa00;
-            padding: 15px 20px; margin: 30px 0;
-            border-radius: 4px; font-size: 0.9em;
-        }
-        footer {
-            text-align: center; margin-top: 40px;
-            padding: 20px; color: #666;
-            font-size: 0.9em;
-            border-top: 1px solid #ddd;
-        }
-        table {
-            width: 100%; border-collapse: collapse;
-            background: white; border-radius: 8px;
-        }
-        th, td {
-            padding: 10px; border: 1px solid #eee;
-            text-align: center;
-        }
+        .persistent-critical { background: #fff0f0;
+                                border: 1px solid #ffcccc;
+                                border-radius: 8px;
+                                padding: 16px 20px; margin: 10px 0; }
+        .update-time { background: #e8f4f8; padding: 10px 15px;
+                       border-radius: 5px; margin-bottom: 20px; }
+        .disclaimer { background: #fff8e1;
+                      border-left: 4px solid #ffaa00;
+                      padding: 15px 20px; margin: 30px 0;
+                      border-radius: 4px; }
+        footer { text-align: center; margin-top: 40px;
+                 padding: 20px; color: #666;
+                 border-top: 1px solid #ddd; }
+        table { width: 100%; border-collapse: collapse;
+                background: white; border-radius: 8px; }
+        th, td { padding: 10px; border: 1px solid #eee;
+                 text-align: center; }
         th { background: #1a1a2e; color: white; }
         tr:hover { background: #f5f5f5; }
         a { color: #0066cc; }
-    </style>
-</head>
+    </style></head>
 <body>
-    <h1>📚 脆弱性レポート アーカイブ</h1>
-    <p><a href="index.html">
-        ← 最新レポートに戻る
-    </a></p>
-    <p>累計 4週分のデータ</p>
-
-    
-        <h2>📋 特集ページ一覧</h2>
-        <p>重大な脆弱性の詳細解説・対策情報です。</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>脆弱性ID</th>
-                    <th>製品</th>
-                    <th>ベンダー</th>
-                    <th>KEV追加日</th>
-                </tr>
-            </thead>
-            <tbody>
-        <tr>
-            <td>
-                <a href="feature/CVE-2026-56291.html">
-                    📋 CVE-2026-56291
-                </a>
-            </td>
-            <td>Forms</td>
-            <td>Balbooa</td>
-            <td>2026-07-10</td>
-        </tr>
-        <tr>
-            <td>
-                <a href="feature/CVE-2026-48908.html">
-                    📋 CVE-2026-48908
-                </a>
-            </td>
-            <td>SP Page Builder</td>
-            <td>JoomShaper</td>
-            <td>2026-07-07</td>
-        </tr>
-        <tr>
-            <td>
-                <a href="feature/CVE-2026-56290.html">
-                    📋 CVE-2026-56290
-                </a>
-            </td>
-            <td>Page Builder</td>
-            <td>Joomlack</td>
-            <td>2026-07-07</td>
-        </tr>
-        <tr>
-            <td>
-                <a href="feature/CVE-2026-48282.html">
-                    📋 CVE-2026-48282
-                </a>
-            </td>
-            <td>ColdFusion</td>
-            <td>Adobe</td>
-            <td>2026-07-07</td>
-        </tr>
-        <tr>
-            <td>
-                <a href="feature/CVE-2026-58644.html">
-                    📋 CVE-2026-58644
-                </a>
-            </td>
-            <td>SharePoint</td>
-            <td>Microsoft</td>
-            <td>2026-07-16</td>
-        </tr>
-        <tr>
-            <td>
-                <a href="feature/CVE-2026-25089.html">
-                    📋 CVE-2026-25089
-                </a>
-            </td>
-            <td>FortiSandbox</td>
-            <td>Fortinet</td>
-            <td>2026-07-16</td>
-        </tr>
-        <tr>
-            <td>
-                <a href="feature/CVE-2026-39808.html">
-                    📋 CVE-2026-39808
-                </a>
-            </td>
-            <td>FortiSandbox</td>
-            <td>Fortinet</td>
-            <td>2026-07-16</td>
-        </tr>
-        <tr>
-            <td>
-                <a href="feature/CVE-2026-46817.html">
-                    📋 CVE-2026-46817
-                </a>
-            </td>
-            <td>E-Business Suite</td>
-            <td>Oracle</td>
-            <td>2026-07-15</td>
-        </tr>
-        <tr>
-            <td>
-                <a href="feature/CVE-2026-56164.html">
-                    📋 CVE-2026-56164
-                </a>
-            </td>
-            <td>SharePoint Server</td>
-            <td>Microsoft</td>
-            <td>2026-07-14</td>
-        </tr>
-        <tr>
-            <td>
-                <a href="feature/CVE-2026-15409.html">
-                    📋 CVE-2026-15409
-                </a>
-            </td>
-            <td>SMA1000 Appliances</td>
-            <td>SonicWall</td>
-            <td>2026-07-14</td>
-        </tr>
-        <tr>
-            <td>
-                <a href="feature/CVE-2026-15410.html">
-                    📋 CVE-2026-15410
-                </a>
-            </td>
-            <td>SMA1000 Appliances</td>
-            <td>SonicWall</td>
-            <td>2026-07-14</td>
-        </tr>
-        <tr>
-            <td>
-                <a href="feature/CVE-2008-4128.html">
-                    📋 CVE-2008-4128
-                </a>
-            </td>
-            <td>IOS</td>
-            <td>Cisco</td>
-            <td>2026-07-13</td>
-        </tr>
-        <tr>
-            <td>
-                <a href="feature/CVE-2026-16232.html">
-                    📋 CVE-2026-16232
-                </a>
-            </td>
-            <td>SmartConsole</td>
-            <td>Check Point</td>
-            <td>2026-07-22</td>
-        </tr>
-        <tr>
-            <td>
-                <a href="feature/CVE-2026-50522.html">
-                    📋 CVE-2026-50522
-                </a>
-            </td>
-            <td>SharePoint</td>
-            <td>Microsoft</td>
-            <td>2026-07-22</td>
-        </tr>
-        <tr>
-            <td>
-                <a href="feature/CVE-2026-60137.html">
-                    📋 CVE-2026-60137
-                </a>
-            </td>
-            <td>Core</td>
-            <td>WordPress</td>
-            <td>2026-07-21</td>
-        </tr>
-        <tr>
-            <td>
-                <a href="feature/CVE-2026-63030.html">
-                    📋 CVE-2026-63030
-                </a>
-            </td>
-            <td>Core</td>
-            <td>WordPress</td>
-            <td>2026-07-21</td>
-        </tr>
-        <tr>
-            <td>
-                <a href="feature/CVE-2021-27137.html">
-                    📋 CVE-2021-27137
-                </a>
-            </td>
-            <td>DD-WRT</td>
-            <td>DD-WRT</td>
-            <td>2026-07-21</td>
-        </tr></tbody>
-        </table><br>
-
-    <h2>📅 週次レポート一覧</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>レポート日</th>
-                <th>🔴CRITICAL</th>
-                <th>🟠高</th>
-                <th>🟡中</th>
-                <th>🟢低</th>
-                <th>合計</th>
-            </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td><a href="2026-07-27.html">
-                2026年07月27日</a></td>
-            <td style="color:#cc0000;">
-                <strong>0</strong>
-            </td>
-            <td style="color:#ff6600;">
-                2</td>
-            <td style="color:#ffaa00;">
-                0</td>
-            <td style="color:#009900;">
-                8</td>
-            <td>10</td>
-        </tr>
-        <tr>
-            <td><a href="2026-07-20.html">
-                2026年07月20日</a></td>
-            <td style="color:#cc0000;">
-                <strong>6</strong>
-            </td>
-            <td style="color:#ff6600;">
-                0</td>
-            <td style="color:#ffaa00;">
-                0</td>
-            <td style="color:#009900;">
-                0</td>
-            <td>6</td>
-        </tr>
-        <tr>
-            <td><a href="2026-07-13.html">
-                2026年07月13日</a></td>
-            <td style="color:#cc0000;">
-                <strong>10</strong>
-            </td>
-            <td style="color:#ff6600;">
-                0</td>
-            <td style="color:#ffaa00;">
-                0</td>
-            <td style="color:#009900;">
-                0</td>
-            <td>10</td>
-        </tr>
-        <tr>
-            <td><a href="2026-07-06.html">
-                2026年07月06日</a></td>
-            <td style="color:#cc0000;">
-                <strong>6</strong>
-            </td>
-            <td style="color:#ff6600;">
-                0</td>
-            <td style="color:#ffaa00;">
-                0</td>
-            <td style="color:#009900;">
-                0</td>
-            <td>6</td>
-        </tr></tbody>
-    </table>
-
-    <footer>
-        <p>
-            <strong>畠山正彦</strong> |
-            ITセキュリティコンサルタント
-        </p>
-        <p style="font-size:0.8em;color:#999;">
-            © 2026 畠山正彦 All Rights Reserved.
-        </p>
-    </footer>
-</body>
-</html>
+<h1>📚 脆弱性レポート アーカイブ</h1>
+<p><a href="index.html">← 最新レポートに戻る</a></p>
+<p>累計 4週分のデータ</p>
+<h2>📋 特集ページ一覧</h2><table><thead><tr><th>脆弱性ID</th><th>製品</th><th>ベンダー</th><th>KEV追加日</th></tr></thead><tbody><tr><td><a href="feature/CVE-2026-56291.html">📋 CVE-2026-56291</a></td><td>Forms</td><td>Balbooa</td><td>2026-07-10</td></tr><tr><td><a href="feature/CVE-2026-48908.html">📋 CVE-2026-48908</a></td><td>SP Page Builder</td><td>JoomShaper</td><td>2026-07-07</td></tr><tr><td><a href="feature/CVE-2026-56290.html">📋 CVE-2026-56290</a></td><td>Page Builder</td><td>Joomlack</td><td>2026-07-07</td></tr><tr><td><a href="feature/CVE-2026-48282.html">📋 CVE-2026-48282</a></td><td>ColdFusion</td><td>Adobe</td><td>2026-07-07</td></tr><tr><td><a href="feature/CVE-2026-58644.html">📋 CVE-2026-58644</a></td><td>SharePoint</td><td>Microsoft</td><td>2026-07-16</td></tr><tr><td><a href="feature/CVE-2026-25089.html">📋 CVE-2026-25089</a></td><td>FortiSandbox</td><td>Fortinet</td><td>2026-07-16</td></tr><tr><td><a href="feature/CVE-2026-39808.html">📋 CVE-2026-39808</a></td><td>FortiSandbox</td><td>Fortinet</td><td>2026-07-16</td></tr><tr><td><a href="feature/CVE-2026-46817.html">📋 CVE-2026-46817</a></td><td>E-Business Suite</td><td>Oracle</td><td>2026-07-15</td></tr><tr><td><a href="feature/CVE-2026-56164.html">📋 CVE-2026-56164</a></td><td>SharePoint Server</td><td>Microsoft</td><td>2026-07-14</td></tr><tr><td><a href="feature/CVE-2026-15409.html">📋 CVE-2026-15409</a></td><td>SMA1000 Appliances</td><td>SonicWall</td><td>2026-07-14</td></tr><tr><td><a href="feature/CVE-2026-15410.html">📋 CVE-2026-15410</a></td><td>SMA1000 Appliances</td><td>SonicWall</td><td>2026-07-14</td></tr><tr><td><a href="feature/CVE-2008-4128.html">📋 CVE-2008-4128</a></td><td>IOS</td><td>Cisco</td><td>2026-07-13</td></tr><tr><td><a href="feature/CVE-2026-16232.html">📋 CVE-2026-16232</a></td><td>SmartConsole</td><td>Check Point</td><td>2026-07-22</td></tr><tr><td><a href="feature/CVE-2026-50522.html">📋 CVE-2026-50522</a></td><td>SharePoint</td><td>Microsoft</td><td>2026-07-22</td></tr><tr><td><a href="feature/CVE-2026-60137.html">📋 CVE-2026-60137</a></td><td>Core</td><td>WordPress</td><td>2026-07-21</td></tr><tr><td><a href="feature/CVE-2026-63030.html">📋 CVE-2026-63030</a></td><td>Core</td><td>WordPress</td><td>2026-07-21</td></tr><tr><td><a href="feature/CVE-2021-27137.html">📋 CVE-2021-27137</a></td><td>DD-WRT</td><td>DD-WRT</td><td>2026-07-21</td></tr></tbody></table><br>
+<h2>📅 週次レポート一覧</h2>
+<table><thead><tr><th>レポート日</th><th>🔴CRITICAL</th><th>🟠高</th><th>🟡中</th><th>🟢低</th><th>合計</th></tr></thead>
+<tbody><tr><td><a href="2026-07-27.html">2026年07月27日</a></td><td style="color:#cc0000;"><strong>0</strong></td><td style="color:#ff6600;">2</td><td style="color:#ffaa00;">0</td><td style="color:#009900;">8</td><td>10</td></tr><tr><td><a href="2026-07-20.html">2026年07月20日</a></td><td style="color:#cc0000;"><strong>6</strong></td><td style="color:#ff6600;">0</td><td style="color:#ffaa00;">0</td><td style="color:#009900;">0</td><td>6</td></tr><tr><td><a href="2026-07-13.html">2026年07月13日</a></td><td style="color:#cc0000;"><strong>10</strong></td><td style="color:#ff6600;">0</td><td style="color:#ffaa00;">0</td><td style="color:#009900;">0</td><td>10</td></tr><tr><td><a href="2026-07-06.html">2026年07月06日</a></td><td style="color:#cc0000;"><strong>6</strong></td><td style="color:#ff6600;">0</td><td style="color:#ffaa00;">0</td><td style="color:#009900;">0</td><td>6</td></tr></tbody></table>
+<footer><p><strong>畠山正彦</strong> | ITセキュリティコンサルタント</p><p style="font-size:0.8em;color:#999;">© 2026 畠山正彦 All Rights Reserved.</p></footer>
+</body></html>
