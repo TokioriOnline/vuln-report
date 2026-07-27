@@ -886,10 +886,17 @@ def build_html_content(
                 f' style="background:#7A74B8;color:white;padding:1px 6px;border-radius:8px;font-size:0.75em;text-decoration:none;">'
                 f'📋</a>'
             )
+        first_seen = v.get("first_seen", "")
+        report_link = (
+            f'<a href="{first_seen}.html"'
+            f' style="font-size:0.78em;color:#0066cc;">'
+            f'📄 週次レポート</a>'
+        ) if first_seen else ""
         sidebar_cards += f"""<div style="background:#fff0f0;border-left:3px solid #cc0000;padding:10px 12px;margin:8px 0;border-radius:4px;font-size:0.85em;">
 <div><strong>{v["id"]}</strong>{feature_link}</div>
 <div style="color:#555;font-size:0.9em;margin:3px 0;">{v.get("product","")}</div>
 <div style="color:#cc0000;font-size:0.8em;">{days_text} | 期限:{v.get("dueDate","-")}</div>
+<div style="margin-top:4px;">{report_link}</div>
 </div>"""
 
     if not sidebar_cards:
