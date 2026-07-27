@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,
+                   initial-scale=1.0">
+    <title>脆弱性情報 2026年07月06日 |
+    畠山正彦</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            max-width: 900px; margin: auto;
+            padding: 20px; background: #f5f5f5;
+            color: #333;
+        }
+        h1 { color: #1a1a2e; }
+        h2 {
+            border-left: 4px solid #333;
+            padding-left: 10px; margin-top: 30px;
+        }
+        .card {
+            background: white; border-radius: 8px;
+            padding: 15px 20px; margin: 10px 0;
+        }
+        .card.critical {
+            border-left: 5px solid #cc0000;
+        }
+        .badge {
+            display: inline-block;
+            padding: 3px 10px; border-radius: 12px;
+            font-size: 0.85em; font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .badge-critical, .badge-CRITICAL {
+            background: #cc0000; color: white;
+        }
+        .badge-高 { background: #ff6600; color: white; }
+        .badge-中 { background: #ffaa00; color: white; }
+        .badge-低 { background: #009900; color: white; }
+        .summary-box {
+            background: #1a1a2e; color: white;
+            border-radius: 8px; padding: 20px;
+            margin: 20px 0;
+        }
+        .summary-box h2 {
+            color: white; border-color: white;
+        }
+        .summary-box table {
+            width: 100%; border-collapse: collapse;
+        }
+        .summary-box td { padding: 8px; }
+        .persistent-critical {
+            background: #fff0f0;
+            border: 1px solid #ffcccc;
+            border-radius: 8px;
+            padding: 16px 20px; margin: 10px 0;
+        }
+        .days-since {
+            font-size: 0.8em; color: #cc0000;
+            margin-top: 4px;
+        }
+        .update-time {
+            background: #e8f4f8; padding: 10px 15px;
+            border-radius: 5px; margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+        .disclaimer {
+            background: #fff8e1;
+            border-left: 4px solid #ffaa00;
+            padding: 15px 20px; margin: 30px 0;
+            border-radius: 4px; font-size: 0.9em;
+        }
+        footer {
+            text-align: center; margin-top: 40px;
+            padding: 20px; color: #666;
+            font-size: 0.9em;
+            border-top: 1px solid #ddd;
+        }
+        table {
+            width: 100%; border-collapse: collapse;
+            background: white; border-radius: 8px;
+        }
+        th, td {
+            padding: 10px; border: 1px solid #eee;
+            text-align: center;
+        }
+        th { background: #1a1a2e; color: white; }
+        tr:hover { background: #f5f5f5; }
+        a { color: #0066cc; }
+    </style>
+</head>
+<body>
+    <p>
+        <a href="index.html">
+            ← 最新レポートに戻る
+        </a> |
+        <a href="archive.html">
+            📚 アーカイブ一覧
+        </a>
+    </p>
+    <h1>🔍 脆弱性情報レポート</h1>
+    <div class="update-time">
+        📅 レポート日: 2026年07月06日
+    </div>
+
+    <div class="summary-box">
+        <h2>📊 重要度サマリー</h2>
+        <table>
+            <tr>
+                <td>🔴 CRITICAL</td>
+                <td><strong>
+                    6件
+                </strong></td>
+            </tr>
+            <tr>
+                <td>🟠 高</td>
+                <td><strong>
+                    0件
+                </strong></td>
+            </tr>
+            <tr>
+                <td>🟡 中</td>
+                <td><strong>
+                    0件
+                </strong></td>
+            </tr>
+            <tr>
+                <td>🟢 低</td>
+                <td><strong>
+                    0件
+                </strong></td>
+            </tr>
+            <tr>
+                <td><strong>合計</strong></td>
+                <td><strong>6件</strong></td>
+            </tr>
+        </table>
+    </div>
+
+    <h2>🔴 CRITICAL:実際に悪用確認済み
+    <small style="font-size:0.7em;
+        color:#cc0000;">(直近90日間 常時掲載)</small>
+    </h2>
+    
+        <div class="persistent-critical">
+            <span class="badge badge-critical">
+                🔴 CRITICAL
+            </span>
+            
+            <strong>CVE-2026-56291</strong> |
+            Forms
+            (Balbooa)<br>
+            <p>Balbooa Forms contains an unrestricted upload of file with dangerous type vulnerability that allows an unauthenticated arbitrary file upload which could allow uploading of executable files leading to full RCE.</p>
+            <p>📅 追加日:2026-07-10
+               ⏰ 期限:2026-07-13</p>
+            <div class="days-since">
+                追加 17日前
+            </div>
+            <a href="https://www.cisa.gov/
+known-exploited-vulnerabilities-catalog"
+               target="_blank">
+                🔗 対策を確認する(CISA)
+            </a>
+        </div>
+        <div class="persistent-critical">
+            <span class="badge badge-critical">
+                🔴 CRITICAL
+            </span>
+            
+            <strong>CVE-2026-48939</strong> |
+            iCagenda
+            (iCagenda)<br>
+            <p>iCagenda contains an unrestricted upload of file with dangerous type vulnerability that allows the upload of arbitrary files in the file attachment feature, ultimately resulting in PHP code upload and execution.</p>
+            <p>📅 追加日:2026-07-10
+               ⏰ 期限:2026-07-13</p>
+            <div class="days-since">
+                追加 17日前
+            </div>
+            <a href="https://www.cisa.gov/
+known-exploited-vulnerabilities-catalog"
+               target="_blank">
+                🔗 対策を確認する(CISA)
+            </a>
+        </div>
+        <div class="persistent-critical">
+            <span class="badge badge-critical">
+                🔴 CRITICAL
+            </span>
+            
+            <strong>CVE-2026-48908</strong> |
+            SP Page Builder
+            (JoomShaper)<br>
+            <p>JoomShaper SP Page Builder contains an unrestricted upload of file with dangerous type vulnerability that allows unauthenticated users to upload arbitrary files, ultimately resulting in the upload and execution of PHP code.</p>
+            <p>📅 追加日:2026-07-07
+               ⏰ 期限:2026-07-10</p>
+            <div class="days-since">
+                追加 20日前
+            </div>
+            <a href="https://www.cisa.gov/
+known-exploited-vulnerabilities-catalog"
+               target="_blank">
+                🔗 対策を確認する(CISA)
+            </a>
+        </div>
+        <div class="persistent-critical">
+            <span class="badge badge-critical">
+                🔴 CRITICAL
+            </span>
+            
+            <strong>CVE-2026-55255</strong> |
+            Langflow
+            (Langflow)<br>
+            <p>Langflow contains an authorization bypass through user-controlled key vulnerability which allows an authenticated attacker to execute any flow belonging to another user by specifying the victim's flow ID in the request.</p>
+            <p>📅 追加日:2026-07-07
+               ⏰ 期限:2026-07-10</p>
+            <div class="days-since">
+                追加 20日前
+            </div>
+            <a href="https://www.cisa.gov/
+known-exploited-vulnerabilities-catalog"
+               target="_blank">
+                🔗 対策を確認する(CISA)
+            </a>
+        </div>
+        <div class="persistent-critical">
+            <span class="badge badge-critical">
+                🔴 CRITICAL
+            </span>
+            
+            <strong>CVE-2026-56290</strong> |
+            Page Builder
+            (Joomlack)<br>
+            <p>Joomlack Page Builder contains an improper access control vulnerability that could allow for remote code execution via unauthenticated arbitrary file upload.</p>
+            <p>📅 追加日:2026-07-07
+               ⏰ 期限:2026-07-10</p>
+            <div class="days-since">
+                追加 20日前
+            </div>
+            <a href="https://www.cisa.gov/
+known-exploited-vulnerabilities-catalog"
+               target="_blank">
+                🔗 対策を確認する(CISA)
+            </a>
+        </div>
+        <div class="persistent-critical">
+            <span class="badge badge-critical">
+                🔴 CRITICAL
+            </span>
+            
+            <strong>CVE-2026-48282</strong> |
+            ColdFusion
+            (Adobe)<br>
+            <p>Adobe ColdFusion contains a path traversal vulnerability that could lead to arbitrary code execution in the context of the current user.</p>
+            <p>📅 追加日:2026-07-07
+               ⏰ 期限:2026-07-10</p>
+            <div class="days-since">
+                追加 20日前
+            </div>
+            <a href="https://www.cisa.gov/
+known-exploited-vulnerabilities-catalog"
+               target="_blank">
+                🔗 対策を確認する(CISA)
+            </a>
+        </div>
+
+    <div class="disclaimer">
+        <h3>⚠️ 免責事項</h3>
+        <p>本情報はCISA KEV・JPCERT/CC・
+        JVN iPediaの公開情報を収集・整理したものです。
+        実際の対応は各情報源および専門家への
+        相談のうえ行ってください。</p>
+    </div>
+
+    <footer>
+        <p>
+            <strong>畠山正彦</strong> |
+            ITセキュリティコンサルタント
+        </p>
+        <p style="font-size:0.8em;color:#999;">
+            © 2026 畠山正彦 All Rights Reserved.
+        </p>
+    </footer>
+</body>
+</html>
