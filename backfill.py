@@ -70,8 +70,8 @@ def get_css():
         .summary-box { background: #1a1a2e; color: white;
                        border-radius: 8px; padding: 20px; margin: 20px 0; }
         .summary-box h2 { color: white; border-color: white; }
-        .summary-box table { width: 100%; border-collapse: collapse; }
-        .summary-box td { padding: 8px; }
+        .summary-box table { width: 100%; border-collapse: collapse; background: transparent; }
+        .summary-box td { padding: 8px; color: white; }
         .persistent-critical { background: #fff0f0;
                                 border: 1px solid #ffcccc;
                                 border-radius: 8px;
@@ -328,14 +328,28 @@ if __name__ == "__main__":
         else:
             print(f"data.json: {week_date} 既存スキップ")
 
-        html_path = f"{DOCS_DIR}/{week_date}.html"
-        if not os.path.exists(html_path):
-            html = build_week_html(week_date, week_kev, counts, vulns_hist)
-            with open(html_path,"w",encoding="utf-8") as f:
-                f.write(html)
-            print(f"✅ {week_date}.html 生成")
+        # data.jsonの保存済みsummaryからcountsを取得(確実なデータ)
+        if week_date in all_data:
+            s = all_data[week_date]["summary"]
+            display_counts = {
+                "CRITICAL": s["critical"],
+                "高": s["high"],
+                "中": s["medium"],
+                "低": s["low"]
+            }
         else:
-            print(f"✅ {week_date}.html 既存スキップ")
+            display_counts = counts
+
+        html_path = f"{DOCS_DIR}/{week_date}.html"
+        html = build_week_html(
+            week_date, week_kev, display_counts, vulns_hist
+        )
+        with open(html_path,"w",encoding="utf-8") as f:
+            f.write(html)
+        print(
+            f"✅ {week_date}.html 生成 "
+            f"(CRITICAL={display_counts['CRITICAL']})"
+        )
 
     print(f"\n{'='*40}")
     print("📋 特集ページを生成中...")
@@ -344,15 +358,14 @@ if __name__ == "__main__":
         if v.get("severity") == "CRITICAL" and v.get("is_major", False):
             safe_id = v["id"].replace("/","-").replace(":","-").replace(" ","-")
             fp = f"{FEATURE_DIR}/{safe_id}.html"
-            if not os.path.exists(fp):
-                generate_feature_page(
+            generate_feature_page(
                     v["id"], v.get("product",""),
                     v.get("vendor",""),
                     v.get("description",""),
                     v.get("dateAdded",""),
                     v.get("dueDate","")
                 )
-                print(f"✅ 特集: {v['id']}")
+            print(f"✅ 特集: {v['id']}")
             v["feature_created"] = True
             feature_vulns.append(v)
 
