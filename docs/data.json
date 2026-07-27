@@ -2,13 +2,62 @@
   "2026-07-27": {
     "date": "2026-07-27",
     "summary": {
-      "critical": 0,
+      "critical": 6,
       "high": 2,
       "medium": 0,
       "low": 8,
-      "total": 10
+      "total": 16
     },
-    "kev": [],
+    "kev": [
+      {
+        "cveID": "CVE-2026-16232",
+        "product": "SmartConsole",
+        "vendorProject": "Check Point",
+        "description": "Check Point SmartConsole contains an improper authentication vulnerability which could allow an unauthenticated remote attacker to obtain an application login token and use it to authenticate with full administrative privileges.",
+        "dateAdded": "2026-07-22",
+        "dueDate": "2026-07-25"
+      },
+      {
+        "cveID": "CVE-2026-50522",
+        "product": "SharePoint",
+        "vendorProject": "Microsoft",
+        "description": "Microsoft SharePoint contains a deserialization of untrusted data vulnerability which could allow an unauthorized attacker to execute code over a network.",
+        "dateAdded": "2026-07-22",
+        "dueDate": "2026-07-25"
+      },
+      {
+        "cveID": "CVE-2026-60137",
+        "product": "Core",
+        "vendorProject": "WordPress",
+        "description": "WordPress Core contains a SQL injection vulnerability when a plugin or theme passes untrusted input to the parameter. This vulnerability can be chained with CVE-2026-63030 to allow an unauthenticated attacker to gain remote code execution on default WordPress installations.",
+        "dateAdded": "2026-07-21",
+        "dueDate": "2026-08-04"
+      },
+      {
+        "cveID": "CVE-2026-63030",
+        "product": "Core",
+        "vendorProject": "WordPress",
+        "description": "WordPress Core contains an interpretation conflict vulnerability that could allow an attacker to perform SQL Injection and achieve Remote Code Execution. This vulnerability can be chained with CVE-2026-60137.",
+        "dateAdded": "2026-07-21",
+        "dueDate": "2026-07-24"
+      },
+      {
+        "cveID": "CVE-2026-0770",
+        "product": "Langflow",
+        "vendorProject": "Langflow",
+        "description": "Langflow contains an inclusion of functionality from untrusted control sphere vulnerability that allows remote attackers to execute arbitrary code on affected installations. ",
+        "dateAdded": "2026-07-21",
+        "dueDate": "2026-07-24"
+      },
+      {
+        "cveID": "CVE-2021-27137",
+        "product": "DD-WRT",
+        "vendorProject": "DD-WRT",
+        "description": "DD-WRT contains a stack-based buffer overflow vulnerability that could allow an unauthenticated attacker to overflow an internal buffer used by UPnP and trigger a code execution vulnerability.",
+        "dateAdded": "2026-07-21",
+        "dueDate": "2026-07-24"
+      }
+    ],
     "jpcert": [
       {
         "title": "注意喚起: 2026年7月マイクロソフトセキュリティ更新プログラムに関する注意喚起  (公開)",
