@@ -889,8 +889,9 @@ def build_html_content(
                 f'📋</a>'
             )
         first_seen = v.get("first_seen", "")
+        cve_anchor = v["id"]
         report_link = (
-            f'<a href="{first_seen}.html"'
+            f'<a href="{first_seen}.html#{cve_anchor}"'
             f' style="font-size:0.78em;color:#0066cc;">'
             f'📄 週次レポート</a>'
         ) if first_seen else ""
@@ -915,7 +916,7 @@ def build_html_content(
                 f' <a href="feature/{safe_id}.html"'
                 f' style="background:#7A74B8;color:white;padding:2px 8px;border-radius:10px;font-size:0.8em;text-decoration:none;">📋 特集記事</a>'
             )
-        kev_html += f"""<div class="card critical">
+        kev_html += f"""<div class="card critical" id="{v["cveID"]}">
 <span class="badge badge-critical">🔴 CRITICAL</span>{feature_link}
 <strong>{v["cveID"]}</strong> | {v["product"]} ({v["vendorProject"]})<br>
 <p>{v["shortDescription"]}</p>
@@ -986,8 +987,8 @@ def build_html_content(
 </div>
 <div class="layout">
 <div class="main-col">
-<h2>🔴 今週のCRITICAL</h2>
-<p style="font-size:0.9em;color:#666;margin-bottom:12px;">米国CISAが実際に悪用されていると認定した脆弱性です。最優先で対応してください。</p>
+<h2>🔴 この週のCRITICAL <small style="font-size:0.65em;color:#cc0000;">({counts["CRITICAL"]}件)</small></h2>
+<p style="font-size:0.9em;color:#666;margin-bottom:12px;">この週にCISAが新たに「実際に悪用されている」と認定した脆弱性です。</p>
 {kev_html}
 <h2>🟠 JPCERT/CC:日本向け注意喚起</h2>
 {jpcert_html}

@@ -159,69 +159,86 @@ def generate_feature_page(cve_id, product, vendor,
 
 def build_week_html(week_date, kev_list, counts, all_vulns_hist):
     try:
-        display_date = datetime.strptime(week_date,"%Y-%m-%d").strftime("%Y年%m月%d日")
+        display_date = datetime.strptime(
+            week_date, "%Y-%m-%d"
+        ).strftime("%Y年%m月%d日")
     except Exception:
         display_date = week_date
 
-    cutoff_90 = (datetime.now() - timedelta(days=90)).strftime("%Y-%m-%d")
-    persistent = [
-        v for v in all_vulns_hist.values()
-        if v.get("severity") == "CRITICAL" and v.get("dateAdded","") >= cutoff_90
-    ]
-    persistent = sorted(persistent, key=lambda x: x.get("dateAdded",""), reverse=True)
-
-    cards_html = ""
-    for v in persistent:
-        date_added = v.get("dateAdded","")
-        try:
-            days_ago = (datetime.now() - datetime.strptime(date_added,"%Y-%m-%d")).days
-            days_text = f"追加 {days_ago}日前" if days_ago > 0 else "本日追加"
-        except Exception:
-            days_text = ""
-
-        safe_id = v["id"].replace("/","-").replace(":","-").replace(" ","-")
-        feature_link = ""
-        fp = f"{FEATURE_DIR}/{safe_id}.html"
-        if v.get("is_major") and os.path.exists(fp):
-            feature_link = f' <a href="feature/{safe_id}.html" style="background:#7A74B8;color:white;padding:2px 8px;border-radius:10px;font-size:0.8em;text-decoration:none;">📋 特集記事</a>'
-
-        cards_html += f"""
-        <div class="persistent-critical">
-            <span class="badge badge-critical">🔴 CRITICAL</span>{feature_link}
-            <strong>{v['id']}</strong> | {v.get('product','')} ({v.get('vendor','')})<br>
-            <p>{v.get('description','')}</p>
-            <p>📅 追加日:{date_added} ⏰ 期限:{v.get('dueDate','-')}</p>
-            <div style="font-size:0.8em;color:#cc0000;">{days_text}</div>
-            <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank">🔗 対策を確認する(CISA)</a>
-        </div>"""
-
-    if not cards_html:
-        cards_html = "<p>直近90日間のCRITICALはありません</p>"
-
     total = sum(counts.values())
+
+    # その週のCRITICALのみ表示(サマリーと一致させる)
+    kev_cards = ""
+    for v in kev_list:
+        safe_id = v["cveID"].replace(
+            "/","-").replace(":","-").replace(" ","-")
+        fp = f"{FEATURE_DIR}/{safe_id}.html"
+        hist = all_vulns_hist.get(v["cveID"], {})
+        feature_link = ""
+        if hist.get("is_major") and os.path.exists(fp):
+            feature_link = (
+                f' <a href="feature/{safe_id}.html"'
+                f' style="background:#7A74B8;color:white;'
+                f'padding:2px 8px;border-radius:10px;'
+                f'font-size:0.8em;text-decoration:none;">'
+                f'📋 特集記事</a>'
+            )
+        kev_cards += f"""<div class="card critical" id="{v["cveID"]}">
+<span class="badge badge-critical">🔴 CRITICAL</span>{feature_link}
+<strong>{v["cveID"]}</strong> | {v["product"]} ({v["vendorProject"]})<br>
+<p>{v["shortDescription"]}</p>
+<p>📅 {v["dateAdded"]} ⏰ 期限:{v["dueDate"]}</p>
+<a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+   target="_blank">🔗 対策を確認する(CISA)</a>
+</div>"""
+
+    if not kev_cards:
+        kev_cards = "<p>この週の新規CRITICALはありません</p>"
+
     return f"""<!DOCTYPE html>
 <html lang="ja">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>脆弱性情報 {display_date} | 畠山正彦</title>
-<style>{get_css()}</style></head>
+<style>{get_css()}</style>
+</head>
 <body>
 <p><a href="index.html">← 最新レポートに戻る</a> | <a href="archive.html">📚 アーカイブ一覧</a></p>
 <h1>🔍 脆弱性情報レポート</h1>
 <div class="update-time">📅 レポート日: {display_date}</div>
-<div class="summary-box"><h2>📊 重要度サマリー</h2>
+<div class="summary-box">
+<h2>📊 重要度サマリー</h2>
 <table>
-<tr><td>🔴 CRITICAL</td><td><strong>{counts['CRITICAL']}件</strong></td></tr>
-<tr><td>🟠 高</td><td><strong>{counts['高']}件</strong></td></tr>
-<tr><td>🟡 中</td><td><strong>{counts['中']}件</strong></td></tr>
-<tr><td>🟢 低</td><td><strong>{counts['低']}件</strong></td></tr>
+<tr><td>🔴 CRITICAL(即時対応・24時間以内)</td><td><strong>{counts["CRITICAL"]}件</strong></td></tr>
+<tr><td>🟠 高(優先対応・72時間以内)</td><td><strong>{counts["高"]}件</strong></td></tr>
+<tr><td>🟡 中(計画対応・1週間以内)</td><td><strong>{counts["中"]}件</strong></td></tr>
+<tr><td>🟢 低(モニタリング・月次確認)</td><td><strong>{counts["低"]}件</strong></td></tr>
 <tr><td><strong>合計</strong></td><td><strong>{total}件</strong></td></tr>
-</table></div>
-<h2>🔴 CRITICAL:実際に悪用確認済み <small style="font-size:0.7em;color:#cc0000;">(直近90日間 常時掲載)</small></h2>
-{cards_html}
-<div class="disclaimer"><h3>⚠️ 免責事項</h3>
-<p>本情報はCISA KEV・JPCERT/CC・JVN iPediaの公開情報を収集・整理したものです。実際の対応は各情報源および専門家への相談のうえ行ってください。</p></div>
-<footer><p><strong>畠山正彦</strong> | ITセキュリティコンサルタント</p><p style="font-size:0.8em;color:#999;">© 2026 畠山正彦 All Rights Reserved.</p></footer>
-</body></html>"""
+</table>
+</div>
+<h2>🔴 この週のCRITICAL({counts["CRITICAL"]}件)</h2>
+<p style="font-size:0.9em;color:#666;margin-bottom:12px;">
+この週にCISAが新たに「実際に悪用されている」と認定した脆弱性です。
+</p>
+{kev_cards}
+<div class="disclaimer">
+<h3>⚠️ 免責事項</h3>
+<p>本情報はCISA KEV・JPCERT/CC・JVN iPediaの公開情報を収集・整理したものです。
+実際の対応は各情報源および専門家への相談のうえ行ってください。</p>
+<p>
+<a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank">CISA KEV</a> /
+<a href="https://www.jpcert.or.jp/" target="_blank">JPCERT/CC</a> /
+<a href="https://jvndb.jvn.jp/" target="_blank">JVN iPedia</a>
+</p>
+</div>
+<footer>
+<p><strong>畠山正彦</strong> | ITセキュリティコンサルタント</p>
+<p style="font-size:0.8em;color:#999;">© 2026 畠山正彦 All Rights Reserved.</p>
+</footer>
+</body>
+</html>"""
+
 
 def generate_archive_page(all_data, feature_vulns):
     rows = ""
@@ -328,17 +345,13 @@ if __name__ == "__main__":
         else:
             print(f"data.json: {week_date} 既存スキップ")
 
-        # data.jsonの保存済みsummaryからcountsを取得(確実なデータ)
-        if week_date in all_data:
-            s = all_data[week_date]["summary"]
-            display_counts = {
-                "CRITICAL": s["critical"],
-                "高": s["high"],
-                "中": s["medium"],
-                "低": s["low"]
-            }
-        else:
-            display_counts = counts
+        # 表示するkev_listの件数から直接計算(サマリーと表示を一致させる)
+        display_counts = {
+            "CRITICAL": len(week_kev),
+            "高": 0,
+            "中": 0,
+            "低": 0
+        }
 
         html_path = f"{DOCS_DIR}/{week_date}.html"
         html = build_week_html(
