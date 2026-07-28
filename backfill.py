@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 
 DOCS_DIR = "docs"
 FEATURE_DIR = "docs/feature"
-BACKFILL_DATES = ["2026-07-06","2026-07-13","2026-07-20"]
+BACKFILL_DATES = ["2026-07-06","2026-07-13","2026-07-20","2026-07-27"]
 MAJOR_PRODUCTS = [
     "windows","exchange","apache","cisco","fortinet",
     "vmware","citrix","ivanti","palo alto","juniper",
