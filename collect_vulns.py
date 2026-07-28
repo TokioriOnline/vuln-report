@@ -987,8 +987,8 @@ def build_html_content(
 </div>
 <div class="layout">
 <div class="main-col">
-<h2>🔴 この週のCRITICAL <small style="font-size:0.65em;color:#cc0000;">({counts["CRITICAL"]}件)</small></h2>
-<p style="font-size:0.9em;color:#666;margin-bottom:12px;">この週にCISAが新たに「実際に悪用されている」と認定した脆弱性です。</p>
+<h2>🔴 最新のCRITICAL <small style="font-size:0.65em;color:#cc0000;">({counts["CRITICAL"]}件)</small></h2>
+<p style="font-size:0.9em;color:#666;margin-bottom:12px;">CISAが新たに「実際に悪用されている」と認定した脆弱性です。最優先で対応してください。</p>
 {kev_html}
 <h2>🟠 JPCERT/CC:日本向け注意喚起</h2>
 {jpcert_html}
