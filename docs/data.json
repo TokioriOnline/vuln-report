@@ -446,5 +446,104 @@
       }
     ],
     "jvn": []
+  },
+  "2026-08-02": {
+    "date": "2026-08-02",
+    "summary": {
+      "critical": 3,
+      "high": 2,
+      "medium": 0,
+      "low": 8,
+      "total": 13
+    },
+    "kev": [
+      {
+        "cveID": "CVE-2026-20316",
+        "product": "Secure Firewall Management Center (FMC)",
+        "vendorProject": "Cisco",
+        "description": "Cisco Secure Firewall Management Center (FMC) formerly known as Firepower Management Center contains a use of hard-coded password vulnerability that could allow an unauthenticated, remote attacker to log in to an affected device using a low-privileged account to access sensitive data within the impacted systems.",
+        "dateAdded": "2026-07-29",
+        "dueDate": "2026-08-01"
+      },
+      {
+        "cveID": "CVE-2025-68686",
+        "product": "FortiOS",
+        "vendorProject": "Fortinet",
+        "description": "Fortinet FortiOS contains an exposure of sensitive information to an unauthorized actor vulnerability. This may allow a remote unauthenticated attacker to bypass the patch developed for the symbolic link persistency mechanism observed in some post-exploit cases, via crafted HTTP requests. An attacker would need first to have compromised the product via another vulnerability, at filesystem level.",
+        "dateAdded": "2026-07-27",
+        "dueDate": "2026-08-10"
+      },
+      {
+        "cveID": "CVE-2026-16812",
+        "product": "VeloCloud Orchestrator",
+        "vendorProject": "Arista",
+        "description": "Arista VeloCloud Orchestrator On-Prem contains an OS command injection vulnerability that may allow a remote attacker to access privileged internal functionality and impact the VCO host. Successful exploitation may compromise the confidentiality, integrity, and availability of the orchestrator and data managed by the orchestrator.",
+        "dateAdded": "2026-07-27",
+        "dueDate": "2026-07-30"
+      }
+    ],
+    "jpcert": [
+      {
+        "title": "注意喚起: 2026年7月マイクロソフトセキュリティ更新プログラムに関する注意喚起  (更新)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260020.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: Ruby on RailsのActive Storageにおけるリモートコード実行につながる脆弱性（CVE-2026-66066）に関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260021.html",
+        "published": "",
+        "severity": "高"
+      },
+      {
+        "title": "注意喚起: Fortinet製品に関連する認証情報の漏えいに関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260019.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: Adobe AcrobatおよびReaderの脆弱性（APSB26-63）に関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260018.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: 2026年6月マイクロソフトセキュリティ更新プログラムに関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260017.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: Check Point Software Technologies社製品における認証バイパスの脆弱性（CVE-2026-50751）に関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260016.html",
+        "published": "",
+        "severity": "高"
+      },
+      {
+        "title": "Weekly Report: Next.jsに複数の脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr260729.html#1",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "Weekly Report: Google Chromeに複数の脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr260729.html#2",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "Weekly Report: Microsoft Edgeに複数の脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr260729.html#3",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "Weekly Report: ISC BINDに複数の脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr260729.html#4",
+        "published": "",
+        "severity": "低"
+      }
+    ],
+    "jvn": []
   }
 }

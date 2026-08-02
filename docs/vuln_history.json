@@ -475,7 +475,91 @@
       "is_major": false,
       "feature_created": false,
       "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+    },
+    "CVE-2026-20316": {
+      "id": "CVE-2026-20316",
+      "type": "kev",
+      "product": "Secure Firewall Management Center (FMC)",
+      "vendor": "Cisco",
+      "description": "Cisco Secure Firewall Management Center (FMC) formerly known as Firepower Management Center contains a use of hard-coded password vulnerability that could allow an unauthenticated, remote attacker to log in to an affected device using a low-privileged account to access sensitive data within the impacted systems.",
+      "dateAdded": "2026-07-29",
+      "dueDate": "2026-08-01",
+      "severity": "CRITICAL",
+      "first_seen": "2026-08-02",
+      "is_major": true,
+      "feature_created": true,
+      "source_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+    },
+    "https://www.jpcert.or.jp/at/2026/at260021.html": {
+      "id": "https://www.jpcert.or.jp/at/2026/at260021.html",
+      "type": "jpcert",
+      "title": "注意喚起: Ruby on RailsのActive Storageにおけるリモートコード実行につながる脆弱性（CVE-2026-66066）に関する注意喚起  (公開)",
+      "link": "https://www.jpcert.or.jp/at/2026/at260021.html",
+      "summary": "",
+      "published": "",
+      "dateAdded": "2026-08-02",
+      "severity": "高",
+      "first_seen": "2026-08-02",
+      "is_major": false,
+      "feature_created": false,
+      "source_url": "https://www.jpcert.or.jp/at/2026/at260021.html"
+    },
+    "https://www.jpcert.or.jp/wr/2026/wr260729.html#1": {
+      "id": "https://www.jpcert.or.jp/wr/2026/wr260729.html#1",
+      "type": "jpcert",
+      "title": "Weekly Report: Next.jsに複数の脆弱性",
+      "link": "https://www.jpcert.or.jp/wr/2026/wr260729.html#1",
+      "summary": "Next.jsに複数の脆弱性",
+      "published": "",
+      "dateAdded": "2026-08-02",
+      "severity": "低",
+      "first_seen": "2026-08-02",
+      "is_major": false,
+      "feature_created": false,
+      "source_url": "https://www.jpcert.or.jp/wr/2026/wr260729.html#1"
+    },
+    "https://www.jpcert.or.jp/wr/2026/wr260729.html#2": {
+      "id": "https://www.jpcert.or.jp/wr/2026/wr260729.html#2",
+      "type": "jpcert",
+      "title": "Weekly Report: Google Chromeに複数の脆弱性",
+      "link": "https://www.jpcert.or.jp/wr/2026/wr260729.html#2",
+      "summary": "Google Chromeに複数の脆弱性",
+      "published": "",
+      "dateAdded": "2026-08-02",
+      "severity": "低",
+      "first_seen": "2026-08-02",
+      "is_major": false,
+      "feature_created": false,
+      "source_url": "https://www.jpcert.or.jp/wr/2026/wr260729.html#2"
+    },
+    "https://www.jpcert.or.jp/wr/2026/wr260729.html#3": {
+      "id": "https://www.jpcert.or.jp/wr/2026/wr260729.html#3",
+      "type": "jpcert",
+      "title": "Weekly Report: Microsoft Edgeに複数の脆弱性",
+      "link": "https://www.jpcert.or.jp/wr/2026/wr260729.html#3",
+      "summary": "Microsoft Edgeに複数の脆弱性",
+      "published": "",
+      "dateAdded": "2026-08-02",
+      "severity": "低",
+      "first_seen": "2026-08-02",
+      "is_major": false,
+      "feature_created": false,
+      "source_url": "https://www.jpcert.or.jp/wr/2026/wr260729.html#3"
+    },
+    "https://www.jpcert.or.jp/wr/2026/wr260729.html#4": {
+      "id": "https://www.jpcert.or.jp/wr/2026/wr260729.html#4",
+      "type": "jpcert",
+      "title": "Weekly Report: ISC BINDに複数の脆弱性",
+      "link": "https://www.jpcert.or.jp/wr/2026/wr260729.html#4",
+      "summary": "ISC BINDに複数の脆弱性",
+      "published": "",
+      "dateAdded": "2026-08-02",
+      "severity": "低",
+      "first_seen": "2026-08-02",
+      "is_major": false,
+      "feature_created": false,
+      "source_url": "https://www.jpcert.or.jp/wr/2026/wr260729.html#4"
     }
   },
-  "last_updated": "2026-07-28"
+  "last_updated": "2026-08-02"
 }
