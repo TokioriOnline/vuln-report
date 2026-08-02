@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>脆弱性情報レポート 2026年08月02日 | 畠山正彦</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.34.0/tabler-icons.min.css">
+<style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Helvetica Neue',
+                         sans-serif;
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            background: #f5f5f5;
+            color: #333;
+        }
+        h1 { color: #1a1a2e; }
+        h2 {
+            border-left: 4px solid #333;
+            padding-left: 10px;
+            margin-top: 30px;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 10px 0;
+            box-shadow: 0 2px 4px
+                        rgba(0,0,0,0.1);
+        }
+        .card.critical {
+            border-left: 5px solid #cc0000;
+        }
+        .card.featured {
+            border-left: 5px solid #7A74B8;
+        }
+        .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .badge-critical,
+        .badge-CRITICAL {
+            background: #cc0000;
+            color: white;
+        }
+        .badge-高 {
+            background: #ff6600;
+            color: white;
+        }
+        .badge-中 {
+            background: #ffaa00;
+            color: white;
+        }
+        .badge-低 {
+            background: #009900;
+            color: white;
+        }
+        .badge-feature {
+            background: #7A74B8;
+            color: white;
+            font-size: 0.75em;
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-left: 8px;
+        }
+        .summary-box {
+            background: #1a1a2e;
+            color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .summary-box h2 {
+            color: white;
+            border-color: white;
+        }
+        .summary-box table {
+            width: 100%;
+            border-collapse: collapse;
+            background: transparent;
+        }
+        .summary-box td {
+            padding: 8px;
+            font-size: 1.05em;
+            color: white;
+        }
+        .update-time {
+            background: #e8f4f8;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+        .persistent-critical {
+            background: #fff0f0;
+            border: 1px solid #ffcccc;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin: 10px 0;
+        }
+        .days-since {
+            font-size: 0.8em;
+            color: #cc0000;
+            margin-top: 4px;
+        }
+        .disclaimer {
+            background: #fff8e1;
+            border-left: 4px solid #ffaa00;
+            padding: 15px 20px;
+            margin: 30px 0;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        .disclaimer h3 { margin-top: 0; }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9em;
+            border-top: 1px solid #ddd;
+        }
+        a { color: #0066cc; }
+        a:hover { text-decoration: underline; }
+    
+.layout{display:flex;gap:20px;align-items:flex-start;margin-top:8px;}
+.main-col{flex:1;min-width:0;}
+.side-col{width:240px;flex-shrink:0;}
+.side-box{background:white;border-radius:8px;padding:14px 16px;position:sticky;top:10px;}
+.side-box h3{font-size:0.9em;color:#cc0000;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #ffcccc;}
+@media(max-width:768px){.layout{flex-direction:column;}.side-col{width:100%;}.side-box{position:static;}}
+</style>
+</head>
+<body>
+
+<h1>🔍 脆弱性情報レポート</h1>
+<div class="update-time">📅 2026年08月02日 | 毎週月曜 自動更新 |
+<a href="archive.html">📚 過去レポート一覧</a> |
+<a href="privacy.html">プライバシーポリシー</a>
+</div>
+<div class="summary-box">
+<h2>📊 今週の重要度サマリー</h2>
+<table>
+<tr><td>🔴 CRITICAL(即時対応・24時間以内)</td><td><strong>3件</strong></td></tr>
+<tr><td>🟠 高(優先対応・72時間以内)</td><td><strong>2件</strong></td></tr>
+<tr><td>🟡 中(計画対応・1週間以内)</td><td><strong>0件</strong></td></tr>
+<tr><td>🟢 低(モニタリング・月次確認)</td><td><strong>8件</strong></td></tr>
+<tr><td><strong>合計</strong></td><td><strong>13件</strong></td></tr>
+</table>
+</div>
+<div class="layout">
+<div class="main-col">
+<h2>🔴 最新のCRITICAL <small style="font-size:0.65em;color:#cc0000;">(3件)</small></h2>
+<p style="font-size:0.9em;color:#666;margin-bottom:12px;">CISAが新たに「実際に悪用されている」と認定した脆弱性です。最優先で対応してください。</p>
+<div class="card critical" id="CVE-2026-20316">
+<span class="badge badge-critical">🔴 CRITICAL</span> <a href="feature/CVE-2026-20316.html" style="background:#7A74B8;color:white;padding:2px 8px;border-radius:10px;font-size:0.8em;text-decoration:none;">📋 特集記事</a>
+<strong>CVE-2026-20316</strong> | Secure Firewall Management Center (FMC) (Cisco)<br>
+<p>Cisco Secure Firewall Management Center (FMC) formerly known as Firepower Management Center contains a use of hard-coded password vulnerability that could allow an unauthenticated, remote attacker to log in to an affected device using a low-privileged account to access sensitive data within the impacted systems.</p>
+<p>📅 2026-07-29 ⏰ 期限:2026-08-01</p>
+<a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank">🔗 対策を確認する(CISA)</a>
+</div><div class="card critical" id="CVE-2025-68686">
+<span class="badge badge-critical">🔴 CRITICAL</span> <a href="feature/CVE-2025-68686.html" style="background:#7A74B8;color:white;padding:2px 8px;border-radius:10px;font-size:0.8em;text-decoration:none;">📋 特集記事</a>
+<strong>CVE-2025-68686</strong> | FortiOS (Fortinet)<br>
+<p>Fortinet FortiOS contains an exposure of sensitive information to an unauthorized actor vulnerability. This may allow a remote unauthenticated attacker to bypass the patch developed for the symbolic link persistency mechanism observed in some post-exploit cases, via crafted HTTP requests. An attacker would need first to have compromised the product via another vulnerability, at filesystem level.</p>
+<p>📅 2026-07-27 ⏰ 期限:2026-08-10</p>
+<a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank">🔗 対策を確認する(CISA)</a>
+</div><div class="card critical" id="CVE-2026-16812">
+<span class="badge badge-critical">🔴 CRITICAL</span>
+<strong>CVE-2026-16812</strong> | VeloCloud Orchestrator (Arista)<br>
+<p>Arista VeloCloud Orchestrator On-Prem contains an OS command injection vulnerability that may allow a remote attacker to access privileged internal functionality and impact the VCO host. Successful exploitation may compromise the confidentiality, integrity, and availability of the orchestrator and data managed by the orchestrator.</p>
+<p>📅 2026-07-27 ⏰ 期限:2026-07-30</p>
+<a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank">🔗 対策を確認する(CISA)</a>
+</div>
+<h2>🟠 JPCERT/CC:日本向け注意喚起</h2>
+<div class="card">
+<span class="badge badge-低">🟢 低</span>
+<strong>注意喚起: 2026年7月マイクロソフトセキュリティ更新プログラムに関する注意喚起  (更新)</strong><br>
+<small></small>
+<p><a href="https://www.jpcert.or.jp/at/2026/at260020.html" target="_blank">🔗 詳細(JPCERT/CC)</a></p>
+</div><div class="card">
+<span class="badge badge-高">🟠 高</span>
+<strong>注意喚起: Ruby on RailsのActive Storageにおけるリモートコード実行につながる脆弱性（CVE-2026-66066）に関する注意喚起  (公開)</strong><br>
+<small></small>
+<p><a href="https://www.jpcert.or.jp/at/2026/at260021.html" target="_blank">🔗 詳細(JPCERT/CC)</a></p>
+</div><div class="card">
+<span class="badge badge-低">🟢 低</span>
+<strong>注意喚起: Fortinet製品に関連する認証情報の漏えいに関する注意喚起  (公開)</strong><br>
+<small></small>
+<p><a href="https://www.jpcert.or.jp/at/2026/at260019.html" target="_blank">🔗 詳細(JPCERT/CC)</a></p>
+</div><div class="card">
+<span class="badge badge-低">🟢 低</span>
+<strong>注意喚起: Adobe AcrobatおよびReaderの脆弱性（APSB26-63）に関する注意喚起  (公開)</strong><br>
+<small></small>
+<p><a href="https://www.jpcert.or.jp/at/2026/at260018.html" target="_blank">🔗 詳細(JPCERT/CC)</a></p>
+</div><div class="card">
+<span class="badge badge-低">🟢 低</span>
+<strong>注意喚起: 2026年6月マイクロソフトセキュリティ更新プログラムに関する注意喚起  (公開)</strong><br>
+<small></small>
+<p><a href="https://www.jpcert.or.jp/at/2026/at260017.html" target="_blank">🔗 詳細(JPCERT/CC)</a></p>
+</div>
+<h2>🟡 JVN iPedia:国内製品脆弱性情報</h2>
+<p>取得できませんでした</p>
+<div class="disclaimer">
+<h3>⚠️ 免責事項</h3>
+<p>本情報はCISA KEV・JPCERT/CC・JVN iPediaの公開情報を収集・整理したものです。実際の対応は各情報源および専門家への相談のうえ行ってください。</p>
+<p>一次情報源: <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank">CISA KEV</a> / <a href="https://www.jpcert.or.jp/" target="_blank">JPCERT/CC</a> / <a href="https://jvndb.jvn.jp/" target="_blank">JVN iPedia</a></p>
+</div>
+</div>
+<div class="side-col">
+<div class="side-box">
+<h3>🔴 過去のCRITICAL<span style="font-size:0.8em;color:#999;font-weight:normal;">(直近90日)</span></h3>
+<p style="font-size:0.75em;color:#999;margin-bottom:6px;">📋 = 特集記事あり</p>
+<div style="background:#fff0f0;border-left:3px solid #cc0000;padding:10px 12px;margin:8px 0;border-radius:4px;font-size:0.85em;">
+<div><strong>CVE-2026-20316</strong> <a href="feature/CVE-2026-20316.html" style="background:#7A74B8;color:white;padding:1px 6px;border-radius:8px;font-size:0.75em;text-decoration:none;">📋</a></div>
+<div style="color:#555;font-size:0.9em;margin:3px 0;">Secure Firewall Management Center (FMC)</div>
+<div style="color:#cc0000;font-size:0.8em;">4日前 | 期限:2026-08-01</div>
+<div style="margin-top:4px;"><a href="2026-08-02.html#CVE-2026-20316" style="font-size:0.78em;color:#0066cc;">📄 週次レポート</a></div>
+</div><div style="background:#fff0f0;border-left:3px solid #cc0000;padding:10px 12px;margin:8px 0;border-radius:4px;font-size:0.85em;">
+<div><strong>CVE-2025-68686</strong> <a href="feature/CVE-2025-68686.html" style="background:#7A74B8;color:white;padding:1px 6px;border-radius:8px;font-size:0.75em;text-decoration:none;">📋</a></div>
+<div style="color:#555;font-size:0.9em;margin:3px 0;">FortiOS</div>
+<div style="color:#cc0000;font-size:0.8em;">6日前 | 期限:2026-08-10</div>
+<div style="margin-top:4px;"><a href="2026-07-28.html#CVE-2025-68686" style="font-size:0.78em;color:#0066cc;">📄 週次レポート</a></div>
+</div><div style="background:#fff0f0;border-left:3px solid #cc0000;padding:10px 12px;margin:8px 0;border-radius:4px;font-size:0.85em;">
+<div><strong>CVE-2026-16812</strong></div>
+<div style="color:#555;font-size:0.9em;margin:3px 0;">VeloCloud Orchestrator</div>
+<div style="color:#cc0000;font-size:0.8em;">6日前 | 期限:2026-07-30</div>
+<div style="margin-top:4px;"><a href="2026-07-28.html#CVE-2026-16812" style="font-size:0.78em;color:#0066cc;">📄 週次レポート</a></div>
+</div><div style="background:#fff0f0;border-left:3px solid #cc0000;padding:10px 12px;margin:8px 0;border-radius:4px;font-size:0.85em;">
+<div><strong>CVE-2026-16232</strong> <a href="feature/CVE-2026-16232.html" style="background:#7A74B8;color:white;padding:1px 6px;border-radius:8px;font-size:0.75em;text-decoration:none;">📋</a></div>
+<div style="color:#555;font-size:0.9em;margin:3px 0;">SmartConsole</div>
+<div style="color:#cc0000;font-size:0.8em;">11日前 | 期限:2026-07-25</div>
+<div style="margin-top:4px;"><a href="2026-07-20.html#CVE-2026-16232" style="font-size:0.78em;color:#0066cc;">📄 週次レポート</a></div>
+</div><div style="background:#fff0f0;border-left:3px solid #cc0000;padding:10px 12px;margin:8px 0;border-radius:4px;font-size:0.85em;">
+<div><strong>CVE-2026-50522</strong> <a href="feature/CVE-2026-50522.html" style="background:#7A74B8;color:white;padding:1px 6px;border-radius:8px;font-size:0.75em;text-decoration:none;">📋</a></div>
+<div style="color:#555;font-size:0.9em;margin:3px 0;">SharePoint</div>
+<div style="color:#cc0000;font-size:0.8em;">11日前 | 期限:2026-07-25</div>
+<div style="margin-top:4px;"><a href="2026-07-20.html#CVE-2026-50522" style="font-size:0.78em;color:#0066cc;">📄 週次レポート</a></div>
+</div><div style="background:#fff0f0;border-left:3px solid #cc0000;padding:10px 12px;margin:8px 0;border-radius:4px;font-size:0.85em;">
+<div><strong>CVE-2026-60137</strong> <a href="feature/CVE-2026-60137.html" style="background:#7A74B8;color:white;padding:1px 6px;border-radius:8px;font-size:0.75em;text-decoration:none;">📋</a></div>
+<div style="color:#555;font-size:0.9em;margin:3px 0;">Core</div>
+<div style="color:#cc0000;font-size:0.8em;">12日前 | 期限:2026-08-04</div>
+<div style="margin-top:4px;"><a href="2026-07-20.html#CVE-2026-60137" style="font-size:0.78em;color:#0066cc;">📄 週次レポート</a></div>
+</div><div style="background:#fff0f0;border-left:3px solid #cc0000;padding:10px 12px;margin:8px 0;border-radius:4px;font-size:0.85em;">
+<div><strong>CVE-2026-63030</strong> <a href="feature/CVE-2026-63030.html" style="background:#7A74B8;color:white;padding:1px 6px;border-radius:8px;font-size:0.75em;text-decoration:none;">📋</a></div>
+<div style="color:#555;font-size:0.9em;margin:3px 0;">Core</div>
+<div style="color:#cc0000;font-size:0.8em;">12日前 | 期限:2026-07-24</div>
+<div style="margin-top:4px;"><a href="2026-07-20.html#CVE-2026-63030" style="font-size:0.78em;color:#0066cc;">📄 週次レポート</a></div>
+</div><div style="background:#fff0f0;border-left:3px solid #cc0000;padding:10px 12px;margin:8px 0;border-radius:4px;font-size:0.85em;">
+<div><strong>CVE-2026-0770</strong></div>
+<div style="color:#555;font-size:0.9em;margin:3px 0;">Langflow</div>
+<div style="color:#cc0000;font-size:0.8em;">12日前 | 期限:2026-07-24</div>
+<div style="margin-top:4px;"><a href="2026-07-20.html#CVE-2026-0770" style="font-size:0.78em;color:#0066cc;">📄 週次レポート</a></div>
+</div><div style="background:#fff0f0;border-left:3px solid #cc0000;padding:10px 12px;margin:8px 0;border-radius:4px;font-size:0.85em;">
+<div><strong>CVE-2021-27137</strong> <a href="feature/CVE-2021-27137.html" style="background:#7A74B8;color:white;padding:1px 6px;border-radius:8px;font-size:0.75em;text-decoration:none;">📋</a></div>
+<div style="color:#555;font-size:0.9em;margin:3px 0;">DD-WRT</div>
+<div style="color:#cc0000;font-size:0.8em;">12日前 | 期限:2026-07-24</div>
+<div style="margin-top:4px;"><a href="2026-07-20.html#CVE-2021-27137" style="font-size:0.78em;color:#0066cc;">📄 週次レポート</a></div>
+</div><div style="background:#fff0f0;border-left:3px solid #cc0000;padding:10px 12px;margin:8px 0;border-radius:4px;font-size:0.85em;">
+<div><strong>CVE-2026-58644</strong> <a href="feature/CVE-2026-58644.html" style="background:#7A74B8;color:white;padding:1px 6px;border-radius:8px;font-size:0.75em;text-decoration:none;">📋</a></div>
+<div style="color:#555;font-size:0.9em;margin:3px 0;">SharePoint</div>
+<div style="color:#cc0000;font-size:0.8em;">17日前 | 期限:2026-07-19</div>
+<div style="margin-top:4px;"><a href="2026-07-13.html#CVE-2026-58644" style="font-size:0.78em;color:#0066cc;">📄 週次レポート</a></div>
+</div><div style="background:#fff0f0;border-left:3px solid #cc0000;padding:10px 12px;margin:8px 0;border-radius:4px;font-size:0.85em;">
+<div><strong>CVE-2026-25089</strong> <a href="feature/CVE-2026-25089.html" style="background:#7A74B8;color:white;padding:1px 6px;border-radius:8px;font-size:0.75em;text-decoration:none;">📋</a></div>
+<div style="color:#555;font-size:0.9em;margin:3px 0;">FortiSandbox</div>
+<div style="color:#cc0000;font-size:0.8em;">17日前 | 期限:2026-07-19</div>
+<div style="margin-top:4px;"><a href="2026-07-13.html#CVE-2026-25089" style="font-size:0.78em;color:#0066cc;">📄 週次レポート</a></div>
+</div><div style="background:#fff0f0;border-left:3px solid #cc0000;padding:10px 12px;margin:8px 0;border-radius:4px;font-size:0.85em;">
+<div><strong>CVE-2026-39808</strong> <a href="feature/CVE-2026-39808.html" style="background:#7A74B8;color:white;padding:1px 6px;border-radius:8px;font-size:0.75em;text-decoration:none;">📋</a></div>
+<div style="color:#555;font-size:0.9em;margin:3px 0;">FortiSandbox</div>
+<div style="color:#cc0000;font-size:0.8em;">17日前 | 期限:2026-07-19</div>
+<div style="margin-top:4px;"><a href="2026-07-13.html#CVE-2026-39808" style="font-size:0.78em;color:#0066cc;">📄 週次レポート</a></div>
+</div><div style="background:#fff0f0;border-left:3px solid #cc0000;padding:10px 12px;margin:8px 0;border-radius:4px;font-size:0.85em;">
+<div><strong>CVE-2026-46817</strong> <a href="feature/CVE-2026-46817.html" style="background:#7A74B8;color:white;padding:1px 6px;border-radius:8px;font-size:0.75em;text-decoration:none;">📋</a></div>
+<div style="color:#555;font-size:0.9em;margin:3px 0;">E-Business Suite</div>
+<div style="color:#cc0000;font-size:0.8em;">18日前 | 期限:2026-07-18</div>
+<div style="margin-top:4px;"><a href="2026-07-13.html#CVE-2026-46817" style="font-size:0.78em;color:#0066cc;">📄 週次レポート</a></div>
+</div><div style="background:#fff0f0;border-left:3px solid #cc0000;padding:10px 12px;margin:8px 0;border-radius:4px;font-size:0.85em;">
+<div><strong>CVE-2023-4346</strong></div>
+<div style="color:#555;font-size:0.9em;margin:3px 0;">KNX Protocol Connection Authorization Option 1</div>
+<div style="color:#cc0000;font-size:0.8em;">18日前 | 期限:2026-07-29</div>
+<div style="margin-top:4px;"><a href="2026-07-13.html#CVE-2023-4346" style="font-size:0.78em;color:#0066cc;">📄 週次レポート</a></div>
+</div><div style="background:#fff0f0;border-left:3px solid #cc0000;padding:10px 12px;margin:8px 0;border-radius:4px;font-size:0.85em;">
+<div><strong>CVE-2026-56155</strong></div>
+<div style="color:#555;font-size:0.9em;margin:3px 0;">Active Directory Federation Services</div>
+<div style="color:#cc0000;font-size:0.8em;">19日前 | 期限:2026-07-28</div>
+<div style="margin-top:4px;"><a href="2026-07-13.html#CVE-2026-56155" style="font-size:0.78em;color:#0066cc;">📄 週次レポート</a></div>
+</div><div style="background:#fff0f0;border-left:3px solid #cc0000;padding:10px 12px;margin:8px 0;border-radius:4px;font-size:0.85em;">
+<div><strong>CVE-2026-56164</strong> <a href="feature/CVE-2026-56164.html" style="background:#7A74B8;color:white;padding:1px 6px;border-radius:8px;font-size:0.75em;text-decoration:none;">📋</a></div>
+<div style="color:#555;font-size:0.9em;margin:3px 0;">SharePoint Server</div>
+<div style="color:#cc0000;font-size:0.8em;">19日前 | 期限:2026-07-17</div>
+<div style="margin-top:4px;"><a href="2026-07-13.html#CVE-2026-56164" style="font-size:0.78em;color:#0066cc;">📄 週次レポート</a></div>
+</div><div style="background:#fff0f0;border-left:3px solid #cc0000;padding:10px 12px;margin:8px 0;border-radius:4px;font-size:0.85em;">
+<div><strong>CVE-2026-15409</strong> <a href="feature/CVE-2026-15409.html" style="background:#7A74B8;color:white;padding:1px 6px;border-radius:8px;font-size:0.75em;text-decoration:none;">📋</a></div>
+<div style="color:#555;font-size:0.9em;margin:3px 0;">SMA1000 Appliances</div>
+<div style="color:#cc0000;font-size:0.8em;">19日前 | 期限:2026-07-17</div>
+<div style="margin-top:4px;"><a href="2026-07-13.html#CVE-2026-15409" style="font-size:0.78em;color:#0066cc;">📄 週次レポート</a></div>
+</div><div style="background:#fff0f0;border-left:3px solid #cc0000;padding:10px 12px;margin:8px 0;border-radius:4px;font-size:0.85em;">
+<div><strong>CVE-2026-15410</strong> <a href="feature/CVE-2026-15410.html" style="background:#7A74B8;color:white;padding:1px 6px;border-radius:8px;font-size:0.75em;text-decoration:none;">📋</a></div>
+<div style="color:#555;font-size:0.9em;margin:3px 0;">SMA1000 Appliances</div>
+<div style="color:#cc0000;font-size:0.8em;">19日前 | 期限:2026-07-17</div>
+<div style="margin-top:4px;"><a href="2026-07-13.html#CVE-2026-15410" style="font-size:0.78em;color:#0066cc;">📄 週次レポート</a></div>
+</div><div style="background:#fff0f0;border-left:3px solid #cc0000;padding:10px 12px;margin:8px 0;border-radius:4px;font-size:0.85em;">
+<div><strong>CVE-2008-4128</strong> <a href="feature/CVE-2008-4128.html" style="background:#7A74B8;color:white;padding:1px 6px;border-radius:8px;font-size:0.75em;text-decoration:none;">📋</a></div>
+<div style="color:#555;font-size:0.9em;margin:3px 0;">IOS</div>
+<div style="color:#cc0000;font-size:0.8em;">20日前 | 期限:2026-07-16</div>
+<div style="margin-top:4px;"><a href="2026-07-13.html#CVE-2008-4128" style="font-size:0.78em;color:#0066cc;">📄 週次レポート</a></div>
+</div><div style="background:#fff0f0;border-left:3px solid #cc0000;padding:10px 12px;margin:8px 0;border-radius:4px;font-size:0.85em;">
+<div><strong>CVE-2026-56291</strong> <a href="feature/CVE-2026-56291.html" style="background:#7A74B8;color:white;padding:1px 6px;border-radius:8px;font-size:0.75em;text-decoration:none;">📋</a></div>
+<div style="color:#555;font-size:0.9em;margin:3px 0;">Forms</div>
+<div style="color:#cc0000;font-size:0.8em;">23日前 | 期限:2026-07-13</div>
+<div style="margin-top:4px;"><a href="2026-07-06.html#CVE-2026-56291" style="font-size:0.78em;color:#0066cc;">📄 週次レポート</a></div>
+</div><div style="background:#fff0f0;border-left:3px solid #cc0000;padding:10px 12px;margin:8px 0;border-radius:4px;font-size:0.85em;">
+<div><strong>CVE-2026-48939</strong></div>
+<div style="color:#555;font-size:0.9em;margin:3px 0;">iCagenda</div>
+<div style="color:#cc0000;font-size:0.8em;">23日前 | 期限:2026-07-13</div>
+<div style="margin-top:4px;"><a href="2026-07-06.html#CVE-2026-48939" style="font-size:0.78em;color:#0066cc;">📄 週次レポート</a></div>
+</div><div style="background:#fff0f0;border-left:3px solid #cc0000;padding:10px 12px;margin:8px 0;border-radius:4px;font-size:0.85em;">
+<div><strong>CVE-2026-48908</strong> <a href="feature/CVE-2026-48908.html" style="background:#7A74B8;color:white;padding:1px 6px;border-radius:8px;font-size:0.75em;text-decoration:none;">📋</a></div>
+<div style="color:#555;font-size:0.9em;margin:3px 0;">SP Page Builder</div>
+<div style="color:#cc0000;font-size:0.8em;">26日前 | 期限:2026-07-10</div>
+<div style="margin-top:4px;"><a href="2026-07-06.html#CVE-2026-48908" style="font-size:0.78em;color:#0066cc;">📄 週次レポート</a></div>
+</div><div style="background:#fff0f0;border-left:3px solid #cc0000;padding:10px 12px;margin:8px 0;border-radius:4px;font-size:0.85em;">
+<div><strong>CVE-2026-55255</strong></div>
+<div style="color:#555;font-size:0.9em;margin:3px 0;">Langflow</div>
+<div style="color:#cc0000;font-size:0.8em;">26日前 | 期限:2026-07-10</div>
+<div style="margin-top:4px;"><a href="2026-07-06.html#CVE-2026-55255" style="font-size:0.78em;color:#0066cc;">📄 週次レポート</a></div>
+</div><div style="background:#fff0f0;border-left:3px solid #cc0000;padding:10px 12px;margin:8px 0;border-radius:4px;font-size:0.85em;">
+<div><strong>CVE-2026-56290</strong> <a href="feature/CVE-2026-56290.html" style="background:#7A74B8;color:white;padding:1px 6px;border-radius:8px;font-size:0.75em;text-decoration:none;">📋</a></div>
+<div style="color:#555;font-size:0.9em;margin:3px 0;">Page Builder</div>
+<div style="color:#cc0000;font-size:0.8em;">26日前 | 期限:2026-07-10</div>
+<div style="margin-top:4px;"><a href="2026-07-06.html#CVE-2026-56290" style="font-size:0.78em;color:#0066cc;">📄 週次レポート</a></div>
+</div><div style="background:#fff0f0;border-left:3px solid #cc0000;padding:10px 12px;margin:8px 0;border-radius:4px;font-size:0.85em;">
+<div><strong>CVE-2026-48282</strong> <a href="feature/CVE-2026-48282.html" style="background:#7A74B8;color:white;padding:1px 6px;border-radius:8px;font-size:0.75em;text-decoration:none;">📋</a></div>
+<div style="color:#555;font-size:0.9em;margin:3px 0;">ColdFusion</div>
+<div style="color:#cc0000;font-size:0.8em;">26日前 | 期限:2026-07-10</div>
+<div style="margin-top:4px;"><a href="2026-07-06.html#CVE-2026-48282" style="font-size:0.78em;color:#0066cc;">📄 週次レポート</a></div>
+</div>
+</div>
+</div>
+</div>
+<footer>
+<p><strong>畠山正彦</strong> | ITセキュリティコンサルタント<br>NIST / FISC / ISMS / 自工会GL / 経産省SCS評価制度</p>
+<p><a href="https://www.linkedin.com/" target="_blank">LinkedIn</a> | <a href="https://note.com/" target="_blank">Note</a> | <a href="privacy.html">プライバシーポリシー</a></p>
+<p style="font-size:0.8em;color:#999;">© 2026 畠山正彦 All Rights Reserved.</p>
+</footer>
+</body>
+</html>

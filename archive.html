@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,
+                   initial-scale=1.0">
+    <title>レポートアーカイブ | 畠山正彦</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Helvetica Neue',
+                         sans-serif;
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            background: #f5f5f5;
+            color: #333;
+        }
+        h1 { color: #1a1a2e; }
+        h2 {
+            border-left: 4px solid #333;
+            padding-left: 10px;
+            margin-top: 30px;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 10px 0;
+            box-shadow: 0 2px 4px
+                        rgba(0,0,0,0.1);
+        }
+        .card.critical {
+            border-left: 5px solid #cc0000;
+        }
+        .card.featured {
+            border-left: 5px solid #7A74B8;
+        }
+        .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .badge-critical,
+        .badge-CRITICAL {
+            background: #cc0000;
+            color: white;
+        }
+        .badge-高 {
+            background: #ff6600;
+            color: white;
+        }
+        .badge-中 {
+            background: #ffaa00;
+            color: white;
+        }
+        .badge-低 {
+            background: #009900;
+            color: white;
+        }
+        .badge-feature {
+            background: #7A74B8;
+            color: white;
+            font-size: 0.75em;
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-left: 8px;
+        }
+        .summary-box {
+            background: #1a1a2e;
+            color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .summary-box h2 {
+            color: white;
+            border-color: white;
+        }
+        .summary-box table {
+            width: 100%;
+            border-collapse: collapse;
+            background: transparent;
+        }
+        .summary-box td {
+            padding: 8px;
+            font-size: 1.05em;
+            color: white;
+        }
+        .update-time {
+            background: #e8f4f8;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+        .persistent-critical {
+            background: #fff0f0;
+            border: 1px solid #ffcccc;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin: 10px 0;
+        }
+        .days-since {
+            font-size: 0.8em;
+            color: #cc0000;
+            margin-top: 4px;
+        }
+        .disclaimer {
+            background: #fff8e1;
+            border-left: 4px solid #ffaa00;
+            padding: 15px 20px;
+            margin: 30px 0;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        .disclaimer h3 { margin-top: 0; }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9em;
+            border-top: 1px solid #ddd;
+        }
+        a { color: #0066cc; }
+        a:hover { text-decoration: underline; }
+    
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px
+                        rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #eee;
+            text-align: center;
+        }
+        th {
+            background: #1a1a2e;
+            color: white;
+        }
+        tr:hover { background: #f5f5f5; }
+    </style>
+</head>
+<body>
+    <h1>📚 脆弱性レポート アーカイブ</h1>
+    <p>
+        <a href="index.html">
+            ← 最新レポートに戻る
+        </a>
+    </p>
+    <p>累計 6週分のデータ</p>
+
+    
+
+    <h2>📅 週次レポート一覧</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>レポート日</th>
+                <th>🔴CRITICAL</th>
+                <th>🟠高</th>
+                <th>🟡中</th>
+                <th>🟢低</th>
+                <th>合計</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                <a href="2026-08-02.html">
+                    2026年08月02日
+                </a>
+            </td>
+            <td style="color:#cc0000;">
+                <strong>3</strong>
+            </td>
+            <td style="color:#ff6600;">
+                2
+            </td>
+            <td style="color:#ffaa00;">
+                0
+            </td>
+            <td style="color:#009900;">
+                8
+            </td>
+            <td>13</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="2026-07-28.html">
+                    2026年07月28日
+                </a>
+            </td>
+            <td style="color:#cc0000;">
+                <strong>4</strong>
+            </td>
+            <td style="color:#ff6600;">
+                2
+            </td>
+            <td style="color:#ffaa00;">
+                0
+            </td>
+            <td style="color:#009900;">
+                8
+            </td>
+            <td>14</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="2026-07-27.html">
+                    2026年07月27日
+                </a>
+            </td>
+            <td style="color:#cc0000;">
+                <strong>6</strong>
+            </td>
+            <td style="color:#ff6600;">
+                2
+            </td>
+            <td style="color:#ffaa00;">
+                0
+            </td>
+            <td style="color:#009900;">
+                8
+            </td>
+            <td>16</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="2026-07-20.html">
+                    2026年07月20日
+                </a>
+            </td>
+            <td style="color:#cc0000;">
+                <strong>6</strong>
+            </td>
+            <td style="color:#ff6600;">
+                0
+            </td>
+            <td style="color:#ffaa00;">
+                0
+            </td>
+            <td style="color:#009900;">
+                0
+            </td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="2026-07-13.html">
+                    2026年07月13日
+                </a>
+            </td>
+            <td style="color:#cc0000;">
+                <strong>10</strong>
+            </td>
+            <td style="color:#ff6600;">
+                0
+            </td>
+            <td style="color:#ffaa00;">
+                0
+            </td>
+            <td style="color:#009900;">
+                0
+            </td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>
+                <a href="2026-07-06.html">
+                    2026年07月06日
+                </a>
+            </td>
+            <td style="color:#cc0000;">
+                <strong>6</strong>
+            </td>
+            <td style="color:#ff6600;">
+                0
+            </td>
+            <td style="color:#ffaa00;">
+                0
+            </td>
+            <td style="color:#009900;">
+                0
+            </td>
+            <td>6</td>
+        </tr></tbody>
+    </table>
+
+    <footer>
+        <p>
+            <strong>畠山正彦</strong> |
+            ITセキュリティコンサルタント<br>
+            <a href="privacy.html">
+                プライバシーポリシー
+            </a>
+        </p>
+        <p style="font-size:0.8em;color:#999;">
+            © 2026 畠山正彦
+            All Rights Reserved.
+        </p>
+    </footer>
+</body>
+</html>
