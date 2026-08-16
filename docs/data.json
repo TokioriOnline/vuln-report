@@ -668,5 +668,104 @@
       }
     ],
     "jvn": []
+  },
+  "2026-08-16": {
+    "date": "2026-08-16",
+    "summary": {
+      "critical": 3,
+      "high": 2,
+      "medium": 1,
+      "low": 7,
+      "total": 13
+    },
+    "kev": [
+      {
+        "cveID": "CVE-2026-20349",
+        "product": "Secure Firewall Adaptive Security Appliance (ASA) and Secure Firewall Threat Defense (FTD) ",
+        "vendorProject": "Cisco",
+        "description": "Cisco Secure Firewall Adaptive Security Appliance (ASA) and Secure Firewall Threat Defense (FTD) contain a heap inspection vulnerability that could allow an unauthenticated, remote attacker to cause the device to reload unexpectedly, resulting in a denial of service (DoS) condition.",
+        "dateAdded": "2026-08-11",
+        "dueDate": "2026-08-14"
+      },
+      {
+        "cveID": "CVE-2026-68820",
+        "product": "Windows Ancillary Function Driver for WinSock ",
+        "vendorProject": "Microsoft",
+        "description": "Microsoft Windows Ancillary Function Driver for WinSock contains a use-after-free vulnerability that allows an authorized attacker to elevate privileges locally.",
+        "dateAdded": "2026-08-11",
+        "dueDate": "2026-08-25"
+      },
+      {
+        "cveID": "CVE-2026-72898",
+        "product": "Metabase",
+        "vendorProject": "Metabase",
+        "description": "Metabase contains a SQL Injection vulnerability that allows an unauthenticated remote attacker to inject arbitrary SQL into the Metabase application database, which can give them administrator access to the instance. From there, the attacker could change the application configuration, steal stored credentials for the connected databases, read any data accessible through those connections, and export data.",
+        "dateAdded": "2026-08-11",
+        "dueDate": "2026-08-14"
+      }
+    ],
+    "jpcert": [
+      {
+        "title": "注意喚起: NetScaler ADCおよびNetScaler Gatewayにおけるリモートコード実行につながる脆弱性（CVE-2026-8452）に関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260024.html",
+        "published": "",
+        "severity": "高"
+      },
+      {
+        "title": "注意喚起: MetabaseのSQLインジェクションの脆弱性（CVE-2026-72898）に関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260023.html",
+        "published": "",
+        "severity": "中"
+      },
+      {
+        "title": "注意喚起: 2026年8月マイクロソフトセキュリティ更新プログラムに関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260022.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: Ruby on RailsのActive Storageにおけるリモートコード実行につながる脆弱性（CVE-2026-66066）に関する注意喚起  (更新)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260021.html",
+        "published": "",
+        "severity": "高"
+      },
+      {
+        "title": "注意喚起: 2026年7月マイクロソフトセキュリティ更新プログラムに関する注意喚起  (更新)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260020.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: Fortinet製品に関連する認証情報の漏えいに関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260019.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "Weekly Report: macOSの画面共有に不適切な認証の脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr260813.html#1",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "Weekly Report: 複数のZyxel製品に脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr260813.html#2",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "Weekly Report: Google Chromeに複数の脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr260813.html#3",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "Weekly Report: WordPressに複数の脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr260813.html#4",
+        "published": "",
+        "severity": "低"
+      }
+    ],
+    "jvn": []
   }
 }
