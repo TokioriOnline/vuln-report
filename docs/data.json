@@ -767,5 +767,152 @@
       }
     ],
     "jvn": []
+  },
+  "2026-08-23": {
+    "date": "2026-08-23",
+    "summary": {
+      "critical": 9,
+      "high": 2,
+      "medium": 2,
+      "low": 6,
+      "total": 19
+    },
+    "kev": [
+      {
+        "cveID": "CVE-2026-73570",
+        "product": "Zimbra Collaboration Suite (ZCS)",
+        "vendorProject": "Synacor",
+        "description": "Zimbra Collaboration Suite (ZCS) contains an OS command injection vulnerability which could allow an unauthenticated attacker to send specially crafted SMTP requests that may result in execution of arbitrary operating system commands as the Zimbra user.",
+        "dateAdded": "2026-08-21",
+        "dueDate": "2026-08-24"
+      },
+      {
+        "cveID": "CVE-2026-72530",
+        "product": "Server",
+        "vendorProject": "TrueConf",
+        "description": "TrueConf Server contains a code injection vulnerability that could allow an unauthorized remote attacker with network access via port 4307/TCP to use a specially crafted script to break out of the isolated environment and execute arbitrary code on the host system.",
+        "dateAdded": "2026-08-20",
+        "dueDate": "2026-09-03"
+      },
+      {
+        "cveID": "CVE-2026-72529",
+        "product": "Server",
+        "vendorProject": "TrueConf",
+        "description": "TrueConf Server contains a missing authentication for critical function vulnerability which could allow a remote unauthorized attacker with network access via port 4307/TCP to execute an arbitrary script.",
+        "dateAdded": "2026-08-20",
+        "dueDate": "2026-08-23"
+      },
+      {
+        "cveID": "CVE-2026-64849",
+        "product": "MLflow",
+        "vendorProject": "MLflow",
+        "description": "MLflow contains a server-side request forgery vulnerability that can allow attackers to reach internal or cloud metadata services and receive response_status and response_body.",
+        "dateAdded": "2026-08-19",
+        "dueDate": "2026-09-02"
+      },
+      {
+        "cveID": "CVE-2026-33824",
+        "product": "Internet Key Exchange (IKE) Service Extensions",
+        "vendorProject": "Microsoft",
+        "description": "Microsoft Internet Key Exchange (IKE) Service Extensions contains a double free vulnerability that could enable remote code execution.",
+        "dateAdded": "2026-08-18",
+        "dueDate": "2026-08-21"
+      },
+      {
+        "cveID": "CVE-2026-59310",
+        "product": "VMware vCenter",
+        "vendorProject": "Broadcom",
+        "description": "Broadcom VMware vCenter contains a path traversal vulnerability which could allow a threat actor with network access to vCenter to execute arbitrary code.",
+        "dateAdded": "2026-08-18",
+        "dueDate": "2026-08-21"
+      },
+      {
+        "cveID": "CVE-2026-55040",
+        "product": "SharePoint",
+        "vendorProject": "Microsoft",
+        "description": "Microsoft SharePoint contains a weak authentication vulnerability which allows an unauthorized attacker to bypass a security feature over a network.",
+        "dateAdded": "2026-08-18",
+        "dueDate": "2026-08-21"
+      },
+      {
+        "cveID": "CVE-2026-65400",
+        "product": "macOS",
+        "vendorProject": "Apple",
+        "description": "Apple macOS contains an improper authentication vulnerability that could allow an attacker on the network to authenticate to Screen Sharing without valid credentials.",
+        "dateAdded": "2026-08-18",
+        "dueDate": "2026-08-21"
+      },
+      {
+        "cveID": "CVE-2025-62593",
+        "product": "Ray",
+        "vendorProject": "Ray-Project",
+        "description": "Ray-Project Ray contains a code injection vulnerability that could allow remote code execution. Developers using Ray as a development tool may be exposed to this vulnerability exploitable through Firefox and Safari.",
+        "dateAdded": "2026-08-17",
+        "dueDate": "2026-08-20"
+      }
+    ],
+    "jpcert": [
+      {
+        "title": "注意喚起: NetScaler ADCおよびNetScaler Gatewayにおけるリモートコード実行につながる脆弱性（CVE-2026-8452）に関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260024.html",
+        "published": "",
+        "severity": "高"
+      },
+      {
+        "title": "注意喚起: MetabaseのSQLインジェクションの脆弱性（CVE-2026-72898）に関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260023.html",
+        "published": "",
+        "severity": "中"
+      },
+      {
+        "title": "注意喚起: 2026年8月マイクロソフトセキュリティ更新プログラムに関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260022.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: Ruby on RailsのActive Storageにおけるリモートコード実行につながる脆弱性（CVE-2026-66066）に関する注意喚起  (更新)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260021.html",
+        "published": "",
+        "severity": "高"
+      },
+      {
+        "title": "注意喚起: 2026年7月マイクロソフトセキュリティ更新プログラムに関する注意喚起  (更新)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260020.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: Fortinet製品に関連する認証情報の漏えいに関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260019.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "Weekly Report: PostgreSQLに複数の脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr260819.html#1",
+        "published": "",
+        "severity": "中"
+      },
+      {
+        "title": "Weekly Report: 複数のElastic製品に脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr260819.html#2",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "Weekly Report: 複数のVMware製品に脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr260819.html#3",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "Weekly Report: 複数のFortinet製品に脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr260819.html#4",
+        "published": "",
+        "severity": "低"
+      }
+    ],
+    "jvn": []
   }
 }
