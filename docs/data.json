@@ -1224,5 +1224,192 @@
       }
     ],
     "jvn": []
+  },
+  "2026-09-13": {
+    "date": "2026-09-13",
+    "summary": {
+      "critical": 14,
+      "high": 2,
+      "medium": 1,
+      "low": 7,
+      "total": 24
+    },
+    "kev": [
+      {
+        "cveID": "CVE-2026-84869",
+        "product": "ScreenConnect",
+        "vendorProject": "ConnectWise",
+        "description": "ConnectWise ScreenConnect contains both an improper privilege management and missing authorization vulnerability that may allow an attacker to file transfer and execution through an active remote sessions without authorization or host confirmation.",
+        "dateAdded": "2026-09-11",
+        "dueDate": "2026-09-14"
+      },
+      {
+        "cveID": "CVE-2026-42016",
+        "product": "Artifactory",
+        "vendorProject": "JFrog",
+        "description": "JFrog Artifactory contains an incorrect authorization vulnerability that allows leads to privilege escalation attack due to a validation check of the token signature/issuer and not the token’s scope.",
+        "dateAdded": "2026-09-11",
+        "dueDate": "2026-09-25"
+      },
+      {
+        "cveID": "CVE-2026-42018",
+        "product": "Artifactory",
+        "vendorProject": "JFrog",
+        "description": "JFrog Artifactory contains an improper authentication vulnerability that could return an internal anonymous-user token to an unauthenticated caller when anonymous access is disabled, potentially exposing sensitive resources.",
+        "dateAdded": "2026-09-11",
+        "dueDate": "2026-09-25"
+      },
+      {
+        "cveID": "CVE-2026-85706",
+        "product": "Community Edition and Enterprise Edition",
+        "vendorProject": "GitLab",
+        "description": "GitLab Community Edition and Enterprise Edition contains a path traversal vulnerability that allows an unauthenticated user to read arbitrary files due to an improper path confinement and missing authentication enforcement in the repository commits API.",
+        "dateAdded": "2026-09-11",
+        "dueDate": "2026-09-14"
+      },
+      {
+        "cveID": "CVE-2026-86060",
+        "product": "RouterOS",
+        "vendorProject": "MikroTik",
+        "description": "MikroTik RouterOS contains an improper neutralization of argument delimiters in a command vulnerability which allows an attacked to change the trusted RouterOS policy mask, leading to privilege escalation.",
+        "dateAdded": "2026-09-10",
+        "dueDate": "2026-09-13"
+      },
+      {
+        "cveID": "CVE-2026-67277",
+        "product": "RouterOS",
+        "vendorProject": "MikroTik",
+        "description": "MikroTik RouterOS contains a missing authenticaion for critical function vulnerability which allows kernel memory disclosure and denial of service in the btest service.",
+        "dateAdded": "2026-09-10",
+        "dueDate": "2026-09-13"
+      },
+      {
+        "cveID": "CVE-2026-19490",
+        "product": "NetScaler",
+        "vendorProject": "Citrix",
+        "description": "Citrix NetScaler ADC and NetScaler Gateway contain an authentication-bypass vulnerability involving an alternate path or channel. When the NetScaler appliance is configured as an AAA virtual server or as a Gateway (SSL VPN, ICA Proxy, CVPN, or RDP Proxy), an unauthenticated remote threat actor may be able to bypass authentication.",
+        "dateAdded": "2026-09-09",
+        "dueDate": "2026-09-12"
+      },
+      {
+        "cveID": "CVE-2025-25249",
+        "product": "Multiple Products",
+        "vendorProject": "Fortinet",
+        "description": "Fortinet FortiOS, FortiSwitchManager, and FortiSASE contain a heap-based buffer overflow vulnerability that allows an attacker to execute unauthorized code or commands via specially crafted packets.",
+        "dateAdded": "2026-09-09",
+        "dueDate": "2026-09-12"
+      },
+      {
+        "cveID": "CVE-2026-87491",
+        "product": "Chromium V8",
+        "vendorProject": "Google",
+        "description": "Google Chromium V8 contains an out of bounds write vulnerability that allows a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. This vulnerability could affect multiple web browsers that utilize Chromium, including, but not limited to, Google Chrome, Microsoft Edge, and Opera.",
+        "dateAdded": "2026-09-09",
+        "dueDate": "2026-09-23"
+      },
+      {
+        "cveID": "CVE-2026-20079",
+        "product": "Secure Firewall Management Center (FMC) and Security Cloud Control (SCC) Firewall Management",
+        "vendorProject": "Cisco",
+        "description": "Cisco Secure Firewall Management Center (FMC) Software and Cisco Security Cloud Control (SCC) Firewall Management contain an authentication Bypass using an alternate path or channel vulnerability that could allow an unauthenticated, remote attacker to bypass authentication and execute script files on an affected device to obtain root access to the underlying operating system.",
+        "dateAdded": "2026-09-09",
+        "dueDate": "2026-09-12"
+      },
+      {
+        "cveID": "CVE-2026-75650",
+        "product": "Commerce and Magento",
+        "vendorProject": "Adobe",
+        "description": "Adobe Commerce and Magento Open Source contain an improper neutralization of special elements used in a template engine vulnerability that could allow an attacker to execute arbitrary code.",
+        "dateAdded": "2026-09-08",
+        "dueDate": "2026-09-11"
+      },
+      {
+        "cveID": "CVE-2026-81963",
+        "product": "Windows",
+        "vendorProject": "Microsoft",
+        "description": "Microsoft Windows Update Stack contains a link following vulnerability that allows a local attacker to escalate privileges locally up to SYSTEM.",
+        "dateAdded": "2026-09-08",
+        "dueDate": "2026-09-22"
+      },
+      {
+        "cveID": "CVE-2026-86218",
+        "product": "N-central",
+        "vendorProject": "N-able",
+        "description": "N-able N-central contains a static code injection vulnerability that could allow for pre-authentication remote code execution.",
+        "dateAdded": "2026-09-08",
+        "dueDate": "2026-09-11"
+      },
+      {
+        "cveID": "CVE-2026-85880",
+        "product": "Windows",
+        "vendorProject": "Microsoft",
+        "description": "Microsoft Windows Advanced Local Procedure Call contains a heap-based buffer overflow vulnerability that allows an attacker to elevate privileges locally.",
+        "dateAdded": "2026-09-08",
+        "dueDate": "2026-09-22"
+      }
+    ],
+    "jpcert": [
+      {
+        "title": "注意喚起: Adobe AcrobatおよびReaderの脆弱性（APSB26-141）に関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260026.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: 2026年9月マイクロソフトセキュリティ更新プログラムに関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260025.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: NetScaler ADCおよびNetScaler Gatewayにおけるリモートコード実行につながる脆弱性（CVE-2026-8452）に関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260024.html",
+        "published": "",
+        "severity": "高"
+      },
+      {
+        "title": "注意喚起: MetabaseのSQLインジェクションの脆弱性（CVE-2026-72898）に関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260023.html",
+        "published": "",
+        "severity": "中"
+      },
+      {
+        "title": "注意喚起: 2026年8月マイクロソフトセキュリティ更新プログラムに関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260022.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: Ruby on RailsのActive Storageにおけるリモートコード実行につながる脆弱性（CVE-2026-66066）に関する注意喚起  (更新)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260021.html",
+        "published": "",
+        "severity": "高"
+      },
+      {
+        "title": "Weekly Report: n8nに複数の脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr260909.html#1",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "Weekly Report: 複数のElastic製品に脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr260909.html#2",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "Weekly Report: WordPress用プラグインReally Simple Securityに代替パスまたはチャネルを使用した認証回避の脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr260909.html#3",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "Weekly Report: Google Chromeに複数の脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr260909.html#4",
+        "published": "",
+        "severity": "低"
+      }
+    ],
+    "jvn": []
   }
 }
