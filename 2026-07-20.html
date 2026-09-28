@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>脆弱性情報 2026年07月20日 | 畠山正彦</title>
+<style>
+        body { font-family: sans-serif; max-width: 900px;
+               margin: auto; padding: 20px;
+               background: #f5f5f5; color: #333; }
+        h1 { color: #1a1a2e; }
+        h2 { border-left: 4px solid #333;
+             padding-left: 10px; margin-top: 30px; }
+        .card { background: white; border-radius: 8px;
+                padding: 15px 20px; margin: 10px 0; }
+        .badge { display: inline-block; padding: 3px 10px;
+                 border-radius: 12px; font-size: 0.85em;
+                 font-weight: bold; margin-bottom: 8px; }
+        .badge-critical { background: #cc0000; color: white; }
+        .summary-box { background: #1a1a2e; color: white;
+                       border-radius: 8px; padding: 20px; margin: 20px 0; }
+        .summary-box h2 { color: white; border-color: white; }
+        .summary-box table { width: 100%; border-collapse: collapse; background: transparent; }
+        .summary-box td { padding: 8px; color: white; }
+        .persistent-critical { background: #fff0f0;
+                                border: 1px solid #ffcccc;
+                                border-radius: 8px;
+                                padding: 16px 20px; margin: 10px 0; }
+        .update-time { background: #e8f4f8; padding: 10px 15px;
+                       border-radius: 5px; margin-bottom: 20px; }
+        .disclaimer { background: #fff8e1;
+                      border-left: 4px solid #ffaa00;
+                      padding: 15px 20px; margin: 30px 0;
+                      border-radius: 4px; }
+        footer { text-align: center; margin-top: 40px;
+                 padding: 20px; color: #666;
+                 border-top: 1px solid #ddd; }
+        table { width: 100%; border-collapse: collapse;
+                background: white; border-radius: 8px; }
+        th, td { padding: 10px; border: 1px solid #eee;
+                 text-align: center; }
+        th { background: #1a1a2e; color: white; }
+        tr:hover { background: #f5f5f5; }
+        a { color: #0066cc; }
+    </style>
+</head>
+<body>
+<p><a href="index.html">← 最新レポートに戻る</a> | <a href="archive.html">📚 アーカイブ一覧</a></p>
+<h1>🔍 脆弱性情報レポート</h1>
+<div class="update-time">📅 レポート日: 2026年07月20日</div>
+<div class="summary-box">
+<h2>📊 重要度サマリー</h2>
+<table>
+<tr><td>🔴 CRITICAL(即時対応・24時間以内)</td><td><strong>6件</strong></td></tr>
+<tr><td>🟠 高(優先対応・72時間以内)</td><td><strong>0件</strong></td></tr>
+<tr><td>🟡 中(計画対応・1週間以内)</td><td><strong>0件</strong></td></tr>
+<tr><td>🟢 低(モニタリング・月次確認)</td><td><strong>0件</strong></td></tr>
+<tr><td><strong>合計</strong></td><td><strong>6件</strong></td></tr>
+</table>
+</div>
+<h2>🔴 この週のCRITICAL(6件)</h2>
+<p style="font-size:0.9em;color:#666;margin-bottom:12px;">
+この週にCISAが新たに「実際に悪用されている」と認定した脆弱性です。
+</p>
+<div class="card critical" id="CVE-2026-16232">
+<span class="badge badge-critical">🔴 CRITICAL</span> <a href="feature/CVE-2026-16232.html" style="background:#7A74B8;color:white;padding:2px 8px;border-radius:10px;font-size:0.8em;text-decoration:none;">📋 特集記事</a>
+<strong>CVE-2026-16232</strong> | SmartConsole (Check Point)<br>
+<p>Check Point SmartConsole contains an improper authentication vulnerability which could allow an unauthenticated remote attacker to obtain an application login token and use it to authenticate with full administrative privileges.</p>
+<p>📅 2026-07-22 ⏰ 期限:2026-07-25</p>
+<a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+   target="_blank">🔗 対策を確認する(CISA)</a>
+</div><div class="card critical" id="CVE-2026-50522">
+<span class="badge badge-critical">🔴 CRITICAL</span> <a href="feature/CVE-2026-50522.html" style="background:#7A74B8;color:white;padding:2px 8px;border-radius:10px;font-size:0.8em;text-decoration:none;">📋 特集記事</a>
+<strong>CVE-2026-50522</strong> | SharePoint (Microsoft)<br>
+<p>Microsoft SharePoint contains a deserialization of untrusted data vulnerability which could allow an unauthorized attacker to execute code over a network.</p>
+<p>📅 2026-07-22 ⏰ 期限:2026-07-25</p>
+<a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+   target="_blank">🔗 対策を確認する(CISA)</a>
+</div><div class="card critical" id="CVE-2026-60137">
+<span class="badge badge-critical">🔴 CRITICAL</span> <a href="feature/CVE-2026-60137.html" style="background:#7A74B8;color:white;padding:2px 8px;border-radius:10px;font-size:0.8em;text-decoration:none;">📋 特集記事</a>
+<strong>CVE-2026-60137</strong> | Core (WordPress)<br>
+<p>WordPress Core contains a SQL injection vulnerability when a plugin or theme passes untrusted input to the parameter. This vulnerability can be chained with CVE-2026-63030 to allow an unauthenticated attacker to gain remote code execution on default WordPress installations.</p>
+<p>📅 2026-07-21 ⏰ 期限:2026-08-04</p>
+<a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+   target="_blank">🔗 対策を確認する(CISA)</a>
+</div><div class="card critical" id="CVE-2026-63030">
+<span class="badge badge-critical">🔴 CRITICAL</span> <a href="feature/CVE-2026-63030.html" style="background:#7A74B8;color:white;padding:2px 8px;border-radius:10px;font-size:0.8em;text-decoration:none;">📋 特集記事</a>
+<strong>CVE-2026-63030</strong> | Core (WordPress)<br>
+<p>WordPress Core contains an interpretation conflict vulnerability that could allow an attacker to perform SQL Injection and achieve Remote Code Execution. This vulnerability can be chained with CVE-2026-60137.</p>
+<p>📅 2026-07-21 ⏰ 期限:2026-07-24</p>
+<a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+   target="_blank">🔗 対策を確認する(CISA)</a>
+</div><div class="card critical" id="CVE-2026-0770">
+<span class="badge badge-critical">🔴 CRITICAL</span>
+<strong>CVE-2026-0770</strong> | Langflow (Langflow)<br>
+<p>Langflow contains an inclusion of functionality from untrusted control sphere vulnerability that allows remote attackers to execute arbitrary code on affected installations. </p>
+<p>📅 2026-07-21 ⏰ 期限:2026-07-24</p>
+<a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+   target="_blank">🔗 対策を確認する(CISA)</a>
+</div><div class="card critical" id="CVE-2021-27137">
+<span class="badge badge-critical">🔴 CRITICAL</span> <a href="feature/CVE-2021-27137.html" style="background:#7A74B8;color:white;padding:2px 8px;border-radius:10px;font-size:0.8em;text-decoration:none;">📋 特集記事</a>
+<strong>CVE-2021-27137</strong> | DD-WRT (DD-WRT)<br>
+<p>DD-WRT contains a stack-based buffer overflow vulnerability that could allow an unauthenticated attacker to overflow an internal buffer used by UPnP and trigger a code execution vulnerability.</p>
+<p>📅 2026-07-21 ⏰ 期限:2026-07-24</p>
+<a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+   target="_blank">🔗 対策を確認する(CISA)</a>
+</div>
+<div class="disclaimer">
+<h3>⚠️ 免責事項</h3>
+<p>本情報はCISA KEV・JPCERT/CC・JVN iPediaの公開情報を収集・整理したものです。
+実際の対応は各情報源および専門家への相談のうえ行ってください。</p>
+<p>
+<a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank">CISA KEV</a> /
+<a href="https://www.jpcert.or.jp/" target="_blank">JPCERT/CC</a> /
+<a href="https://jvndb.jvn.jp/" target="_blank">JVN iPedia</a>
+</p>
+</div>
+<footer>
+<p><strong>畠山正彦</strong> | ITセキュリティコンサルタント</p>
+<p style="font-size:0.8em;color:#999;">© 2026 畠山正彦 All Rights Reserved.</p>
+</footer>
+</body>
+</html>
