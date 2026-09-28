@@ -1542,5 +1542,168 @@
       }
     ],
     "jvn": []
+  },
+  "2026-09-28": {
+    "date": "2026-09-28",
+    "summary": {
+      "critical": 11,
+      "high": 1,
+      "medium": 2,
+      "low": 7,
+      "total": 21
+    },
+    "kev": [
+      {
+        "cveID": "CVE-2026-88772",
+        "product": "NetScaler",
+        "vendorProject": "Citrix",
+        "description": "Citrix NetScaler ADC and NetScaler Gateway contain an improper restriction of operations within the bounds of a memory buffer vulnerability that could allow for remote code execution or denial of service",
+        "dateAdded": "2026-09-27",
+        "dueDate": "2026-09-30"
+      },
+      {
+        "cveID": "CVE-2026-88771",
+        "product": "NetScaler",
+        "vendorProject": "Citrix",
+        "description": "Citrix NetScaler ADC and NetScaler Gateway contain an improper input validation vulnerability that could allow an unauthenticated attacker to execute arbitrary commands.",
+        "dateAdded": "2026-09-27",
+        "dueDate": "2026-09-30"
+      },
+      {
+        "cveID": "CVE-2026-67279",
+        "product": "RouterOS",
+        "vendorProject": "MikroTik",
+        "description": "Mikrotik RouterOS contains an improper enforcement of behavioral workflow vulnerability that could allow an unauthenticated client to open a session channel and send an exec request. This vulnerability can be chained to achieve unauthenticated exploitation of CVE-2026-86060.",
+        "dateAdded": "2026-09-25",
+        "dueDate": "2026-09-28"
+      },
+      {
+        "cveID": "CVE-2026-65660",
+        "product": "SharePoint",
+        "vendorProject": "Microsoft",
+        "description": "Microsoft SharePoint contains a code injection vulnerability which could allow an authorized attacker to execute code over a network.",
+        "dateAdded": "2026-09-25",
+        "dueDate": "2026-09-28"
+      },
+      {
+        "cveID": "CVE-2026-87902",
+        "product": "Core",
+        "vendorProject": "WordPress",
+        "description": "WordPress Core contains a remote file inclusion vulnerability which could allow an unauthenticated attacker to make page-template resolution include a chosen readable local `.php` file outside the active theme directories, leading to remote code execution.",
+        "dateAdded": "2026-09-25",
+        "dueDate": "2026-09-28"
+      },
+      {
+        "cveID": "CVE-2026-5430",
+        "product": "Multiple Products",
+        "vendorProject": "WSO2",
+        "description": "WSO2 API Control Plane, API Manager, Traffic Manager & Universal Gateway contain a path traversal vulnerability that could allow for unrestricted file upload and lead to remote code execution. ",
+        "dateAdded": "2026-09-24",
+        "dueDate": "2026-09-27"
+      },
+      {
+        "cveID": "CVE-2026-71362",
+        "product": "Commerce and Magento ",
+        "vendorProject": "Adobe",
+        "description": "Adobe Commerce and Magento contains an incorrect authorization vulnerability that could allow an attacker to leverage this vulnerability to gain elevated access to sensitive resources without any user interaction. ",
+        "dateAdded": "2026-09-24",
+        "dueDate": "2026-09-27"
+      },
+      {
+        "cveID": "CVE-2026-93952",
+        "product": "VeloCloud Orchestrator",
+        "vendorProject": "Arista",
+        "description": "Arista VeloCloud Orchestrator (VCO) on-prem contains an improper input validation vulnerability that may allow a remote attacker to access privileged internal functionality and impact the VCO host. Successful exploitation may compromise the confidentiality, integrity, and availability of the orchestrator and data managed by the orchestrator.",
+        "dateAdded": "2026-09-22",
+        "dueDate": "2026-09-25"
+      },
+      {
+        "cveID": "CVE-2026-94127",
+        "product": "BIG-IP APM",
+        "vendorProject": "F5",
+        "description": "F5 BIG-IP APM contains a heap-based buffer overflow vulnerability when access policy and an OAuth profile are configured on a virtual server. This vulnerability could allow an unauthenticated attacker to perform remote code execution.",
+        "dateAdded": "2026-09-22",
+        "dueDate": "2026-09-25"
+      },
+      {
+        "cveID": "CVE-2026-93616",
+        "product": "Multiple Products",
+        "vendorProject": "Check Point",
+        "description": "Check Point Security Management Server, Multi-Domain Security Management Server, Log Server, Multi-Domain Log Server, and SmartEvent contain a path traversal vulnerability that allows an unauthenticated attacker to upload and execute arbitrary scripts.",
+        "dateAdded": "2026-09-22",
+        "dueDate": "2026-09-25"
+      },
+      {
+        "cveID": "CVE-2026-85102",
+        "product": "Multiple Products",
+        "vendorProject": "Check Point",
+        "description": "Check Point Security Gateway and Check Point Spark Firewall using Site to Site VPN or Remote Access VPN contain an improper certificate validation vulnerability which could allow an unauthenticated remote attacker to execute arbitrary code on the Gateway.",
+        "dateAdded": "2026-09-22",
+        "dueDate": "2026-09-25"
+      }
+    ],
+    "jpcert": [
+      {
+        "title": "注意喚起: F5 BIG-IP Access Policy Managerにおけるヒープベースのバッファオーバーフローの脆弱性（CVE-2026-94127）に関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260028.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: Cisco Secure Email GatewayにおけるSQLインジェクションの脆弱性（CVE-2026-76461）に関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260027.html",
+        "published": "",
+        "severity": "中"
+      },
+      {
+        "title": "注意喚起: Adobe AcrobatおよびReaderの脆弱性（APSB26-141）に関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260026.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: 2026年9月マイクロソフトセキュリティ更新プログラムに関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260025.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: NetScaler ADCおよびNetScaler Gatewayにおけるリモートコード実行につながる脆弱性（CVE-2026-8452）に関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260024.html",
+        "published": "",
+        "severity": "高"
+      },
+      {
+        "title": "注意喚起: MetabaseのSQLインジェクションの脆弱性（CVE-2026-72898）に関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260023.html",
+        "published": "",
+        "severity": "中"
+      },
+      {
+        "title": "Weekly Report: a-blog cmsにパストラバーサルの脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr260916.html#1",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "Weekly Report: AWS Systems Manager Agentにサーバーサイドリクエストフォージェリの脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr260916.html#2",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "Weekly Report: Apache Camelに複数の脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr260916.html#3",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "Weekly Report: PleskのBackup Managerに複数の脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr260916.html#4",
+        "published": "",
+        "severity": "低"
+      }
+    ],
+    "jvn": []
   }
 }
