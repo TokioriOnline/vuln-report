@@ -1705,5 +1705,128 @@
       }
     ],
     "jvn": []
+  },
+  "2026-10-05": {
+    "date": "2026-10-05",
+    "summary": {
+      "critical": 6,
+      "high": 1,
+      "medium": 1,
+      "low": 8,
+      "total": 16
+    },
+    "kev": [
+      {
+        "cveID": "CVE-2026-88779",
+        "product": "NetScaler",
+        "vendorProject": "Citrix",
+        "description": "Citrix NetScaler ADC (formerly Citrix ADC) and Citrix NetScaler Gateway (formerly Citrix Gateway) contain an improper restriction of operations within the bounds of a memory buffer vulnerability that could allow for a denial of service.",
+        "dateAdded": "2026-10-04",
+        "dueDate": "2026-10-07"
+      },
+      {
+        "cveID": "CVE-2026-102490",
+        "product": "Zammad",
+        "vendorProject": "Zammad GmbH",
+        "description": "Zammad GmbH Zammad contains an improper privilege management vulnerability that can allow the local zammad user to escalate privileges to root. This vulnerability can be chained with CVE-2026-102489.",
+        "dateAdded": "2026-10-02",
+        "dueDate": "2026-10-05"
+      },
+      {
+        "cveID": "CVE-2026-102489",
+        "product": "Zammad",
+        "vendorProject": "Zammad GmbH",
+        "description": "Zammad GmbH Zammad contains a session fixation vulnerability that can lead to remote code execution as the zammad user. This vulnerability can be chained with CVE-2026-102490.",
+        "dateAdded": "2026-10-02",
+        "dueDate": "2026-10-05"
+      },
+      {
+        "cveID": "CVE-2026-104286",
+        "product": "FortiMail",
+        "vendorProject": "Fortinet",
+        "description": "Fortinet FortiMail contains a path traversal and an improper neutralization of NULL byte or NULL character vulnerability that may allow an unauthenticated attacker to write arbitrary files on the underlying system via crafted HTTP or HTTPS requests.",
+        "dateAdded": "2026-10-01",
+        "dueDate": "2026-10-04"
+      },
+      {
+        "cveID": "CVE-2026-76504",
+        "product": "Catalyst SD-WAN Manager",
+        "vendorProject": "Cisco",
+        "description": "Cisco Catalyst SD-WAN Manager contains a hex encoding vulnerability that could allow an unauthenticated, remote attacker to access an affected system with privileges of the admin user due to improper handling of URI encoding in an HTTP request.",
+        "dateAdded": "2026-09-30",
+        "dueDate": "2026-10-03"
+      },
+      {
+        "cveID": "CVE-2026-86950",
+        "product": "Multiple Products",
+        "vendorProject": "Apple",
+        "description": "Apple iOS, macOS, and iPadOS contain an out-of-bounds write vulnerability in CoreGraphics that may lead to arbitrary code execution.",
+        "dateAdded": "2026-09-29",
+        "dueDate": "2026-10-02"
+      }
+    ],
+    "jpcert": [
+      {
+        "title": "注意喚起: NetScaler ADCおよびNetScaler Gatewayにおける複数の脆弱性（CVE-2026-88771、CVE-2026-88772等）に関する注意喚起  (更新)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260029.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: F5 BIG-IP Access Policy Managerにおけるヒープベースのバッファオーバーフローの脆弱性（CVE-2026-94127）に関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260028.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: Cisco Secure Email GatewayにおけるSQLインジェクションの脆弱性（CVE-2026-76461）に関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260027.html",
+        "published": "",
+        "severity": "中"
+      },
+      {
+        "title": "注意喚起: Adobe AcrobatおよびReaderの脆弱性（APSB26-141）に関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260026.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: 2026年9月マイクロソフトセキュリティ更新プログラムに関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260025.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: NetScaler ADCおよびNetScaler Gatewayにおけるリモートコード実行につながる脆弱性（CVE-2026-8452）に関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260024.html",
+        "published": "",
+        "severity": "高"
+      },
+      {
+        "title": "Weekly Report: ServiceNow AI Platformに複数の脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr260930.html#1",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "Weekly Report: 複数のAdobe製品に脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr260930.html#2",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "Weekly Report: Unboundに複数の脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr260930.html#3",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "Weekly Report: Apache Tomcatに複数の脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr260930.html#4",
+        "published": "",
+        "severity": "低"
+      }
+    ],
+    "jvn": []
   }
 }
