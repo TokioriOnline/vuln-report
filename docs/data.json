@@ -1828,5 +1828,120 @@
       }
     ],
     "jvn": []
+  },
+  "2026-10-12": {
+    "date": "2026-10-12",
+    "summary": {
+      "critical": 5,
+      "high": 1,
+      "medium": 1,
+      "low": 8,
+      "total": 15
+    },
+    "kev": [
+      {
+        "cveID": "CVE-2015-5477",
+        "product": "BIND",
+        "vendorProject": "ISC",
+        "description": "ISC BIND contains a data processing errors vulnerability that could allow remote attackers to cause a denial of service via TKEY queries.",
+        "dateAdded": "2026-10-08",
+        "dueDate": "2026-10-11"
+      },
+      {
+        "cveID": "CVE-2016-3081",
+        "product": "Struts",
+        "vendorProject": "Apache",
+        "description": "Apache Struts contains a command injection vulnerability that could allow remote attackers to execute arbitrary code via method:prefix when Dynamic Method Invocation is enabled.",
+        "dateAdded": "2026-10-08",
+        "dueDate": "2026-10-11"
+      },
+      {
+        "cveID": "CVE-2023-22894",
+        "product": "Strapi",
+        "vendorProject": "Strapi",
+        "description": "Strapi contains a cleartext storage of sensitive information vulnerability that could allow attackers with access to the admin panel to discover sensitive user details via the query filter. The impacted product(s) could be end-of-life (EoL) and/or end-of-service (EoS). Users are advised to discontinue use and/or transition to a supported version. This vulnerability can be chained with CVE-2023-22621 to achieve remote code execution. ",
+        "dateAdded": "2026-10-08",
+        "dueDate": "2026-10-11"
+      },
+      {
+        "cveID": "CVE-2021-3199",
+        "product": "Docs",
+        "vendorProject": "ONLYOFFICE",
+        "description": "ONLYOFFICE Docs contains a path traversal vulnerability that can occur when JWT is used, via a /.. sequence in an image upload parameter and could allow for remote code execution.",
+        "dateAdded": "2026-10-08",
+        "dueDate": "2026-10-11"
+      },
+      {
+        "cveID": "CVE-2015-3306",
+        "product": "ProFTPD",
+        "vendorProject": "ProFTPD",
+        "description": "ProFTPD contains an improper access control vulnerability that could allow remote attackers to read and write to arbitrary files via the site cpfr and site cpto commands.",
+        "dateAdded": "2026-10-08",
+        "dueDate": "2026-10-11"
+      }
+    ],
+    "jpcert": [
+      {
+        "title": "注意喚起: 直近で相次いでいる国内組織における不正アクセスに関する注意喚起  (更新)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260030.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: NetScaler ADCおよびNetScaler Gatewayにおける複数の脆弱性（CVE-2026-88771、CVE-2026-88772等）に関する注意喚起  (更新)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260029.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: F5 BIG-IP Access Policy Managerにおけるヒープベースのバッファオーバーフローの脆弱性（CVE-2026-94127）に関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260028.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: Cisco Secure Email GatewayにおけるSQLインジェクションの脆弱性（CVE-2026-76461）に関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260027.html",
+        "published": "",
+        "severity": "中"
+      },
+      {
+        "title": "注意喚起: Adobe AcrobatおよびReaderの脆弱性（APSB26-141）に関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260026.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: 2026年9月マイクロソフトセキュリティ更新プログラムに関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260025.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "Weekly Report: Google Chromeに複数の脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr261007.html#1",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "Weekly Report: Apache HTTP Server 2.4に複数の脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr261007.html#2",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "Weekly Report: FortinetのFortiMailに未認証のリモートコード実行につながる脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr261007.html#3",
+        "published": "",
+        "severity": "高"
+      },
+      {
+        "title": "Weekly Report: 複数のMozilla製品に脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr261007.html#4",
+        "published": "",
+        "severity": "低"
+      }
+    ],
+    "jvn": []
   }
 }
