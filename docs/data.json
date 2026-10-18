@@ -1943,5 +1943,152 @@
       }
     ],
     "jvn": []
+  },
+  "2026-10-18": {
+    "date": "2026-10-18",
+    "summary": {
+      "critical": 9,
+      "high": 0,
+      "medium": 1,
+      "low": 9,
+      "total": 19
+    },
+    "kev": [
+      {
+        "cveID": "CVE-2026-102764",
+        "product": "Remote Support",
+        "vendorProject": "BeyondTrust",
+        "description": "BeyondTrust Remote Support contains an authentication bypass by spoofing vulnerability that could allow a remote attacker to perform file operations on the appliance.",
+        "dateAdded": "2026-10-16",
+        "dueDate": "2026-10-19"
+      },
+      {
+        "cveID": "CVE-2025-61624",
+        "product": "Multiple Products",
+        "vendorProject": "Fortinet",
+        "description": "FortiOS, FortiPAM, FortiProxy, and FortiSwitchManager contain a path traversal vulnerability that may allow an authenticated attacker with admin profile and at least read-write permissions to write or delete arbitrary files via specific CLI commands.",
+        "dateAdded": "2026-10-16",
+        "dueDate": "2026-10-19"
+      },
+      {
+        "cveID": "CVE-2026-21589",
+        "product": "Multiple Products",
+        "vendorProject": "Atlassian",
+        "description": "Multiple Atlassian products (Bitbucket Data Center ,Confluence Data Center, Jira Service Management Data Center, Jira Software Data Center, Bamboo Data Center, Crowd Data Center, Crucible and Fisheye) contain a files or directories accessible to external parties vulnerability which could allow an unauthenticated attacker to access specific files within the web application root directory in affected versions.",
+        "dateAdded": "2026-10-15",
+        "dueDate": "2026-10-18"
+      },
+      {
+        "cveID": "CVE-2026-105134",
+        "product": "AhsayCBS",
+        "vendorProject": "Ahsay",
+        "description": "Ahsay AhsayCBS contains a command injection vulnerability that could allow a remote attacker to execute operating system commands via manipulation of the random parameter in the Replication Receiver component’s /rps/api/json/UpdateReceivers.do endpoint. This vulnerability can be chained with CVE-2026-105133.",
+        "dateAdded": "2026-10-14",
+        "dueDate": "2026-10-17"
+      },
+      {
+        "cveID": "CVE-2026-76519",
+        "product": "Secure Email Gateway",
+        "vendorProject": "Cisco",
+        "description": "Cisco Secure Email Gateway contains a relative path traversal vulnerability that could allow an unauthenticated, remote attacker to write arbitrary files on the underlying operating system.",
+        "dateAdded": "2026-10-14",
+        "dueDate": "2026-10-17"
+      },
+      {
+        "cveID": "CVE-2026-105133",
+        "product": "AhsayCBS",
+        "vendorProject": "Ahsay",
+        "description": "Ahsay AhsayCBS contains an improper authentication vulnerability that could allow a remote attacker to bypass authentication via manipulation of the random parameter in the API component’s checkSysPwd function. This vulnerability can be chained with CVE-2026-105134.",
+        "dateAdded": "2026-10-14",
+        "dueDate": "2026-10-17"
+      },
+      {
+        "cveID": "CVE-2026-0322",
+        "product": "PAN-OS",
+        "vendorProject": "Palo Alto Networks",
+        "description": "Palo Alto Networks PAN-OS contains a code injection vulnerability that could allow an authenticated attacker with network access to execute arbitrary code with root privileges on the firewall.",
+        "dateAdded": "2026-10-14",
+        "dueDate": "2026-10-17"
+      },
+      {
+        "cveID": "CVE-2026-104935",
+        "product": "Connect Secure",
+        "vendorProject": "Ivanti",
+        "description": "Ivanti Connect Secure contains an authentication bypass by spoofing vulnerability that allows a remote unauthenticated attacker to execute arbitrary commands.",
+        "dateAdded": "2026-10-13",
+        "dueDate": "2026-10-16"
+      },
+      {
+        "cveID": "CVE-2026-96951",
+        "product": "Windows",
+        "vendorProject": "Microsoft",
+        "description": "Microsoft Windows Shell contains a command injection vulnerability that allows an unauthorized attacker to bypass a security feature over a network.",
+        "dateAdded": "2026-10-13",
+        "dueDate": "2026-10-16"
+      }
+    ],
+    "jpcert": [
+      {
+        "title": "注意喚起: SiteGuard Server EditionにおけるOSコマンドインジェクションの脆弱性（CVE-2026-106931）に関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260032.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: 2026年10月マイクロソフトセキュリティ更新プログラムに関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260031.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: 直近で相次いでいる国内組織における不正アクセスに関する注意喚起  (更新)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260030.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: NetScaler ADCおよびNetScaler Gatewayにおける複数の脆弱性（CVE-2026-88771、CVE-2026-88772等）に関する注意喚起  (更新)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260029.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: F5 BIG-IP Access Policy Managerにおけるヒープベースのバッファオーバーフローの脆弱性（CVE-2026-94127）に関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260028.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: Cisco Secure Email GatewayにおけるSQLインジェクションの脆弱性（CVE-2026-76461）に関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260027.html",
+        "published": "",
+        "severity": "中"
+      },
+      {
+        "title": "Weekly Report: Drupalの複数のモジュールに脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr261015.html#1",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "Weekly Report: 複数のSplunk製品に脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr261015.html#2",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "Weekly Report: 複数のCisco製品に脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr261015.html#3",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "Weekly Report: Movable Typeに複数の脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr261015.html#4",
+        "published": "",
+        "severity": "低"
+      }
+    ],
+    "jvn": []
   }
 }
