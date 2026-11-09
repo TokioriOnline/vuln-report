@@ -2368,5 +2368,104 @@
       }
     ],
     "jvn": []
+  },
+  "2026-11-09": {
+    "date": "2026-11-09",
+    "summary": {
+      "critical": 3,
+      "high": 1,
+      "medium": 1,
+      "low": 8,
+      "total": 13
+    },
+    "kev": [
+      {
+        "cveID": "CVE-2026-19868",
+        "product": "SonicOS SSLVPN",
+        "vendorProject": "SonicWall",
+        "description": "SonicWall SonicOS SSLVPN contains a use of single-factor authentication vulnerability that may allow a user with valid credentials for an alternate authentication method to bypass SAML authentication controls. Successful exploitation may also bypass SAML-enforced multi-factor authentication (MFA).",
+        "dateAdded": "2026-11-06",
+        "dueDate": "2026-11-20"
+      },
+      {
+        "cveID": "CVE-2024-27834",
+        "product": "Multiple Products",
+        "vendorProject": "Apple",
+        "description": "Apple iOS, iPadOS, macOS, Safari, tvOS and watchOS 10.5 contain an improper authentication vulnerability which could allow an attacker with arbitrary read and write capability to bypass pointer authentication.",
+        "dateAdded": "2026-11-04",
+        "dueDate": "2026-11-18"
+      },
+      {
+        "cveID": "CVE-2026-119977",
+        "product": "WordPress Core",
+        "vendorProject": "WordPress",
+        "description": "WordPress WordPress Core contains a time-of-check time-of-use (TOCTOU) race condition vulnerability that could allow unauthenticated attackers to execute code on the server during the upgrade window. This is due to predictable, web-accessible staging paths used during full-package core upgrades.",
+        "dateAdded": "2026-11-03",
+        "dueDate": "2026-11-06"
+      }
+    ],
+    "jpcert": [
+      {
+        "title": "注意喚起: PHPにおける複数の脆弱性（CVE-2026-109618、CVE-2026-109619）に関する注意喚起  (更新)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260033.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: BrotliのC言語実装における境界外書き込みの脆弱性（CVE-2026-111497）に関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260034.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: 直近で相次いでいる国内組織における不正アクセスに関する注意喚起  (更新)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260030.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: SiteGuard Server EditionにおけるOSコマンドインジェクションの脆弱性（CVE-2026-106931）に関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260032.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: 2026年10月マイクロソフトセキュリティ更新プログラムに関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260031.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: NetScaler ADCおよびNetScaler Gatewayにおける複数の脆弱性（CVE-2026-88771、CVE-2026-88772等）に関する注意喚起  (更新)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260029.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "Weekly Report: Microsoft Edgeに複数の脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr261105.html#1",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "Weekly Report: Sophos UTMに任意のコード実行につながる脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr261105.html#2",
+        "published": "",
+        "severity": "高"
+      },
+      {
+        "title": "Weekly Report: Cisco Secure Firewall ASAおよびFTD Softwareにサービス運用妨害（DoS）の脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr261105.html#3",
+        "published": "",
+        "severity": "中"
+      },
+      {
+        "title": "Weekly Report: Jenkinsに複数の脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr261105.html#4",
+        "published": "",
+        "severity": "低"
+      }
+    ],
+    "jvn": []
   }
 }
