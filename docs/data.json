@@ -2467,5 +2467,144 @@
       }
     ],
     "jvn": []
+  },
+  "2026-11-16": {
+    "date": "2026-11-16",
+    "summary": {
+      "critical": 8,
+      "high": 1,
+      "medium": 0,
+      "low": 9,
+      "total": 18
+    },
+    "kev": [
+      {
+        "cveID": "CVE-2026-114713",
+        "product": "UnrealIRCd",
+        "vendorProject": "UnrealIRCd",
+        "description": "UnrealIRCd UnrealIRCd contains an improper neutralization of delimiters vulnerability that allows any user on a network with two or more linked servers to inject server-to-server commands that are executed with server authority.",
+        "dateAdded": "2026-11-13",
+        "dueDate": "2026-11-16"
+      },
+      {
+        "cveID": "CVE-2026-123039",
+        "product": "Multiple Products",
+        "vendorProject": "Check Point",
+        "description": "Check Point Firewall, Multi-Domain Security Management Server, Scalable Platforms, Security Gateway, and Security Management Server contain an incorrect permissions assignment for critical resources vulnerability when the Gaia OS DynamicCLI daemon runs as root and listens on a world-writable local socket without authenticating connecting processes. An authenticated local user can send a command to the socket and have it executed as root.",
+        "dateAdded": "2026-11-13",
+        "dueDate": "2026-11-16"
+      },
+      {
+        "cveID": "CVE-2026-124194",
+        "product": "Office",
+        "vendorProject": "Microsoft",
+        "description": "Microsoft Office Outlook contains a missing user interaction for potentially unsafe action vulnerability that allows an unauthorized attacker to perform spoofing over a network.",
+        "dateAdded": "2026-11-10",
+        "dueDate": "2026-11-24"
+      },
+      {
+        "cveID": "CVE-2026-111793",
+        "product": "Webtop Media Transcoder",
+        "vendorProject": "Openwave Messaging Limited",
+        "description": "Openwave Messaging Limited Webtop Media Transcoder contains an incorrect resource transfer between spheres vulnerability that may allow an authenticated user to process and convert unintended document types if bypassing the Webmail experience.",
+        "dateAdded": "2026-11-10",
+        "dueDate": "2026-11-24"
+      },
+      {
+        "cveID": "CVE-2026-20320",
+        "product": "BroadWorks",
+        "vendorProject": "Cisco",
+        "description": "Cisco BroadWorks contains an improper restriction of XML external entity reference vulnerability that could allow an unauthenticated, remote attacker to read sensitive configuration information on an affected system.",
+        "dateAdded": "2026-11-10",
+        "dueDate": "2026-11-24"
+      },
+      {
+        "cveID": "CVE-2026-111560",
+        "product": "Multiple Products",
+        "vendorProject": "Barracuda Networks",
+        "description": "Barracuda Networks Email Security Gateway (ESG), Load Balancer, Application Delivery Controller (ADC), Message Archiver (BMA), WAF Control Center (WCC), Web Application Firewall (WAF), and Web Security Gateway (WSG) contain an OS command injection vulnerability. This vulnerability could allow an authenticated administrator to inject OS commands that execute with root privileges when the crafted timezone value is subsequently processed. This vulnerability can be chained with CVE-2026-116606",
+        "dateAdded": "2026-11-10",
+        "dueDate": "2026-11-13"
+      },
+      {
+        "cveID": "CVE-2026-116606",
+        "product": "Barracuda Email Security Gateway (ESG)",
+        "vendorProject": "Barracuda Networks",
+        "description": "Barracuda Networks Email Security Gateway (ESG) contains an authentication bypass using an alternate path or channel that could allow an unauthenticated remote attacker to invoke a configuration-import function and restore a crafted, compatible backup archive, resulting in unauthorized modification of the appliance’s global configuration. This vulnerability can be chained with CVE-2026-111560.",
+        "dateAdded": "2026-11-10",
+        "dueDate": "2026-11-13"
+      },
+      {
+        "cveID": "CVE-2026-125350",
+        "product": "Chromium",
+        "vendorProject": "Google",
+        "description": "Google Chromium contains a use-after-free vulnerability in the XML component that could allow a remote attacker to execute arbitrary code inside the sandbox via a specially crafted webpage. This vulnerability could affect multiple web browsers that utilize Chromium, including, but not limited to, Google Chrome, Microsoft Edge, and Opera.",
+        "dateAdded": "2026-11-10",
+        "dueDate": "2026-11-24"
+      }
+    ],
+    "jpcert": [
+      {
+        "title": "注意喚起: 2026年11月マイクロソフトセキュリティ更新プログラムに関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260035.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: PHPにおける複数の脆弱性（CVE-2026-109618、CVE-2026-109619）に関する注意喚起  (更新)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260033.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: BrotliのC言語実装における境界外書き込みの脆弱性（CVE-2026-111497）に関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260034.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: 直近で相次いでいる国内組織における不正アクセスに関する注意喚起  (更新)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260030.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: SiteGuard Server EditionにおけるOSコマンドインジェクションの脆弱性（CVE-2026-106931）に関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260032.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "注意喚起: 2026年10月マイクロソフトセキュリティ更新プログラムに関する注意喚起  (公開)",
+        "link": "https://www.jpcert.or.jp/at/2026/at260031.html",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "Weekly Report: Cloud Software GroupのXenServerに複数の脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr261111.html#1",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "Weekly Report: Puppet ServerおよびOpenVoxに複数の脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr261111.html#2",
+        "published": "",
+        "severity": "低"
+      },
+      {
+        "title": "Weekly Report: Airbyteに任意のコード実行につながる脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr261111.html#3",
+        "published": "",
+        "severity": "高"
+      },
+      {
+        "title": "Weekly Report: Firefoxにバッファエラーの脆弱性",
+        "link": "https://www.jpcert.or.jp/wr/2026/wr261111.html#4",
+        "published": "",
+        "severity": "低"
+      }
+    ],
+    "jvn": []
   }
 }
